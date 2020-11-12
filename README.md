@@ -2,10 +2,10 @@
 ## B & B Climatizaciones
 
 - 💸 Venta de Aires Acondicionados
-- 🧘‍♂️ Industria / Persona
-- ⚖ Paginas Referidas
-    - https://www.mercadolibre.com.ar/#from=homecom
-    - http://www.amazon.com
+- 🧘‍♂️ Industrias, Comercios, Residencial
+- ⚖ Paginas Referentes:
+    - https://www.mercadolibre.com.ar/
+    - https://www.amazon.com/
     - http://www.cardiff.com.ar/
     - https://www.climatecnica.com/
     - http://www.reld.com.ar/
@@ -22,4 +22,9 @@
         - Vendedor Minorista de articulos de iluminacion (Proyecto personal)
         - Me defiendo en percusion (especialmente Congas y Bongo) y me estoy iniciando con Piano.
         - "Si no tenes groove, no tenes nada." 
-    - David
+    - David:
+        - 34 años
+        - Lic. en Comercio Exterior 🌎
+        - Freelancer
+        - ⚽
+        - "La suerte es amiga de la acción"
