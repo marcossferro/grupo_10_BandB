@@ -10,12 +10,14 @@
     - https://www.climatecnica.com/
     - http://www.reld.com.ar/
     - https://bybclima.com/
+
 - 😛 Equipo:
     - Marcos Ferro: 
         - 23 años
         - Expenses Lead - Globant
         - Administracion de Empresas
         - Juego al Rugby en Regatas de Bella Vista
+        - "El que no arriesga no gana"
     - Maxi: 
         - 26 años
         - Vendedor Mayorista en Pueyrredon LED S.R.L.
