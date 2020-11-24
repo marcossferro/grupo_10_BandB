@@ -2,7 +2,11 @@
 ## B & B Climatizaciones
 
 - 💸 Venta de Aires Acondicionados
-- 🧘‍♂️ Industrias, Comercios, Residencial
+- 🧘‍♂️ En B&B Clima trabajamos para lograr el confort de las personas. Para que usted pueda mantener una temperatura ambiente y una calidad del aire apropiada en su oficina, comercio o industria, brindamos diferentes soluciones para la refrigeración, calefacción y ventilación de los espacios de trabajo.
+    - Ofrecemos servicios para los clientes en dos áreas:
+        - Nuestro departamento de obras diseña, planifica y ejecuta proyectos a medida en climatización y ventilación.
+        - Además, nos especializamos en instalación, mantenimiento y reparación de sistemas de aire acondicionado y calderas.
+
 - ⚖ Paginas Referentes:
     - [Mercado Libre](https://www.mercadolibre.com.ar/)
     - [Amazon](https://www.amazon.com/)
@@ -30,8 +34,3 @@
         - Freelancer
         - ⚽
         - "La suerte es amiga de la acción"
-
-- En B&B Clima trabajamos para lograr el confort de las personas. Para que usted pueda mantener una temperatura ambiente y una calidad del aire apropiada en su oficina, comercio o industria, brindamos diferentes soluciones para la refrigeración, calefacción y ventilación de los espacios de trabajo.
-    - Ofrecemos servicios para los clientes en dos áreas:
-        - Nuestro departamento de obras diseña, planifica y ejecuta proyectos a medida en climatización y ventilación.
-        - Además, nos especializamos en instalación, mantenimiento y reparación de sistemas de aire acondicionado y calderas.
