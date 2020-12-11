@@ -1,0 +1,223 @@
+:root {
+    --colorPrincipal: #6EC1E4;
+    --marginPrincipal: 60px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Barlow";
+}
+/*----------------------MOBILE--------------------*/
+
+/*=========================
+-------HEADER DESKTOP-------
+=========================*/
+header.desktop {
+    display: none;
+}
+
+/*=========================
+-------HEADER MOBILE--------
+=========================*/    
+header.mobile {
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+header.mobile div.bars {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+header.mobile div.bars a {}
+header.mobile div.bars a i {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 25px;
+}
+
+header.mobile a {
+    color: black;
+}
+header.mobile a img {
+    width: 250px;
+}
+
+header.mobile div.search {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+header.mobile div.search a {
+    color: black;
+}
+header.mobile div.search a i {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+}
+/*=========================
+-------FOOTER DESKTOP-------
+=========================*/
+footer.footerDesktop {
+    display: none;
+}
+/*=========================
+-------FOOTER MOBILE-------
+=========================*/
+footer.footerMobile {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #424242;
+}
+footer.footerMobile a.facebook {
+    background-color: #3b5998;
+    border-radius: 140px;
+}
+footer.footerMobile a.facebook i {
+    padding: 25px;
+    font-size: 2rem;
+    color: #fff;
+}
+footer.footerMobile a.whatsapp {
+    margin-left: 10px;
+    background-color: #25d366;
+    border-radius: 140px;
+}
+footer.footerMobile a.whatsapp i {
+    padding: 25px;
+    font-size: 2rem;
+    color: #fff;
+}
+footer.footerMobile a.instagram {
+    margin-left: 10px;
+    background-image: url("https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc5fe0378-6694-42e6-8495-8beff78ac206%2Finstagram-gradient-background-1-normal-636.png?table=block&id=4824b22f-48d1-423f-b327-40b63fb81d82&width=2720&userId=5a35f030-876c-4783-a4db-f50e00c4410d&cache=v2");
+    background-color: var(--colorPrincipal);
+    border-radius: 140px;
+}
+footer.footerMobile a.instagram i {
+    padding: 25px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/*----------------------DESKTOP--------------------*/
+
+@media (min-width: 1024px) {
+    /*=========================
+    -------DIV CONTAINER--------
+    =========================*/
+    div.container {
+        padding: 0 100px
+    }
+    
+    /*=========================
+    -------HEADER MOBILE--------
+    =========================*/
+        header.mobile {
+            display: none;
+        }
+    /*=========================
+    -------HEADER DESKTOP-------
+    =========================*/
+    header.desktop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+    }
+    header.desktop a.logo {}
+    header.desktop a.logo img {}
+    header.desktop form {}
+    header.desktop form input {
+        width: 280px;
+        height: 30px;
+        border-radius: 5px 0 0 5px;
+        text-align: center;
+    }
+    header.desktop form button {
+        width: 30px;
+        height: 30px;
+        border-radius: 0 5px 5px 0;
+    }
+    header.desktop form button i {
+        font-size: 15px;
+    }
+    header.desktop nav {}
+    header.desktop nav ul {
+        display: flex;
+        list-style-type: none;
+    }
+    header.desktop nav ul li {
+        margin-left: 15px;
+    }
+    header.desktop nav ul li :first-child {
+        margin-left: 0px;
+    }
+    header.desktop nav ul li a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: black;
+    }
+/*=========================
+-------FOOTER DESKTOP-------
+=========================*/
+    footer.footerDesktop {
+        display: block;
+        margin-top: 200px;
+        padding: 70px 0px 20px 0px;
+        background-color: #424242;
+    }
+    footer.footerDesktop div.container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    footer.footerDesktop div.container a.logofooter {}
+    footer.footerDesktop div.container a.logofooter img {
+        width: 80px;
+    }
+    footer.footerDesktop div.container ul {
+        list-style-type: none;
+    }
+    footer.footerDesktop div.container ul li {}
+    footer.footerDesktop div.container ul li a {
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: small;
+    }
+    footer.footerDesktop div.container ul.redSocial {
+        display: flex;
+    }
+    footer.footerDesktop div.container ul.redSocial li {
+        margin-left: 15px;
+    }
+    footer.footerDesktop div.container ul.redSocial li :first-child {
+        margin-left: 0px;
+    }
+    footer.footerDesktop div.container ul.redSocial li a {}
+    footer.footerDesktop div.container ul.redSocial li a i {
+        font-size: 30px;
+        color: #fff;
+    }
+    small {
+        color:black;
+        font-size: x-small;
+    }
+/*=========================
+-------FOOTER MOBILE-------
+=========================*/
+    footer.footerMobile {
+        display: none;
+    }
+}
