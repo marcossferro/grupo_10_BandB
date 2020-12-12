@@ -1,0 +1,410 @@
+:root {
+    --colorPrincipal: #6EC1E4;
+    --marginPrincipal: 60px 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Barlow";
+}
+
+/*---------------------MOBILE----------------------*/
+
+/*=========================
+------PRODUCTO DESKTOP------
+=========================*/
+
+div.productoDesktop {
+    display: none;
+}
+
+/*=========================
+------PRODUCTO MOBILE------
+=========================*/
+
+section.productoMobile {
+    position: relative;
+}
+section.productoMobile h2 {}
+section.productoMobile img {
+    width: 100%;
+    margin-bottom: 15px;
+}
+section.productoMobile a.favHeart {
+    display: block;
+    position: absolute;
+    top: 325px;
+    right: 45px;
+    width: 70px;
+    height: 62px;
+    border-radius: 500px;
+    text-align: center;
+    background-color: var(--colorPrincipal);
+    text-decoration: none;
+}
+section.productoMobile a.favHeart h3 {
+    padding: 15px;
+    font-size: 1.7rem;
+    color: #fff;
+}
+
+section.productoMobile h1 {
+    font-size: 2.2rem;
+}
+section.productoMobile a.mediosDePago {
+    font-size: 0.7rem;
+    text-decoration: none;
+    color: #4054B2;
+}
+section.productoMobile a.mediosDePago h3 {
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+section.productoMobile h3.envios {
+    padding: 10px;
+    background-color: var(--colorPrincipal);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+section.productoMobile form.enviosCodPos {
+    margin-bottom: 25px;
+}
+section.productoMobile form.enviosCodPos label {
+    background-color: #fff;
+    font-size: 0.9rem;
+    width: 45%;
+}
+section.productoMobile form.enviosCodPos input.text {
+    width: 45%;
+    height: 25px;
+}
+section.productoMobile form.enviosCodPos input.button {
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: var(--colorPrincipal);
+    color: #fff;
+}
+
+section.productoMobile form.unidades {
+    margin-bottom: 25px;
+    text-align: center;
+}
+section.productoMobile form.unidades label {
+    text-transform: uppercase;
+}
+section.productoMobile form.unidades input {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+section.productoMobile div.botonesHorizontales{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section.productoMobile div.botonesHorizontales a.comprar {
+    width: 95%;
+    padding: 10px 0;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4054B2;
+}
+section.productoMobile div.botonesHorizontales a.comprar h3 {
+    
+    color: #fff;
+}
+section.productoMobile div.botonesHorizontales a.carrito {
+    width: 95%;
+    padding: 10px 0;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--colorPrincipal);
+}
+section.productoMobile div.botonesHorizontales a.carrito h3 {
+    color: #fff;
+}
+
+/*=========================
+----ALTERNATIVAS MOBILE-----
+=========================*/
+
+article.producAlternativos {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+article.producAlternativos h3 {
+    margin-bottom: 20px;
+}
+article.producAlternativos a {
+    text-decoration: none;
+}
+article.producAlternativos a div.producConteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+article.producAlternativos a div.producConteiner img {
+    width: 35%;
+}
+article.producAlternativos a div.producConteiner div.detalle {
+    width: 65%;
+}
+article.producAlternativos a div.producConteiner div.detalle h3 {
+    color: black;
+}
+article.producAlternativos a div.producConteiner div.detalle h1 {
+    color: black;
+}
+
+article.producAlternativos a.alternativaTablet {
+    display: none;
+}
+
+/*=========================
+------CARACTERISTICAS------
+=========================*/
+
+section.caracteristicas {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+section.caracteristicas h2 {}
+section.caracteristicas ul {
+    padding-left: 30px;
+}
+section.caracteristicas ul li {}
+
+/*=========================
+------MEDIOS DE PAGO------
+=========================*/
+
+article.mediosDePago {
+    width: 100%;
+    margin-bottom: 25px;
+}
+article.mediosDePago h3 {
+    margin-bottom: 25px;
+}
+article.mediosDePago img {
+    width: 100%;
+}
+
+/*---------------------TABLET----------------------*/
+@media (min-width: 768px) {
+    div.containerTablet {
+        padding: 0px 100px;
+    }
+
+/*=========================
+------PRODUCTO TABLET------
+=========================*/
+
+    section.productoMobile a.favHeart {
+        display: block;
+        position: absolute;
+        top: 500px;
+        right: 45px;
+        width: 70px;
+        height: 62px;
+        border-radius: 500px;
+        text-align: center;
+        background-color: var(--colorPrincipal);
+        text-decoration: none;
+    }
+
+/*=========================
+----ALTERNATIVAS TABLET-----
+=========================*/
+
+    article.producAlternativos a{
+        display: inline-block;
+        width: 45%;
+    }
+    article.producAlternativos a.alternativaTablet {
+        display: inline-block;
+        width: 45%;
+    }
+}
+
+/*--------------------DESKTOP---------------------*/
+
+@media (min-width: 1024px) {
+    div.containerTablet {
+        display: none;
+    }
+
+    div.productoDesktop {
+        display: block;
+        padding: 0 100px
+    }
+
+/*=========================
+----------PRODUCTO-----------
+=========================*/
+
+    div.productoGeneral {
+        margin: var(--marginPrincipal);
+        display: flex;
+    }
+
+    div.productoGeneral section.productoMitad1 {
+        width: 60%;
+    }
+    div.productoGeneral section.productoMitad1 img {
+        padding: 0 150px;
+        margin-bottom: 155px;
+        height: 400px;
+    }
+    div.productoGeneral section.productoMitad1 h2 {
+        margin-bottom: 10px;
+    }
+    div.productoGeneral section.productoMitad1 div.fichaTecnica {
+        margin-top: 10px;
+        display: flex;
+    }
+    div.productoGeneral section.productoMitad1 ul {
+        list-style-type: none;
+        width: 50%;
+        margin-left: 5px;
+    }
+    div.productoGeneral section.productoMitad1 ul li {}
+
+    div.productoGeneral section.productoMitad2 {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+    }
+    div.productoGeneral section.productoMitad2 div.titulo {
+        height: 33%;
+    }
+    div.productoGeneral section.productoMitad2 div.titulo h1 {}
+    div.productoGeneral section.productoMitad2 div.titulo div.estrellasOpiniones {
+        display: flex;
+        align-items: center;
+        margin: 2px 0px;
+    }
+    div.productoGeneral section.productoMitad2 div.titulo div.estrellasOpiniones h4 {
+        margin-left: 10px;
+    }
+    div.productoGeneral section.productoMitad2 div.titulo div.estrellasOpiniones h4 i {
+        color: var(--colorPrincipal);
+    }
+    div.productoGeneral section.productoMitad2 div.titulo div.estrellasOpiniones h5 {
+        margin-left: 10px;
+    }
+    div.productoGeneral section.productoMitad2 div.titulo h3 {
+        margin: 20px 0px;
+    }
+    div.productoGeneral section.productoMitad2 div.titulo ul {
+        list-style-type: none;
+    }
+    div.productoGeneral section.productoMitad2 div.titulo ul li {}
+
+    div.productoGeneral section.productoMitad2 div.precio {
+        margin-bottom: 200px;
+        height: 33%;
+    }
+    div.productoGeneral section.productoMitad2 div.precio h3 {
+        margin: 10px 0;
+        font-size: 50px;
+    }
+    div.productoGeneral section.productoMitad2 div.precio h4 {
+        padding: 5px 0px 5px 10px;
+        background-color: var(--colorPrincipal);
+        text-transform: uppercase;
+        color: #fff;
+    }
+    div.productoGeneral section.productoMitad2 div.precio img {
+        width: 100%;
+        margin: 10px 0;
+    }
+    div.productoGeneral section.productoMitad2 div.precio h5 {
+        padding: 5px 0px 5px 10px;
+        background-color: var(--colorPrincipal);
+        text-transform: uppercase;
+        color: #fff;
+    }
+    div.productoGeneral section.productoMitad2 div.precio form.enviosCodPos {
+        margin: 10px 0;
+    }
+    div.productoGeneral section.productoMitad2 div.precio form.enviosCodPos label {}
+    div.productoGeneral section.productoMitad2 div.precio form.enviosCodPos input {}
+
+    div.productoGeneral section.productoMitad2 div.precio form.unidades {
+        padding: 10px 0;
+        text-align: center;
+        background-color: var(--colorPrincipal);
+    }
+    div.productoGeneral section.productoMitad2 div.precio form.unidades label {
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 20px;
+    }
+    div.productoGeneral section.productoMitad2 div.precio form.unidades input {
+        margin-bottom: 15px;
+        width: 95px;
+        height: 25px;
+        text-align: center;
+    }
+
+
+    div.productoGeneral section.productoMitad2 div.botones {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 34%;
+    }
+    div.productoGeneral section.productoMitad2 div.botones a {
+        margin: 0px 10px;
+        padding: 15px;
+        border-radius: 100px;
+        background-color: var(--colorPrincipal);
+    }
+    div.productoGeneral section.productoMitad2 div.botones a.comprar {
+        margin: 0px 10px;
+        padding: 20px 100px;
+        text-decoration: none;
+    }
+    div.productoGeneral section.productoMitad2 div.botones a.comprar h3 {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+    div.productoGeneral section.productoMitad2 div.botones a h3 {
+        font-size: 20px;
+    }
+    div.productoGeneral section.productoMitad2 div.botones a h3 i {
+        color: #fff;
+    }
+
+    section.productosSimilares {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    section.productosSimilares div {}
+    section.productosSimilares h2 {
+        text-transform: uppercase;
+    }
+    section.productosSimilares a {}
+    section.productosSimilares a img {
+        height: 200px;
+    }
+}
