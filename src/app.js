@@ -6,7 +6,7 @@ app.use(express.static('./public'));
 // ó tambien... app.use(express.static(path.join(dirname, './public') ));
 
 app.get('/', function(req,res){
-    res.sendFile( path.join(dirname, './views/index.html') ); // path te da una ruta absoluta
+    res.sendFile( path.join(dirname, '') ); // path te da una ruta absoluta
 })
 
 app.get('/login', function(req,res){
