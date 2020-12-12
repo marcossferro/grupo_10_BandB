@@ -34,3 +34,5 @@
         - Freelancer
         - ⚽
         - "La suerte es amiga de la acción"
+
+- 📝 [Tablero de trabajo](https://trello.com/b/vQYcIBod)
