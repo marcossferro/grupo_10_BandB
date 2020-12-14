@@ -63,6 +63,14 @@ header.mobile div.search a i {
     top: 20px;
     right: 5px;
 }
+
+/*=============================
+--SECTION BAR. DE NAV. DESKTOP--
+==============================*/
+section.barDeNav {
+    display: none;
+}
+
 /*=========================
 -------FOOTER DESKTOP-------
 =========================*/
@@ -168,6 +176,42 @@ footer.footerMobile a.instagram i {
         text-transform: uppercase;
         color: black;
     }
+
+    
+/*=============================
+--SECTION BAR. DE NAV. DESKTOP--
+==============================*/
+section.barDeNav {
+    margin-bottom: var(--marginPrincipal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4054B2;
+    height: 55px;
+    }
+    section.barDeNav nav {}
+    section.barDeNav nav ul {
+    display: flex;
+    list-style-type: none;
+    }
+    section.barDeNav nav ul li {
+    margin-left: 35px;
+    }
+    section.barDeNav nav ul li :first-child {
+    margin-left: 0;
+    }
+    section.barDeNav nav ul li a {}
+    section.barDeNav nav ul li a button {
+    width: 250px;
+    height: 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--colorPrincipal);
+    color: #fff;
+    border-radius: 5px;
+    border-color: var(--colorPrincipal);
+    }
+
 /*=========================
 -------FOOTER DESKTOP-------
 =========================*/

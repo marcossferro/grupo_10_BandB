@@ -2,9 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-app.use('/public/css', express.static(__dirname + '/css'));
-app.use('/src', express.static(__dirname + '/src'));
-app.use('/public/img', express.static(__dirname + '/img'));
+app.use(express.static(path.join(__dirname, '../public')));
+
 // app.use(express.static('./src')); 
 // ó tambien... app.use(express.static(path.join(dirname, './public') ));
 

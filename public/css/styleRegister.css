@@ -1,0 +1,116 @@
+:root {
+    --colorPrincipal: #6EC1E4;
+    --marginPrincipal: 60px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Barlow";
+}
+
+/*----------------------MOBILE--------------------*/
+
+/*=============================
+--SECTION BAR. DE NAV. DESKTOP--
+==============================*/
+section.barDeNav {
+    display: none;
+}
+
+h1{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+
+@media (min-width: 1024px) {
+    /*=========================
+    -------DIV CONTAINER--------
+    =========================*/
+    div.container {
+        position: relative;
+        padding: 0 100px
+    }
+
+/*=============================
+--SECTION BAR. DE NAV. DESKTOP--
+==============================*/
+section.barDeNav {
+    margin-bottom: var(--marginPrincipal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4054B2;
+    height: 55px;
+    }
+    section.barDeNav nav {}
+    section.barDeNav nav ul {
+    display: flex;
+    list-style-type: none;
+    }
+    section.barDeNav nav ul li {
+    margin-left: 35px;
+    }
+    section.barDeNav nav ul li :first-child {
+    margin-left: 0;
+    }
+    section.barDeNav nav ul li a {}
+    section.barDeNav nav ul li a button {
+    width: 250px;
+    height: 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--colorPrincipal);
+    color: #fff;
+    border-radius: 5px;
+    border-color: var(--colorPrincipal);
+    }
+
+    /*=========================
+    ---REDES SOCIALES DESKTOP---
+    =========================*/
+        article.redesDesktop {
+            position: absolute;
+            top: 150px;
+            bottom: 100px;
+            right: 100px;
+            left: 100px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        article.redesDesktop a.facebook {
+            background-color: #3b5998;
+            border-radius: 140px;
+        }
+        article.redesDesktop a.facebook i {
+            padding: 75px;
+            font-size: 75px;
+            color: #fff;
+        }
+        article.redesDesktop a.whatsapp {
+            background-color: #25d366;
+            border-radius: 140px;
+        }
+        article.redesDesktop a.whatsapp i {
+            padding: 75px;
+            font-size: 75px;
+            color: #fff;
+        }
+        article.redesDesktop a.instagram {
+            background-image: url("https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc5fe0378-6694-42e6-8495-8beff78ac206%2Finstagram-gradient-background-1-normal-636.png?table=block&id=4824b22f-48d1-423f-b327-40b63fb81d82&width=2720&userId=5a35f030-876c-4783-a4db-f50e00c4410d&cache=v2");
+            background-color: var(--colorPrincipal);
+            border-radius: 140px;
+        }
+        article.redesDesktop a.instagram i {
+            padding: 75px;
+            font-size: 75px;
+            color: #fff;
+        }
+    }
