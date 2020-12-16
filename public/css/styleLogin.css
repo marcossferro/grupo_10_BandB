@@ -26,7 +26,8 @@ form{
     flex-wrap: nowrap;
 }
 
-form section {
+.ingreso{
+    text-align: center;
 }
 
 /*=========================
