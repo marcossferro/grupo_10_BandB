@@ -2,31 +2,22 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+const generalRouter = require ("./routers/general")
+const loginRouter = require ("./routers/login")
+const registerRouter = require ("./routers/register")
+const productRouter = require ("./routers/product")
+const productCartRouter = require ("./routers/productCart")
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"))
+
 app.use(express.static(path.join(__dirname, '../public')));
 
-// app.use(express.static('./src')); 
-// ó tambien... app.use(express.static(path.join(dirname, './public') ));
-
-app.get('/', function(req,res){
-    res.sendFile(__dirname + "/views/home/index.html" ); // path te da una ruta absoluta
-})
-
-app.get('/login', function(req,res){
-    res.sendFile(__dirname + '/views/login/login.html'); 
-})
-
-app.get('/register', function(req,res){
-    res.sendFile(__dirname + '/views/register/register.html');
-})
-
-app.get('/product', function(req,res){
-    res.sendFile(__dirname + '/views/product/product.html');
-})
-
-app.get('/productCart', function(req,res){
-    res.sendFile(__dirname + '/views/productCart/productCart.html');
-})
-
+app.use("/", generalRouter);
+app.use("/login", loginRouter);
+app.use("/register", registerRouter);
+app.use("/product", productRouter);
+app.use("/productCart", productCartRouter);
 
 let puerto = 3000;
 app.listen(puerto, function(){
