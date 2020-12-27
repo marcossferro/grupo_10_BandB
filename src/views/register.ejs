@@ -1,55 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<!------HEAD------>
 <head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="/img/logo_title.png" type="image/png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B&B Clima │ Registro</title>
-    <script src="https://kit.fontawesome.com/65417c754c.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Armata&family=Barlow&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styleRegister.css">
-    <link rel='stylesheet' type='text/css' media='screen' href='/css/styleGeneral.css'>
-</head>
+    <%- include("partials/head.ejs") %>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/styleRegister.css'>
 </head>
 <body>
-    <!------HEADER DESKTOP------>
-    <div class="container">    
-        <header class="desktop">
-            <a class="logo" href="#"><img src="/img/logo_B&B.jpg"></a>
-            <form action="" method="">
-                <input type="text" name="Search" placeholder="Encuentra tu próximo Aire Acondicionado"><button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-            <nav>
-                <ul>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Registro</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>
-    <!------HEADER MOBILE------>
-    <header class="mobile">
-        <div class="bars">
-            <a href="#"><i class="fas fa-bars"></i></a>
-        </div>
-        <a href="#"><img src="/img/logo_B&B.jpg"></a>
-        <div class="search">
-            <a href="#"><i class="fas fa-search"></i></a>
-        </div>
-    </header>
+
+<!------HEADER DESKTOP AND MOBILE------>
+<%- include("partials/header.ejs") %>
     
-    <!------SECTION BAR. DE NAV. DESKTOP------>
-    <section class="barDeNav">
-        <nav>
-            <ul>
-                <li><a href="#"><button>Categorias</button></a></li>
-                <li><a href="#"><button>Departamento de obras</button></a></li>
-                <li><a href="#"><button>La empresa</button></a></li>
-            </ul>
-        </nav>
-    </section>
+<!------SECTION BAR. DE NAV. DESKTOP------>
+<%- include("partials/barraDeNavegacion.ejs") %>
     
     <!------FORM DE REGISTRO------>
     
@@ -110,39 +72,7 @@
             <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
         </article>
     </div>
-    <!------FOOTER DESKTOP------>
-    <footer class="footerDesktop">
-        <div class="container">
-            <a class="logofooter" href="#"><img src="/img/logo_title.png"></a>
-            
-            <ul>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Registro</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">Categorias</a></li>
-                <li><a href="#">Departamento de obras</a></li>
-                <li><a href="#">La empresa</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">Aires Acondicionados</a></li>
-                <li><a href="#">Calefaccion</a></li>
-                <li><a href="#">Agua caliente sanitaria</a></li>
-            </ul>
-            <ul class="redSocial">
-                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-                <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            </ul>
-            <small>Made by Grupo_10</small>
-        </div>
-    </footer>
-    <!------FOOTER MOBILE------>
-    <footer class="footerMobile">
-        <a class="facebook" href="#"><i class="fab fa-facebook-square"></i></a>
-        <a class="whatsapp" href="#"><i class="fab fa-whatsapp"></i></a>
-        <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
-    </footer>
+<!------FOOTER DESKTOP AND MOBILE------>
+<%- include("partials/footer.ejs") %>
 </body>
 </html>
