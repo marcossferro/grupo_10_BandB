@@ -3,21 +3,21 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 
 let usuarios = fs.readFileSync(path.join(__dirname, "../data/usuarios.json"), "utf8");
-usuarios = JSON.parse(usuarios)
+usuariosJson = JSON.parse(usuarios);
 
 module.exports = {
     register: function(req,res){
-        res.render(path.join(__dirname, "../views/users/register"))
+        res.render("users/register")
     },
     create: function(req, res){
-        usuarios.push({
+        usuariosJson.push({
             name: req.body.name,
             password: bcrypt.hashSync(req.body.password, 12)
         })
-        fs.writeFileSync(path.join(__dirname, "../data/usuarios.json"), JSON.stringify(usuarios))
+        fs.writeFileSync(path.join(__dirname, "../data/usuarios.json"), JSON.stringify(usuariosJson))
         res.redirect("/registerMenssage")
     },
     registerMenssage: function(req, res){
-        res.render(path.join(__dirname, "../views/users/registerMenssage"))
+        res.render("users/registerMenssage")
     }
 }
