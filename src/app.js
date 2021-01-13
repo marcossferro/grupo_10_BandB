@@ -6,6 +6,7 @@ const generalRouter = require ("./routers/general")
 const loginRouter = require ("./routers/login")
 const registerRouter = require ("./routers/register")
 const productRouter = require ("./routers/product")
+const productListRouter = require ("./routers/productList")
 const productCartRouter = require ("./routers/productCart")
 
 app.set("view engine", "ejs");
@@ -20,6 +21,7 @@ app.use("/", generalRouter);
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
 app.use("/product", productRouter);
+app.use("/productList", productListRouter);
 app.use("/productCart", productCartRouter);
 
 let puerto = 3000;

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<!------HEAD------>
+    <head>
+        <%- include("../partials/head.ejs") %>
+        <link rel='stylesheet' type='text/css' media='screen' href='/css/style.css'>
+    </head>
+<body>
+
+<!------HEADER DESKTOP AND MOBILE------>
+<%- include("../partials/header.ejs") %>
+
+<!------SECTION BAR. DE NAV. DESKTOP------>
+<%- include("../partials/barraDeNavegacion.ejs") %>
+
+<!------LISTADO DE PRODUCTOS ------>
+<section class="productosDestacados">
+    <h2>Listado de Productos</h2>
+    <div class="container">
+        <div class="bloqueProductos1">
+            <div>
+                <a class="logo" href=""><img src="/img/producto.jpg"></a>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div>
+                <a class="logo" href=""><img src="/img/producto.jpg"></a>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div>
+                <a class="logo" href=""><img src="/img/producto.jpg"></a>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div>
+                <a class="logo" href=""><img src="/img/producto.jpg"></a>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div>
+                <a class="logo" href=""><img src="/img/producto.jpg"></a>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+X
+<!------REDES SOCIALES DESKTOP------>
+    <div class="container">
+        <article class="redesDesktop">
+            <a class="facebook" href="#"><i class="fab fa-facebook-square"></i></a>
+            <a class="whatsapp" href="#"><i class="fab fa-whatsapp"></i></a>
+            <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
+        </article>
+    </div>
+
+<!------FOOTER DESKTOP AND MOBILE------>
+    <%- include("../partials/footer.ejs") %>
+</body>
+</html>

@@ -40,6 +40,7 @@ body {
         flex-direction: column;
         align-items: center;
         background-color: #fff;
+        
     }
     section.categorias a.aireAcondicionado {
         text-decoration: none;
@@ -217,7 +218,7 @@ div.container {
         margin-top: var(--marginPrincipal);
         margin-bottom: var(--marginPrincipal);
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 /*=========================
 ----PRODUCTOS DESTACADOS----
