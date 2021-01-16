@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<!------HEAD------>
+<head>
+    <%- include("../partials/head.ejs") %>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/style.css'>
+</head>
+<body>
+
+<!------HEADER DESKTOP AND MOBILE------>
+<%- include("../partials/header.ejs") %>
+    
+<!------SECTION BAR. DE NAV. DESKTOP------>
+<%- include("../partials/barraDeNavegacion.ejs") %>
+    
+    <!------FORM DE REGISTRO------>
+    
+    <section class="newProducts">
+        <h1>NUEVA PUBLICACIÓN</h1>
+        <br>        
+        <h3>Completá los datos del producto:</h3>
+        <br>
+        <div>
+            <form class="newProducts" action="newProducts.ejs" method="POST">
+                <label for="nombre">Nombre del producto:</label>
+                <br>
+                <input type="text" name="nombre" id="newProducts">
+            </form>
+            <br>
+            <form class="newProducts" action="newProducts.ejs" method="POST">
+                <label for="nombre">Descripción del producto:</label>
+                <br>
+                <input type="text" name="description" id="newProducts">
+            </form>
+            <br>
+            <form class="newProducts" action="newProducts.ejs" method="POST">
+                <label for="nombre">Imagen:</label>
+                <br>
+                <input type="image" name="image" id="newProducts">
+            </form>
+            <br>
+            <form class="newProducts" action="newProducts.ejs" method="POST">
+                <label for="nombre">Categoría:</label>
+                <br>
+                <input type="radio" id="aa" name="category" value="aa">
+                <label for="aa">Aires acondicionados</label><br>
+                <input type="radio" id="calefaccion" name="category" value="calefaccion">
+                <label for="calefaccion">Calefacción</label><br>
+                <input type="radio" id="aguacalientesanitaria" name="category" value="aguacalientesanitaria">
+                <label for="aguacalientesanitaria">Agua caliente sanitaria</label>
+            </form>
+            <br>
+            <form class="newProducts" action="newProducts.ejs" method="POST">
+                <label for="nombre">Precio:</label>
+                <br>
+                <input type="number" name="price" id="newProducts">
+            </form>
+
+
+            <br>
+            <form class="register" action="register.ejs" method="POST">
+                <input type="submit" value="Confirmar">
+            </form>
+        </div>
+    </section>
+    
+    <!------REDES SOCIALES DESKTOP------>
+    <div class="container">
+        <article class="redesDesktop">
+            <a class="facebook" href="#"><i class="fab fa-facebook-square"></i></a>
+            <a class="whatsapp" href="#"><i class="fab fa-whatsapp"></i></a>
+            <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
+        </article>
+    </div>
+<!------FOOTER DESKTOP AND MOBILE------>
+<%- include("../partials/footer.ejs") %>
+</body>
+</html>
