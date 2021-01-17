@@ -3,7 +3,7 @@
 <!------HEAD------>
 <head>
     <%- include("../partials/head.ejs") %>
-    <link rel='stylesheet' type='text/css' media='screen' href='/css/style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/styleNewProducts.css'>
 </head>
 <body>
 
@@ -43,9 +43,9 @@
                 <label for="nombre">Categoría:</label>
                 <br>
                 <input type="radio" id="aa" name="category" value="aa">
-                <label for="aa">Aires acondicionados</label><br>
+                <label for="aa">Aires acondicionados</label>
                 <input type="radio" id="calefaccion" name="category" value="calefaccion">
-                <label for="calefaccion">Calefacción</label><br>
+                <label for="calefaccion">Calefacción</label>
                 <input type="radio" id="aguacalientesanitaria" name="category" value="aguacalientesanitaria">
                 <label for="aguacalientesanitaria">Agua caliente sanitaria</label>
             </form>
@@ -55,7 +55,6 @@
                 <br>
                 <input type="number" name="price" id="newProducts">
             </form>
-
 
             <br>
             <form class="newProducts" action="newProducts.ejs" method="POST">

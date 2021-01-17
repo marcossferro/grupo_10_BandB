@@ -8,6 +8,7 @@ const registerRouter = require ("./routers/register")
 const productRouter = require ("./routers/product")
 const productListRouter = require ("./routers/productList")
 const productCartRouter = require ("./routers/productCart")
+const newProductRouter = require ("./routers/newProducts")
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"))
@@ -23,6 +24,7 @@ app.use("/register", registerRouter);
 app.use("/product", productRouter);
 app.use("/productList", productListRouter);
 app.use("/productCart", productCartRouter);
+app.use("/newProducts", newProductRouter);
 
 let puerto = 3000;
 app.listen(puerto, function(){
