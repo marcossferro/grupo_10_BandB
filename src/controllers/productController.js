@@ -20,7 +20,7 @@ module.exports = {
             precio: req.body.precio
         })
         fs.writeFileSync(path.join(__dirname, "../data/productos.json"), JSON.stringify(productosJson))
-        res.redirect("/products/productList")
+        res.redirect("/product/productList")
     },
     productList: function(req,res){
         let product = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
