@@ -14,42 +14,19 @@
 <%- include("../partials/barraDeNavegacion.ejs") %>
 
 <!------LISTADO DE PRODUCTOS DESKTOP ------>
-<section class="listadoProductos">
-    <h2>Listado de Productos</h2>
-    <div class="container">
-        <div class="filaProductos">
-        <% for (let i = 0; i < productos.length ; i++) { %>
-            <div>
-                <a class="logo" href="">
-                    <img src="/img/producto.jpg">
-                    <!-- <img src="<%= /*productos[i].imagen*/%>"> -->
-                    <p> <%= productos[i].nombre %> </p> 
-                    <p> <%= productos[i].precio %> </p>
-                </a>
-            </div>
-            <% } %> 
-        </div>
-    </div>
-</section>
 
-<!------LISTADO DE PRODUCTOS MOBILE ------>
-<section class="listadoProductosMobile">
-    <h2>Listado de Productos</h2>
-    <div class="container">
-        <div class="filaProductosMobile">
+<h2>Listado de Productos</h2>
+<div class="container">
+    <article class="listadoProductos">
+        <a href="#">
             <% for (let i = 0; i < productos.length ; i++) { %>
-                <div class="singleProduct">
-                    <a class="productoMobile" href="#">
-                        <img src="/img/producto.jpg">
-                        <!-- <img src="<%= /*productos[i].imagen*/%>"> -->
-                        <p> <%= productos[i].nombre %> </p> 
-                        <p> <%= productos[i].precio %> </p>
-                    </a>
-                </div>
-                <% } %> 
-        </div>
+                <img src="/imgProducts/<%= productos[i].imagen%>">
+                <p class="nombre"> <%= productos[i].nombre %> </p> 
+                <p class="precio"> <%= productos[i].precio %> </p>
+            </a>
+            <% } %>
+        </article>
     </div>
-</section>
 
 <!------REDES SOCIALES DESKTOP------>
     <div class="container">

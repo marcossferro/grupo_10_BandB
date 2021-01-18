@@ -15,7 +15,7 @@ module.exports = {
         productosJson.push({
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
-            imagen: req.body.imagen,
+            imagen: req.files[0].filename,
             categoria: req.body.categoria,
             precio: req.body.precio
         })

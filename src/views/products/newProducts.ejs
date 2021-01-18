@@ -21,7 +21,7 @@
         <h3>Completá los datos del producto:</h3>
         <br>
         <div>
-            <form action="" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="nombre">Nombre del producto:</label>
                 <input id= "nombre" name="nombre" type="text">
@@ -33,8 +33,8 @@
             </div>
                 <br>
             <div>
-                <label for="imagen">Imagen:</label>
-                <input id= "imagen" name="imagen" type="image">
+                <label for="imagen">Imagen del producto</label>
+                <input type="file" name="imagen">
             </div>
                 <br>
             <div>
