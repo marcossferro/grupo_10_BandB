@@ -15,52 +15,60 @@
     
     <!------FORM DE REGISTRO------>
     
-    <section class="forms">
-        <h1>REGISTRO</h1>
-        <br>        
-        <h3>Completá tus datos:</h3>
-        <br>
-        <div>
-            <form class="register" action="register.ejs" method="POST">
-                <label for="register">Nombre:</label>
-                <br>
-                <input type="text" name="nombre" id="register">
-            </form>
-            <br>
-            <form class="register" action="register.ejs" method="POST">
-                <label for="register">Apellido:</label>
-                <br>
-                <input type="text" name="apellido" id="register">
-            </form>
-            <br>
-            <form class="register" action="register.ejs" method="POST">
-                <label for="register">Teléfono:</label>
-                <br>
-                <input type="number" name="telefono" id="register">
-            </form>
-            <br>
-            <form class="register" action="register.ejs" method="POST">
-                <label for="register">Email:</label>
-                <br>
-                <input type="email" name="email" id="register">
-            </form>
-            <br>
-            <form class="register" action="register.ejs" method="POST">
-                <label for="register">Contraseña:</label>
-                <br>
-                <input type="password" name="password" id="register" value="Contraseña">
-            </form>
-            <br>
-            <form class="register" action="register.ejs" method="POST">
-                <label for="register">Confirmar contraseña:</label>
-                <br>
-                <input type="password" name="password" id="register" value="Contraseña">
-            </form>
-            <br>
-            <form class="register" action="register.ejs" method="POST">
-                <input type="submit" value="Confirmar">
-            </form>
-        </div>
+    <h1>Formulario de registro</h1>
+
+    <h2>Completa los datos:</h2>
+
+    <section class="form">
+        <form action="" method="POST">
+            <div>
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" type="text">
+            </div>
+            <div>
+                <label for="apellido">Apellido</label>
+                <input id="apellido" name="apellido" type="text">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email">
+            </div>
+            <div>
+                <label for="password">Contraseña</label>
+                <input id="password" name="password" type="password">
+            </div>
+            <div>
+                <label for="repassword">Repite la contraseña</label>
+                <input id="repassword" name="repassword" type="password">
+            </div>
+
+            <h3>Direccion:</h3>
+            <div>
+                <label for="calle">Calle</label>
+                <input id="calle" name="calle" type="text">
+            </div>
+            <div>
+                <label for="altura">Altura</label>
+                <input id="altura" name="altura" type="number">
+            </div>
+            <div>
+                <label for="localidad">Localidad</label>
+                <input id="localidad" name="localidad" type="text">
+            </div>
+            <div>
+                <label for="codpos">Codigo Postal</label>
+                <input id="codpos" name="codpos" type="number">
+            </div>
+            <div>
+                <label for="telefono">Telefono</label>
+                <input id="telefono" name="telefono" type="number">
+            </div>
+            <div>
+                <label for="celular">Celular</label>
+                <input id="celular" name="celular" type="number">
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
     </section>
     
     <!------REDES SOCIALES DESKTOP------>

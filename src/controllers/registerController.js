@@ -11,13 +11,18 @@ module.exports = {
     },
     create: function(req, res){
         usuariosJson.push({
-            name: req.body.name,
-            password: bcrypt.hashSync(req.body.password, 12)
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 12),
+            calle: req.body.calle,
+            altura: req.body.altura,
+            localidad: req.body.localidad,
+            codpos: req.body.codpos,
+            telefono: req.body.telefono,
+            celular: req.body.celular
         })
         fs.writeFileSync(path.join(__dirname, "../data/usuarios.json"), JSON.stringify(usuariosJson))
-        res.redirect("/registerMenssage")
-    },
-    registerMenssage: function(req, res){
-        res.render("users/registerMenssage")
+        res.send("Registrado!")
     }
 }

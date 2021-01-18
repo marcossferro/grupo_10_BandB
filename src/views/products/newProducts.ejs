@@ -21,49 +21,44 @@
         <h3>Completá los datos del producto:</h3>
         <br>
         <div>
-            <form class="newProducts" action="newProducts.ejs" method="POST">
+            <form action="" method="POST">
+            <div>
                 <label for="nombre">Nombre del producto:</label>
+                <input id= "nombre" name="nombre" type="text">
+            </div>
                 <br>
-                <input type="text" name="nombre" id="newProducts">
-            </form>
-            <br>
-            <form class="newProducts" action="newProducts.ejs" method="POST">
-                <label for="nombre">Descripción del producto:</label>
+            <div>
+                <label for="descripcion">Descripción del producto:</label>
+                <input id= "descripcion" name="descripcion" type="text">
+            </div>
                 <br>
-                <input type="text" name="description" id="newProducts">
-            </form>
-            <br>
-            <form class="newProducts" action="newProducts.ejs" method="POST">
-                <label for="nombre">Imagen:</label>
+            <div>
+                <label for="imagen">Imagen:</label>
+                <input id= "imagen" name="imagen" type="text">
+            </div>
                 <br>
-                <input type="image" name="image" id="newProducts">
-            </form>
-            <br>
-            <form class="newProducts" action="newProducts.ejs" method="POST">
-                <label for="nombre">Categoría:</label>
+            <div>
+                <label for="categoria">Categoría:</label>
+                <label for="categoria">Aires acondicionados</label>
+                <input type="radio" id="aireAcon" name="categoria" value="Aire Acondicionado">
+                <label for="categoria">Calefacción</label>
+                <input type="radio" id="calefaccion" name="categoria" value="Calefaccion">
+                <label for="categoria">Agua caliente sanitaria</label>
+                <input type="radio" id="aguaCalienteSanitaria" name="categoria" value="Agua Caliente Sanitaria">
+            </div>
                 <br>
-                <input type="radio" id="aa" name="category" value="aa">
-                <label for="aa">Aires acondicionados</label>
-                <input type="radio" id="calefaccion" name="category" value="calefaccion">
-                <label for="calefaccion">Calefacción</label>
-                <input type="radio" id="aguacalientesanitaria" name="category" value="aguacalientesanitaria">
-                <label for="aguacalientesanitaria">Agua caliente sanitaria</label>
-            </form>
-            <br>
-            <form class="newProducts" action="newProducts.ejs" method="POST">
-                <label for="nombre">Precio:</label>
+            <div>
+                <label for="precio">Precio:</label>
+                <input id= "precio" name="precio" type="number">
+            </div>
                 <br>
-                <input type="number" name="price" id="newProducts">
-            </form>
-
-            <br>
-            <form class="newProducts" action="newProducts.ejs" method="POST">
+            <div>
                 <input type="submit" value="Confirmar">
-            </form>
-        </div>
+            </div>
+        </form>
     </section>
-    
-    <!------REDES SOCIALES DESKTOP------>
+        
+        <!------REDES SOCIALES DESKTOP------>
     <div class="container">
         <article class="redesDesktop">
             <a class="facebook" href="#"><i class="fab fa-facebook-square"></i></a>

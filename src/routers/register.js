@@ -6,6 +6,5 @@ const registerController = require("../controllers/registerController")
 router.get('/', registerController.register)
 router.post('/', registerController.create)
 
-router.get("/registerMessage", registerController.registerMenssage)
 
 module.exports = router
