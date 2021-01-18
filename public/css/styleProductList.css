@@ -1,0 +1,67 @@
+:root {
+    --colorPrincipal: #6EC1E4;
+    --marginPrincipal: 60px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Barlow";
+}
+
+/* productosDestacados - bloqueProductos1 */
+/*----------------------MOBILE--------------------*/
+
+
+/*=========================
+----LISTADO DE PRODUCTOS----
+=========================*/
+section.listadoProductos {
+    display: none;
+}
+
+
+section.listadoProductosMobile {
+    display: flex;
+    flex-wrap: wrap;
+}
+section.listadoProductosMobile h2 {
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: var(--colorPrincipal);
+}
+
+section.listadoProductosMobile div.container {}
+
+section.listadoProductosMobile div.container div.filaProductosMobile {
+    padding: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+section.listadoProductosMobile div.container div.filaProductosMobile div.singleProduct {
+    /* margin: 10px; */
+}
+section.listadoProductosMobile div.container div.filaProductosMobile div.singleProduct a.productoMobile {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 35%;
+    border-radius: 15px;
+    background-color: var(--colorPrincipal);
+}
+section.listadoProductosMobile div.container div.filaProductosMobile div.singleProduct a.productoMobile img {
+    width: 100%;
+    padding: 5px;
+    border-radius: 20px;
+} 
+section.listadoProductosMobile div.container div.filaProductosMobile div.singleProduct a.productoMobile p.nombre {}
+section.listadoProductosMobile div.container div.filaProductosMobile div.singleProduct a.productoMobile p.precio {}
+
+
+/*----------------------TABLET--------------------*/
