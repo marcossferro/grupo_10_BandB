@@ -24,8 +24,50 @@ h2 {
     color: #fff;
     background-color: var(--colorPrincipal);
 }
-article.listadoProductos {}
-article.listadoProductos a {}
-article.listadoProductos a img {}
-article.listadoProductos a p.nombre {}
-article.listadoProductos a p.precio {}
+a.aProduct{
+    text-decoration: none;
+}
+a.aProduct article.product {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+a.aProduct article.product div.productConteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a.aProduct article.product div.productConteiner img {
+    width: 35%;
+}
+a.aProduct article.product div.productConteiner div.detalle {
+    width: 65%;
+}
+a.aProduct article.product div.productConteiner div.detalle h3 {
+    color: black;
+}
+a.aProduct article.product div.productConteiner div.detalle h1 {
+    color: black;
+}
+
+/*----------------------TABLET--------------------*/
+@media (min-width: 768px){
+
+
+div.container {
+    position: relative;
+    padding: 0 100px
+}
+}
+
+/*----------------------DESKTOP--------------------*/
+
+@media (min-width: 1024px){
+a.aProduct article.product {
+    padding: 15px 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+}

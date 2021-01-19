@@ -13,21 +13,26 @@
 <!------SECTION BAR. DE NAV. DESKTOP------>
 <%- include("../partials/barraDeNavegacion.ejs") %>
 
-<!------LISTADO DE PRODUCTOS DESKTOP ------>
-
+<!------LISTADO DE PREDUCTOS------>
 <h2>Listado de Productos</h2>
 <div class="container">
-    <article class="listadoProductos">
-        <a href="#">
-            <% for (let i = 0; i < productos.length ; i++) { %>
-                <img src="/imgProducts/<%= productos[i].imagen%>">
-                <p class="nombre"> <%= productos[i].nombre %> </p> 
-                <p class="precio"> <%= productos[i].precio %> </p>
-            </a>
-            <% } %>
-        </article>
-    </div>
 
+    <% for (let i = 0; i < productos.length ; i++) { %>
+        <a class="aProduct" href="#">
+            <article class="product">
+                <div class="productConteiner">
+                    <img src="/imgProducts/<%= productos[i].imagen%>">
+                    <div class="detalle">
+                        <h3 class="nombre"><%= productos[i].nombre %></h3>
+                        <h1>$ <%= productos[i].precio %></h1>
+                    </div>
+                </div>
+            </article>
+        </a>
+        <hr>
+        <% } %>
+        
+</div>
 <!------REDES SOCIALES DESKTOP------>
     <div class="container">
         <article class="redesDesktop">
