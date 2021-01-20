@@ -16,48 +16,44 @@
     <!------FORM DE REGISTRO------>
     
     <section class="newProducts">
-        <h1>NUEVA PUBLICACIÓN</h1>
+        <h1>EDITANDO PRODUCTO NUMERO <%= productos.id %></h1>
         <br>        
         <h3>Completá los datos del producto:</h3>
         <br>
         <div>
-            <form action="" method="POST" enctype="multipart/form-data">
-            <div>
-                <label for="id">ID:</label>
-                <input id= "id" name="id" type="number" value="<%= productos.length + 1 %>">
-            </div>
+            <form action="/product/formeditproduct?_method=PUT" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="nombre">Nombre del producto:</label>
-                <input id= "nombre" name="nombre" type="text">
+                <input id= "nombre" name="nombre" type="text" value="<%= productos.nombre%>">
             </div>
                 <br>
             <div>
                 <label for="descripcion">Descripción del producto:</label>
-                <input id= "descripcion" name="descripcion" type="text">
+                <input id= "descripcion" name="descripcion" type="text" value="<%= productos.descripcion%>">
             </div>
                 <br>
             <div>
                 <label for="imagen">Imagen del producto</label>
-                <input type="file" name="imagen">
+                <input type="file" name="imagen" value="<%= productos.imagen%>">
             </div>
                 <br>
             <div>
                 <label for="categoria">Categoría:</label><br><br>
                 <label for="categoria">Aires acondicionados</label>
-                <input type="radio" id="aireAcon" name="categoria" value="Aire Acondicionado">
+                <input type="radio" id="aireAcon" name="categoria">
                 <label for="categoria">Calefacción</label>
-                <input type="radio" id="calefaccion" name="categoria" value="Calefaccion">
+                <input type="radio" id="calefaccion" name="categoria">
                 <label for="categoria">Agua caliente sanitaria</label>
-                <input type="radio" id="aguaCalienteSanitaria" name="categoria" value="Agua Caliente Sanitaria">
+                <input type="radio" id="aguaCalienteSanitaria" name="categoria">
             </div>
                 <br>
             <div>
                 <label for="precio">Precio:</label>
-                <input id= "precio" name="precio" type="number">
+                <input id= "precio" name="precio" type="number" value="<%= productos.precio%>">
             </div>
                 <br>
             <div>
-                <input type="submit" value="Confirmar">
+                <input type="submit" value="Editar">
             </div>
         </form>
     </section>
