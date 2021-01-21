@@ -44,6 +44,24 @@ module.exports = {
         })
     },
     edit: function(req, res){
-        res.send("Editado")
-      }
+        let idProduct = req.params.idProducto;
+        let product = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
+        product = JSON.parse(product); 
+        let productToEdit = product[idProduct];
+
+        let productoEditado = {
+            id: req.body.id,
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
+            imagen: req.files[0].filename,
+            categoria: req.body.categoria,
+            precio: req.body.precio
+        };
+
+        productosJson.splice(idProduct, 1, productoEditado)
+        fs.writeFileSync(path.join(__dirname, "../data/productos.json"), JSON.stringify(productosJson))
+        res.redirect("/product/productList", {
+            productos: productToEdit
+        })
+    }
 }

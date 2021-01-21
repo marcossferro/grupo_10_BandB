@@ -23,6 +23,10 @@
         <div>
             <form action="/product/formeditproduct?_method=PUT" method="POST" enctype="multipart/form-data">
             <div>
+                <label for="id">ID:</label>
+                <input id= "id" name="id" type="number" value="<%= productos.id %>">
+            </div>
+            <div>
                 <label for="nombre">Nombre del producto:</label>
                 <input id= "nombre" name="nombre" type="text" value="<%= productos.nombre%>">
             </div>
