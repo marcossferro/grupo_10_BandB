@@ -62,12 +62,12 @@ div.container {
 /*----------------------DESKTOP--------------------*/
 
 @media (min-width: 1024px){
-a.aProduct article.product {
-    padding: 15px 0;
+
+div.container {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 100px
 }
 
 }
