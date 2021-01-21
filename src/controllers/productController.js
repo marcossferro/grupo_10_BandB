@@ -35,7 +35,7 @@ module.exports = {
         })
     },
     editView: function(req,res){
-        let idProduct = req.params.idProducto
+        let idProduct = req.params.idProducto - 1;
         let product = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
         product = JSON.parse(product); 
         let productToEdit = product[idProduct]
@@ -44,7 +44,7 @@ module.exports = {
         })
     },
     edit: function(req, res){
-        let idProduct = req.params.idProducto;
+        let idProduct = req.params.idProducto - 1;
         let product = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
         product = JSON.parse(product); 
         let productToEdit = product[idProduct];
