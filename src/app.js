@@ -3,6 +3,8 @@ const app = express();
 const path = require('path');
 const methodOverride = require("method-override");
 
+const { check, body } = require("express-validator");
+
 const generalRouter = require ("./routers/general")
 const loginRouter = require ("./routers/login")
 const registerRouter = require ("./routers/register")

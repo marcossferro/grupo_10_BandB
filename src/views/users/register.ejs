@@ -21,7 +21,12 @@
     <br>
 
     <section class="form">
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="id">ID:</label>
+                <input id= "id" name="id" type="number" value="<%= usuarios.length + 1 %>" readonly>
+            </div>
+            <div>
             <div>
                 <label for="nombre">Nombre</label>
                 <input id="nombre" name="nombre" type="text">
@@ -42,32 +47,10 @@
                 <label for="repassword">Repite la contraseña</label>
                 <input id="repassword" name="repassword" type="password">
             </div>
-
-            <h3>Direccion:</h3>
             <div>
-                <label for="calle">Calle</label>
-                <input id="calle" name="calle" type="text">
-            </div>
-            <div>
-                <label for="altura">Altura</label>
-                <input id="altura" name="altura" type="number">
-            </div>
-            <div>
-                <label for="localidad">Localidad</label>
-                <input id="localidad" name="localidad" type="text">
-            </div>
-            <div>
-                <label for="codpos">Codigo Postal</label>
-                <input id="codpos" name="codpos" type="number">
-            </div>
-            <div>
-                <label for="telefono">Telefono</label>
-                <input id="telefono" name="telefono" type="number">
-            </div>
-            <div>
-                <label for="celular">Celular</label>
-                <input id="celular" name="celular" type="number">
-            </div>
+                <label for="avatar">Avatar</label>
+                <input type="file" name="avatar">
+            </div>            
             <br>
             <button type="submit">Enviar</button>
         </form>

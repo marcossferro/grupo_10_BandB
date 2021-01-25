@@ -7,7 +7,11 @@ usuariosJson = JSON.parse(usuarios);
 
 module.exports = {
     register: function(req,res){
-        res.render("users/register")
+        let user = fs.readFileSync(path.join(__dirname, "../data/usuarios.json"), "utf8");
+        user = JSON.parse(user); 
+        res.render("users/register", {
+            usuarios: user
+        })
     },
     create: function(req, res){
         usuariosJson.push({
@@ -15,12 +19,7 @@ module.exports = {
             apellido: req.body.apellido,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 12),
-            calle: req.body.calle,
-            altura: req.body.altura,
-            localidad: req.body.localidad,
-            codpos: req.body.codpos,
-            telefono: req.body.telefono,
-            celular: req.body.celular
+            avatar: req.files[0].filename
         })
         fs.writeFileSync(path.join(__dirname, "../data/usuarios.json"), JSON.stringify(usuariosJson))
         res.send("Registrado!")
