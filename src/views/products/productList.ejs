@@ -18,13 +18,15 @@
 <div class="container">
 
     <% for (let i = 0; i < productos.length ; i++) { %>
-        <a class="aProduct" href="#">
+        <a class="aProduct" href="/products/<%= productos[i].id %>">
             <article class="product">
                 <div class="productConteiner">
                     <img src="/imgProducts/<%= productos[i].imagen%>">
                     <div class="detalle">
                         <h3 class="nombre"><%= productos[i].nombre %></h3>
                         <h1>$ <%= productos[i].precio %></h1>
+                        <a href="/products/<%= productos[i].id%>/edit"><button>Edit</button></a>
+                        <a href="/products/<%= productos[i].id%>/delete"><button>Delete</button></a>
                     </div>
                 </div>
             </article>

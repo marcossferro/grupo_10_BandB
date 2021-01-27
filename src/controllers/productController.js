@@ -6,9 +6,15 @@ productosJson = JSON.parse(productos);
 
 module.exports = {
     product: function(req,res){
-        res.render("products/product")
+        let idProduct = req.params.id - 1;
+        let product = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
+        product = JSON.parse(product); 
+        let productToEdit = product[idProduct]
+        res.render("products/product", {
+            productos: productToEdit
+        })
     },
-    register: function(req,res){
+    createView: function(req,res){
         let product = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
         product = JSON.parse(product); 
         res.render("products/newProducts", {
@@ -25,7 +31,7 @@ module.exports = {
             precio: req.body.precio
         })
         fs.writeFileSync(path.join(__dirname, "../data/productos.json"), JSON.stringify(productosJson))
-        res.redirect("/product/productList")
+        res.redirect("/products")
     },
     productList: function(req,res){
         let product = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
@@ -35,7 +41,7 @@ module.exports = {
         })
     },
     editView: function(req,res){
-        let idProduct = req.params.idProducto - 1;
+        let idProduct = req.params.id - 1;
         let product = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
         product = JSON.parse(product); 
         let productToEdit = product[idProduct]
@@ -44,7 +50,7 @@ module.exports = {
         })
     },
     edit: function(req, res){
-        let idProduct = req.params.idProducto - 1;
+        let idProduct = req.params.id - 1;
         let product = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
         product = JSON.parse(product); 
         let productToEdit = product[idProduct];
@@ -60,7 +66,7 @@ module.exports = {
 
         productosJson.splice(idProduct, 1, productoEditado)
         fs.writeFileSync(path.join(__dirname, "../data/productos.json"), JSON.stringify(productosJson))
-        res.redirect("/product/productList", {
+        res.redirect("/products", {
             productos: productToEdit
         })
     }

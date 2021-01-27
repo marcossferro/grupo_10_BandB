@@ -16,7 +16,7 @@
     <div class="productoDesktop">
         <div class="productoGeneral">
             <section class="productoMitad1">
-                <img src="/img/producto.jpg" alt="imagenProducto">
+                <img src="/imgProducts/<%= productos.imagen %>" alt="imagenProducto">
                 <h2>FICHA TECNICA</h2>
                 <hr>
                 <div class="fichaTecnica">
@@ -39,20 +39,18 @@
             </section>
             <section class="productoMitad2">
                 <div class="titulo">
-                    <h1>TITULO PRODUCTO</h1>
+                    <h1><%= productos.nombre %></h1>
                     <div class="estrellasOpiniones">
                         <h4><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></h4>
                         <h5> 1234 Calificaciones</h5>
                     </div>
                     <h3>DESCRIPCION</h3>
                     <ul>
-                        <li> - Descripcion principal 1</li>
-                        <li> - Descripcion principal 2</li>
-                        <li> - Descripcion principal 3</li>
+                        <li> - <%= productos.descripcion %></li>
                     </ul>
                 </div>
                 <div class="precio">
-                    <h3>$ 12345</h3>
+                    <h3><%= productos.precio %></h3>
                     <h4>Metodos de pago</h4>
                     <img src="/img/994049-MERCADO_PAGO.png">
                     <h5>¿Necesitas que te lo enviemos?</h5>
@@ -91,10 +89,10 @@
 <div class="containerTablet">
 <!------PRODUCTO MOBILE------>
     <section class="productoMobile">
-        <h2>Nombre del producto</h1>
-            <img src="/img/producto.jpg" alt="producto">
+        <h2><%= productos.nombre %></h1>
+            <img src="/img/<%= productos.imagen %>" alt="producto">
             <a href="#" class="favHeart"><h3><i class="far fa-heart"></i></h3></a>
-            <h1>$ 1234</h1>
+            <h1><%= productos.precio %></h1>
             <a href="#" class="mediosDePago"><h3>Ver los medios de pago</h3></a>
             <h3 class="envios">Calcular envio</h3>
                 <form class="enviosCodPos">
@@ -157,11 +155,7 @@
     <section class="caracteristicas">
         <h2>Caracteristicas principales</h2>
             <ul>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
+                <li><%= productos.descripcion %></li>
             </ul>
      </section>
 <!------MEDIOS DE PAGO------>  

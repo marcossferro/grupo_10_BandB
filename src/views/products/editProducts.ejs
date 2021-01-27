@@ -3,7 +3,7 @@
 <!------HEAD------>
 <head>
     <%- include("../partials/head.ejs") %>
-    <link rel='stylesheet' type='text/css' media='screen' href='/css/styleNewProducts.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/style.css'>
 </head>
 <body>
 
@@ -15,14 +15,14 @@
     
     <!------FORM DE REGISTRO------>
     
-    <section class="newProducts">
+    <section class="editProducts">
         <h1>EDITANDO PRODUCTO NUMERO <%= productos.id %></h1>
         <br>        
         <h3>Completá los datos del producto:</h3>
         <br>
         <div>
-            <form action="/product/formeditproduct?_method=PUT" method="POST" enctype="multipart/form-data">
-            <div>
+            <form action="/products/<%= productos.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div id = labelcontainer>
                 <label for="id">ID:</label>
                 <input id= "id" name="id" type="number" value="<%= productos.id %>" readonly>
             </div>
@@ -44,11 +44,17 @@
             <div>
                 <label for="categoria">Categoría:</label><br><br>
                 <label for="categoria">Aires acondicionados</label>
-                <input type="radio" id="aireAcon" name="categoria">
+                <input type="radio" id="aireAcon" name="categoria" <%if(productos.categoria == "Aire Acondicionado"){%> 
+                    checked
+                <%}%>>
                 <label for="categoria">Calefacción</label>
-                <input type="radio" id="calefaccion" name="categoria">
-                <label for="categoria">Agua caliente sanitaria</label>
-                <input type="radio" id="aguaCalienteSanitaria" name="categoria">
+                <input type="radio" id="calefaccion" name="categoria" <%if(productos.categoria == "Calefacción"){%> 
+                    checked
+                <%}%>>
+                <label for="categoria">Agua Caliente Sanitaria</label>
+                <input type="radio" id="aguaCalienteSanitaria" name="categoria" <%if(productos.categoria == "Agua Caliente Sanitaria"){%> 
+                    checked
+                <%}%>>
             </div>
                 <br>
             <div>

@@ -16,15 +16,16 @@ var storage = multer.diskStorage({
 
 const productController = require("../controllers/productController")
 
-router.get('/', productController.product)
+router.get('/', productController.productList)
+router.get('/create', productController.createView)
+router.get('/:id',productController.product)
 
-router.get('/formulariodeproductos', productController.register)
-router.post('/formulariodeproductos', upload.any(), productController.create)
+router.post('/create', upload.any(), productController.create)
 
-router.get('/formeditproduct/:idProducto', productController.editView)
-router.put('/formeditproduct', productController.edit)
+router.get('/:id/edit', productController.editView)
+router.put('/:id/edit', productController.edit)
+//router.delete('/:id/edit', productController.delete)
 
-router.get('/productlist',productController.productList)
 
 
 

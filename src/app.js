@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use("/", generalRouter);
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
-app.use("/product", productRouter);
+app.use("/products", productRouter);
 app.use("/productCart", productCartRouter);
 
 let puerto = 3000;
