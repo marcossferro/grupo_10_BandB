@@ -53,13 +53,14 @@ module.exports = {
         let idProduct = req.params.id - 1;
         let product = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
         product = JSON.parse(product); 
+        let imagenAModificar = productosJson[idProduct].imagen;
         let productToEdit = product[idProduct];
 
         let productoEditado = {
             id: req.body.id,
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
-            imagen: req.files[0].filename,
+            imagen: (req.files[0].filename == undefined) ? imagenAModificar : req.files[0].filename,
             categoria: req.body.categoria,
             precio: req.body.precio
         };

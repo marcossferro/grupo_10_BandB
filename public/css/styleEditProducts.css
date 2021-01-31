@@ -13,12 +13,35 @@ body {
 
 .editProducts{
     text-align: center;
+    
 }
 
-div input.descripcion {
-    height: 200px;
+.editProducts div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
+.editProducts div label{
+    margin: 10px;
+}
+
+div.imagen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+img.imagenAEditar{
+    width: 20%;
+    height: 30%;
+}
+
+div.categorias{
+    display: inline;
+}
 /*----------------------MOBILE--------------------*/
 
 /*=============================
