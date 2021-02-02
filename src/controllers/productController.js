@@ -50,25 +50,24 @@ module.exports = {
         })
     },
     edit: function(req, res){
+        // return res.send(req.files.length) prueba
         let idProduct = req.params.id - 1;
         let product = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
         product = JSON.parse(product); 
         let imagenAModificar = productosJson[idProduct].imagen;
-        let productToEdit = product[idProduct];
+        // let productToEdit = product[idProduct]; no se usa mas
 
         let productoEditado = {
             id: req.body.id,
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
-            imagen: (req.files[0].filename == undefined) ? imagenAModificar : req.files[0].filename,
+            imagen: (req.files.length != 0) ? req.files[0].filename : imagenAModificar,
             categoria: req.body.categoria,
             precio: req.body.precio
         };
 
         productosJson.splice(idProduct, 1, productoEditado)
         fs.writeFileSync(path.join(__dirname, "../data/productos.json"), JSON.stringify(productosJson))
-        res.redirect("/products", {
-            productos: productToEdit
-        })
+        res.redirect("/products");
     }
 }

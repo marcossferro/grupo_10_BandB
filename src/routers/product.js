@@ -23,12 +23,8 @@ router.get('/:id',productController.product)
 router.post('/create', upload.any(), productController.create)
 
 router.get('/:id/edit', productController.editView)
-router.put('/:id/edit', productController.edit)
+router.put('/:id/edit', upload.any(), productController.edit)
 //router.delete('/:id/edit', productController.delete)
-
-
-
-
 
 
 module.exports = router;
