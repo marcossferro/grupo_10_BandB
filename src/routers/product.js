@@ -24,7 +24,7 @@ router.post('/create', upload.any(), productController.create)
 
 router.get('/:id/edit', productController.editView)
 router.put('/:id/edit', upload.any(), productController.edit)
-//router.delete('/:id/edit', productController.delete)
+router.delete('/:id/delete', productController.delete)
 
 
 module.exports = router;

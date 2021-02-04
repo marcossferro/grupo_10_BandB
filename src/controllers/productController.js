@@ -69,5 +69,17 @@ module.exports = {
         productosJson.splice(idProduct, 1, productoEditado)
         fs.writeFileSync(path.join(__dirname, "../data/productos.json"), JSON.stringify(productosJson))
         res.redirect("/products");
+    },
+    delete: function(req, res){
+        
+        let idProduct = req.params.id - 1;
+        let product = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
+        product = JSON.parse(product); 
+        
+        productosJson.splice(idProduct, 1)
+        
+        fs.writeFileSync(path.join(__dirname, "../data/productos.json"), JSON.stringify(productosJson))
+        res.redirect("/products");
+        
     }
 }
