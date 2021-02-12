@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/marcossferro/grupo_10_BandB#readme",
   "dependencies": {
-    "bcrypt": "^5.0.0",
+    "bcrypt-nodejs": "0.0.3",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-validator": "^6.9.2",
