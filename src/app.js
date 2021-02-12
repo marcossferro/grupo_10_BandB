@@ -11,6 +11,8 @@ const registerRouter = require ("./routers/register")
 const productRouter = require ("./routers/product")
 const productCartRouter = require ("./routers/productCart")
 
+let port = process.env.PORT || 3000
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"))
 
@@ -28,7 +30,7 @@ app.use("/products", productRouter);
 app.use("/productCart", productCartRouter);
 
 let puerto = 3000;
-app.listen(puerto, function(){
+app.listen(port, function(){
     console.log('El servidor esta corriendo en el puerto '+ puerto);
     console.log("http://localhost:3000")
 });
