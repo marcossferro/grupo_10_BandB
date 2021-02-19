@@ -19,7 +19,18 @@
         <br>
         <h4>Por favor ingresa los datos con los que te registraste:</h4>
         <br>
-        <form action="validar" method="POST">
+        <%if (typeof errors != "undefined") { %>
+            <p class="errorP">ERROR</p>
+            <ul class="errorUl">
+                <% for(let i = 0; i < errors.length; i++){ %>
+                    <li class="errorLi">
+                        <%= errors[i].msg%>
+                    </li>
+               <% } %>
+            </ul>
+        
+            <% } %>
+        <form action="/login" method="POST">
             <label for="email">Email:</label>
             <br>
             <input type="email" name="email" id="email">

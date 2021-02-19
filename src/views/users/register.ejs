@@ -19,12 +19,22 @@
     <br>
     <h2>Completa los datos:</h2>
     <br>
-
+    <%if (typeof errores != "undefined") { %>
+        <p class="errorP">ERROR</p>
+        <ul class="errorUl">
+            <% for(let i = 0; i < errores.length; i++){ %>
+                <li class="errorLi">
+                    <%= errores[i].msg%>
+                </li>
+           <% } %>
+        </ul>
+    
+        <% } %>
     <section class="form">
         <form action="" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="id">ID:</label>
-                <input id= "id" name="id" type="number" value="<%= usuarios.length + 1 %>" readonly>
+                <input id= "id" name="id" type="number" value="<%= usuariosJson.length + 1 %>" readonly>
             </div>
             <div>
             <div>

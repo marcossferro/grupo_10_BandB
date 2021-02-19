@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
+const logueadoMiddleware = require("../middlewares/logueadoMiddleware")
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -16,9 +17,9 @@ var storage = multer.diskStorage({
 
 const productController = require("../controllers/productController")
 
-router.get('/', productController.productList)
+router.get('/', logueadoMiddleware ,productController.productList)
 router.get('/create', productController.createView)
-router.get('/:id',productController.product)
+router.get('/:id', logueadoMiddleware ,productController.product)
 
 router.post('/create', upload.any(), productController.create)
 
