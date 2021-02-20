@@ -5,13 +5,24 @@
         <form action="" method="">
             <input type="text" name="Search" placeholder="Encuentra tu próximo Aire Acondicionado"><button type="submit"><i class="fas fa-search"></i></button>
         </form>
-        <nav>
-            <ul>
-                <li><a href="login">Login</a></li>
-                <li><a href="register">Registro</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
+        <% if(typeof usuarioLogueado == 'undefined') { %>
+            <nav>
+                <ul>
+                    <li><a href="login">Login</a></li>
+                    <li><a href="register">Registro</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        <% } else { %>
+            <nav>
+                <ul>
+                    <li><%= usuarioLogueado.nombre %>, bienvenido!</li>
+                    <li><a href="#">Contacto</a></li>
+                    <button onclick="closeSession('<%= usuarioLogueado.id %>')">Cerrar sesión</button>
+                </ul>
+            </nav>
+              
+            <% } %>
     </header>
 </div>
 <!------HEADER MOBILE------>

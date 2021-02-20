@@ -164,9 +164,10 @@ footer.footerMobile a.instagram i {
     header.desktop nav ul {
         display: flex;
         list-style-type: none;
+        justify-content: space-between;
     }
     header.desktop nav ul li {
-        margin-left: 15px;
+        margin: 0px 10px;
     }
     header.desktop nav ul li :first-child {
         margin-left: 0px;
