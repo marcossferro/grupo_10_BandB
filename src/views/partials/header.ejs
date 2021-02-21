@@ -18,7 +18,9 @@
                 <ul>
                     <li><%= usuarioLogueado.nombre %>, bienvenido!</li>
                     <li><a href="#">Contacto</a></li>
-                    <button onclick="closeSession('<%= usuarioLogueado.id %>')">Cerrar sesión</button>
+                    <form action="" method="POST">
+                        <button class= "cierreDeSesion" onclick="closeSession('<%= usuarioLogueado.id %>')">Cerrar sesión</button>
+                    </form>
                 </ul>
             </nav>
               

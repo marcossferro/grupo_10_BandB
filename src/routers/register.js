@@ -5,6 +5,7 @@ const path = require("path");
 const { check, validationResult, body } = require ("express-validator");
 const fs = require("fs");
 const logueadoMiddleware = require("../middlewares/logueadoMiddleware")
+const cierreSesionMiddleware = require("../middlewares/cierreSesionMiddleware")
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -43,7 +44,7 @@ router.post('/', upload.any() , [
     }
     return true;
   }).withMessage("Este mail ya fue registrado")
-] ,registerController.create)
+] , cierreSesionMiddleware ,registerController.create)
 
 
 module.exports = router

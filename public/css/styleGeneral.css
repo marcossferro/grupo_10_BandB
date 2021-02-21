@@ -177,6 +177,11 @@ footer.footerMobile a.instagram i {
         text-transform: uppercase;
         color: black;
     }
+    header.desktop nav ul form button.cierreDeSesion {
+        width: 100px;
+        border-radius: 0px;
+    }
+
 
     
 /*=============================
