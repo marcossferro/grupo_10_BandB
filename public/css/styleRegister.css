@@ -16,6 +16,10 @@ body {
     text-align: center;
 }
 
+section.form form div.id {
+    display: none;
+}
+
 /*----------------------MOBILE--------------------*/
 
 /*=============================
