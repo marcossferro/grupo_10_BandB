@@ -8,6 +8,9 @@ function editCreateValidationMiddleware (req, res, next){
     }else if(!req.session.usuarioLogueado.email == "maximilianoalbeldas@gmail.com"){
         console.log(req.session.usuarioLogueado)
         res.send("Usted no es administrador")
+    }else if(!req.session.usuarioLogueado.email == "garcia.davidff@gmail.com"){
+        console.log(req.session.usuarioLogueado)
+        res.send("Usted no es administrador")
     }else{
         next()
     }
