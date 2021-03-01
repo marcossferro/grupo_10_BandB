@@ -25,9 +25,9 @@ module.exports = {
         productosJson.push({
             id: req.body.id,
             nombre: req.body.nombre,
-            descripcion: req.body.descripcion,
+            detalle: req.body.detalle,
             imagen: req.files[0].filename,
-            categoria: req.body.categoria,
+            categoria_id: req.body.categoria_id,
             precio: req.body.precio
         })
         fs.writeFileSync(path.join(__dirname, "../data/productos.json"), JSON.stringify(productosJson))
@@ -60,9 +60,9 @@ module.exports = {
         let productoEditado = {
             id: req.body.id,
             nombre: req.body.nombre,
-            descripcion: req.body.descripcion,
+            detalle: req.body.detalle,
             imagen: (req.files.length != 0) ? req.files[0].filename : imagenAModificar,
-            categoria: req.body.categoria,
+            categoria_id: req.body.categoria_id,
             precio: req.body.precio
         };
 

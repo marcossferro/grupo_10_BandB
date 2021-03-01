@@ -16,7 +16,7 @@ module.exports = {
         if(errors.isEmpty()){
             for(let i = 0; i < usuariosJson.length; i++){
                 if(usuariosJson[i].email == req.body.email){
-                    if (bcrypt.compareSync(req.body.password, usuariosJson[i].password)){
+                    if (bcrypt.compareSync(req.body.contraseña, usuariosJson[i].contraseña)){
                         var usuarioALoguearse = usuariosJson[i];
                         break;
                     }

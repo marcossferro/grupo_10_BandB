@@ -9,7 +9,7 @@ const loginController = require("../controllers/loginController")
 router.get('/', logueadoMiddleware ,loginController.login)
 router.post('/', [
     check("email").isEmail().withMessage("Formato invalido"),
-    check("password").isLength({min: 8, max: 12}).withMessage("La contraseña debe tener entre 8 y 12 caracteres")
+    check("contraseña").isLength({min: 8, max: 12}).withMessage("La contraseña debe tener entre 8 y 12 caracteres")
 ] , cierreSesionMiddleware ,loginController.processLogin)
 
 module.exports = router

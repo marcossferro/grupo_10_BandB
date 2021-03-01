@@ -21,7 +21,7 @@ module.exports = {
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 12),
+                contraseña: bcrypt.hashSync(req.body.contraseña, 12),
                 avatar: req.files[0].filename
             })
             fs.writeFileSync(path.join(__dirname, "../data/usuarios.json"), JSON.stringify(usuariosJson))

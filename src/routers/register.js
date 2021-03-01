@@ -26,10 +26,10 @@ router.post('/', upload.any() , [
   check("nombre").isLength({min:1}).withMessage("El nombre no puede estar vacio"),
   check("apellido").isLength({min:1}).withMessage("El apellido no puede estar vacio"),
   check("email").isEmail().withMessage("El formato correcto es tuemail@email.com"),
-  check("password").isLength({min: 8, max: 12}).withMessage("La contraseña debe contener entre 8 y 12 caracteres"),
+  check("contraseña").isLength({min: 8, max: 12}).withMessage("La contraseña debe contener entre 8 y 12 caracteres"),
   check("repassword").custom(async(repassword, {req})=>{
-    let password = req.body.password
-    if(password !== repassword){
+    let contraseña = req.body.contraseña
+    if(contraseña !== repassword){
       throw new Error("La contraseña debe ser la misma")
     }
   }),

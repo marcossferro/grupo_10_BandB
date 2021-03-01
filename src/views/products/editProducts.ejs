@@ -32,8 +32,8 @@
             </div>
                 <br>
             <div>
-                <label for="descripcion">Descripción del producto:</label>
-                <input id= "descripcion" name="descripcion" type="text" value="<%= productos.descripcion%>">
+                <label for="detalle">Descripción del producto:</label>
+                <input id= "detalle" name="descripcion" type="text" value="<%= productos.detalle%>">
             </div>
                 <br>
             <div>
@@ -42,17 +42,17 @@
             </div>
                 <br>
             <div>
-                <label for="categoria">Categoría:</label><br><br>
+                <label for="categoria_id">Categoría:</label><br><br>
                 <label for="categoria">Aires acondicionados</label>
-                <input type="radio" id="aireAcon" name="categoria" <%if(productos.categoria == "Aire Acondicionado"){%> 
+                <input type="radio" id="1" name="categoria" <%if(productos.categoria_id == "1"){%> 
                     checked
                 <%}%>>
-                <label for="categoria">Calefacción</label>
-                <input type="radio" id="calefaccion" name="categoria" <%if(productos.categoria == "Calefacción"){%> 
+                <label for="categoria_id">Calefacción</label>
+                <input type="radio" id="2" name="categoria" <%if(productos.categoria_id == "2"){%> 
                     checked
                 <%}%>>
-                <label for="categoria">Agua Caliente Sanitaria</label>
-                <input type="radio" id="aguaCalienteSanitaria" name="categoria" <%if(productos.categoria == "Agua Caliente Sanitaria"){%> 
+                <label for="categoria_id">Agua Caliente Sanitaria</label>
+                <input type="radio" id="3" name="categoria" <%if(productos.categoria_id == "3"){%> 
                     checked
                 <%}%>>
             </div>
