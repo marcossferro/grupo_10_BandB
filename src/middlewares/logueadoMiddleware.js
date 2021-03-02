@@ -1,6 +1,9 @@
 const fs = require("fs");
 const path = require("path");
+const db = require("../database/models")
 
+
+// Llamo a producto desde el Json
 let productos = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
 productosJson = JSON.parse(productos);
 
@@ -25,6 +28,13 @@ function invitadoMiddleware (req, res, next){
             res.render("products/product", {productos: productToEdit, usuarioLogueado: req.session.usuarioLogueado})
         }else if(req.originalUrl == "/productCart"){
             res.render("productCart", {usuarioLogueado: req.session.usuarioLogueado})
+        }else if(req.originalUrl == "/perfil/" + req.params.id){
+
+            // Llamo a usuario por su PK desde la db
+                db.Usuario.findByPk(req.params.id)
+                .then(function(usuario){
+                    return res.render("users/perfil", {usuarios: usuario, usuarioLogueado: req.session.usuarioLogueado})
+            })
         }else{
             res.send("Esta pagina no esta disponible")
         }

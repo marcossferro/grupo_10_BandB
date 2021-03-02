@@ -42,19 +42,12 @@ module.exports= function(sequelize, dataTypes){
     
     let Usuario = sequelize.define(alias, cols, config);
 
-    Usuario.associate = function(models){
-        Usuario.belongsTo(models.Usuario, {
-            as: "usuario",
-            foreingKey: "tipo_usuario"
-        })
-        Usuario.belongsToMany(models.Usuario, {
-            as: "productos",
-            through: "producto_usuario",
-            foreingKey: "usuario_id",
-            otherKey: "producto_id",
-            timestamps: false
-        })
-    }
+    //Usuario.associate = function(models){
+      //  Usuario.belongsTo(models.TipoUsuario, {
+        //    as: "tiposUsuario",
+          //  foreingKey: "id"
+        //})
+    //}
 
     return Usuario
 

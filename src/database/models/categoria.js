@@ -22,12 +22,12 @@ module.exports= function(sequelize, dataTypes){
     
     let Categoria = sequelize.define(alias, cols, config);
 
-    Categoria.associate = function(models){
-        Categoria.hasMany(models.Producto, {
-            as: "productos",
-            foreingKey: "categoria_id"
-        })
-    }
+    //Categoria.associate = function(models){
+      //  Categoria.hasMany(models.Producto, {
+        //    as: "productos",
+          //  foreingKey: "categoria_id"
+        //})
+    //}
 
     return Categoria
 

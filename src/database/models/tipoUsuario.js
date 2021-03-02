@@ -22,12 +22,12 @@ module.exports= function(sequelize, dataTypes){
     
     let TipoUsuario = sequelize.define(alias, cols, config);
 
-    TipoUsuario.associate = function(models){
-        TipoUsuario.hasMany(models.Usuario, {
-            as: "usuarios",
-            foreingKey: "tipo_usuario"
-        })
-    }
+    //TipoUsuario.associate = function(models){
+      //  TipoUsuario.hasMany(models.Usuario, {
+        //    as: "usuarios",
+          //  foreingKey: "tipo_usuario"
+        //})
+    //}
 
     return TipoUsuario
 

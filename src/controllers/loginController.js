@@ -30,7 +30,7 @@ module.exports = {
                 })
             }
             req.session.usuarioLogueado = usuarioALoguearse
-            console.log(`el email ${req.session.usuarioLogueado.email} fue logueado`)
+            console.log(`el email ${req.session.usuarioLogueado.email} con id ${req.session.usuarioLogueado.id} fue logueado`)
             res.render("index",{
                 usuarioLogueado: req.session.usuarioLogueado
             })

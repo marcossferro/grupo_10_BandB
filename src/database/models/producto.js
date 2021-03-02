@@ -38,20 +38,12 @@ module.exports= function(sequelize, dataTypes){
     
     let Producto = sequelize.define(alias, cols, config);
 
-    Producto.associate = function(models){
-        Producto.belongsTo(models.Producto, {
-            as: "categoria",
-            foreingKey: "categoria_id"
-        })
-
-        Producto.belongsToMany(models.Producto, {
-            as: "usuarios",
-            through: "producto_usuario",
-            foreingKey: "producto_id",
-            otherKey: "usuario_id",
-            timestamps: false
-        })
-    }
+    //Producto.associate = function(models){
+      //  Producto.belongsTo(models.Categoria, {
+        //    as: "categoria",
+          //  foreingKey: "id"
+        //})
+    //}
 
     return Producto
 

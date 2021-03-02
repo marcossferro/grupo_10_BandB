@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<!------HEAD------>
+<head>
+    <%- include("../partials/head.ejs") %>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/style.css'>
+</head>
+<body>
+
+<!------HEADER DESKTOP AND MOBILE------>
+<%- include("../partials/header.ejs") %>
+    
+<!------SECTION BAR. DE NAV. DESKTOP------>
+<%- include("../partials/barraDeNavegacion.ejs") %>
+    
+    <!------FORM DE REGISTRO------>
+    
+    <section class="editProducts">
+        <h1>MI PERFIL</h1>
+        <br>        
+        <h3>¿Quieres editar tu perfil?</h3>
+        <br>
+        <div>
+            <form action="/perfil/<%= usuarios.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div id = labelcontainer>
+                <label for="id">ID:</label>
+                <input id= "id" name="id" type="number" value="<%= usuarios.id %>" readonly>
+            </div>
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input id= "nombre" name="nombre" type="text" value="<%= usuarios.nombre%>">
+            </div>
+                <br>
+            <div>
+                <label for="apellido">Apellido:</label>
+                <input id= "apellido" name="apellido" type="text" value="<%= usuarios.apellido%>">
+            </div>
+                <br>
+            <div>
+                <label for="email">Email:</label>
+                <input id= "email" name="email" type="text" value="<%= usuarios.email%>">
+            </div>
+                <br>
+            <div>
+                <label for="avatar">Avatar:</label>
+                <input type="file" name="avatar" value="<%= usuarios.avatar%>">
+            </div>
+                <br>
+                <p>¿Quieres cambiar la contraseña?</p>
+                <br>
+            <div>
+                <label for="contraseñaActual">Contraseña Actual:</label>
+                <input id= "contraseñaActual" name="contraseñaActual" type="password">
+            </div>
+            <div>
+                <label for="contraseña">Contraseña Nueva:</label>
+                <input id= "contraseña" name="contraseña" type="password">
+            </div>
+            <div>
+                <label for="repassword">Repite la Contraseña:</label>
+                <input id= "repassword" name="repassword" type="password">
+            </div>
+                <br>
+            <div>
+                <input type="submit" value="Editar">
+            </div>
+        </form>
+
+        <form action="/perfil/<%= usuarios.id %>/delete?_method=DELETE" method="POST" enctype="multipart/form-data">
+            <a href="/perfil/<%= usuarios.id %>/delete"><button id="deleteButton"><i class="fas fa-trash-alt"></i></button></a>    
+        </form>
+
+    </section>
+        
+        <!------REDES SOCIALES DESKTOP------>
+    <div class="container">
+        <article class="redesDesktop">
+            <a class="facebook" href="#"><i class="fab fa-facebook-square"></i></a>
+            <a class="whatsapp" href="#"><i class="fab fa-whatsapp"></i></a>
+            <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
+        </article>
+    </div>
+<!------FOOTER DESKTOP AND MOBILE------>
+<%- include("../partials/footer.ejs") %>
+</body>
+</html>

@@ -16,7 +16,7 @@
         <% } else { %>
             <nav>
                 <ul>
-                    <li><%= usuarioLogueado.nombre %>, bienvenido!</li>
+                    <a href="/perfil/<%= usuarioLogueado.id%>"><li><%= usuarioLogueado.nombre %>, bienvenido!</li></a>
                     <li><a href="#">Contacto</a></li>
                     <form action="" method="POST">
                         <button class= "cierreDeSesion" onclick="closeSession('<%= usuarioLogueado.id %>')">Cerrar sesión</button>
