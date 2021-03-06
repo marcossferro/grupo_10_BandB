@@ -13,43 +13,144 @@
 <!------SECTION BAR. DE NAV. DESKTOP------>
 <%- include("partials/barraDeNavegacion.ejs") %>
 
-<!------SECTION SLIDER------>
+<!------SECTION SLIDER MOBILE Y TABLET------>
     <section class="slider">
-        <img src="/img/muestra_banner.jpg">
+        <img class = "imagenSlider" src="/img/bannerMobile1.jpg">
+        <img class = "imagenSlider" src="/img/bannerMobile2.jpg">
+        <img class = "imagenSlider" src="/img/bannerMobile3.jpg">      
     </section>
+
+<!------SECTION SLIDER DESKTOP------>
+<section class="sliderDesktop">
+    <img class = "imagenSliderDesktop" src="/img/muestra_banner.jpg">     
+</section>
+
  <!------SECTION CATEGORIAS------>
+
     <section class="categorias">
-        <a href="#" class="aireAcondicionado"><div>
+         
+    <h1 class="tituloCategoria">¿Que estas buscando?</h1>
+    <div class="container">
+        
+        <a href="#"><div class = "catAireAcon">
             <img src="/img/categoria_AiresAcondicionados.jpg">
             <h1>Aires Acondicionados</h1>
         </div></a>
-        <a href="#" class="calefaccion"><div>
+
+        <a href="#"><div class="catCalefaccion">
             <img src="/img/categoria_Calefaccion.png">
             <h1>Calefaccion</h1>
         </div></a>
-        <a href="#" class="aguaCalienteSanitaria"><div>
+
+        <a href="#"><div class="catAguaCalienteSanitaria">
             <img src="/img/categoria_AguaCalienteSanitaria.jpg">
             <h1>Agua Caliente Sanitaria</h1>
         </div></a>
+    </div>
     </section>
-<!------PRODUCTOS DESTACADOS------>
+
+
+<!------PRODUCTOS DESTACADOS TABLET------>
+
     <section class="productosDestacados">
+        
         <h2>Productos destacados</h2>
-            <div class="container">
-                <div class="bloqueProductos1">
-                    <a class="logo" href="#"><img src="/img/producto.jpg"></a>
-                    <a class="logo" href="#"><img src="/img/producto.jpg"></a>
-                    <a class="logo" href="#"><img src="/img/producto.jpg"></a>
-                    <a class="logo" href="#"><img src="/img/producto.jpg"></a>    
-                </div>
-                <div class="bloqueProductos2">
-                    <a class="logo" href="#"><img src="/img/producto.jpg"></a>
-                    <a class="logo" href="#"><img src="/img/producto.jpg"></a>
-                    <a class="logo" href="#"><img src="/img/producto.jpg"></a>
-                    <a class="logo" href="#"><img src="/img/producto.jpg"></a>    
-                </div>
+
+        <div class="container">
+
+            <i id = "flechaIzq" class="far fa-arrow-alt-circle-left"></i>
+            <i id = "flechaDer" class="far fa-arrow-alt-circle-right"></i>
+
+            <div id="productosDestacados1" class="bloqueProductosTablet1">
+            <% for (let i = producto.length - 3; i < producto.length; i++){ %>
+                <a class="productoVinculo" href="/products/<%= producto[i - 1].id %>">
+                <article class="productoDetalle">
+                <img src="/imgProducts/<%= producto[i].imagen %>">
+                <p class="nombreProducto"><%= producto[i].nombre %></p>
+                <p class="precioProducto"><%= producto[i].precio %></p>
+                </article>
+                </a>
+            <% } %>
             </div>
+
+            <div id="productosDestacados2" class="bloqueProductosTablet2">
+                <% for (let i = producto.length - 6; i < producto.length - 3; i++){ %>
+                    <a class="productoVinculo" href="/products/<%= producto[i - 1].id %>">
+                    <article class="productoDetalle">
+                    <img src="/imgProducts/<%= producto[i].imagen %>">
+                    <p class="nombreProducto"><%= producto[i].nombre %></p>
+                    <p class="precioProducto"><%= producto[i].precio %></p>
+                    </article>
+                    </a>
+                <% } %>
+            </div>
+
+            <div id="productosDestacados3" class="bloqueProductosTablet3">
+                <% for (let i = producto.length - 9; i < producto.length - 6; i++){ %>
+                    <a class="productoVinculo" href="/products/<%= producto[i - 1].id %>">
+                    <article class="productoDetalle">
+                    <img src="/imgProducts/<%= producto[i].imagen %>">
+                    <p class="nombreProducto"><%= producto[i].nombre %></p>
+                    <p class="precioProducto"><%= producto[i].precio %></p>
+                    </article>
+                    </a>
+                <% } %>
+            </div>
+
+        </div>
+
     </section>
+
+    <!------PRODUCTOS DESTACADOS DESKTOP------>
+    <section id="productosDestacadosDesktop" class="productosDestacadosDesktop">
+        
+        <h2>Productos destacados</h2>
+
+            <div class="container">
+
+                <i id = "flechaIzqDesk" class="far fa-arrow-alt-circle-left"></i>
+                <i id = "flechaDerDesk" class="far fa-arrow-alt-circle-right"></i>
+
+                <div id="productosDestacados1Desktop" class="bloqueProductosDesktop1">
+                    <% for (let i = producto.length - 4; i < producto.length; i++){ %>
+                        <a class="productoVinculo" href="/products/<%= producto[i - 1].id %>">
+                            <article class="productoDetalle">
+                                <img src="/imgProducts/<%= producto[i].imagen %>">
+                                <p class="nombreProducto"><%= producto[i].nombre %></p>
+                                <p class="precioProducto"><%= producto[i].precio %></p>
+                            </article>
+                        </a>
+                    <% } %>
+                </div>
+
+                <div id="productosDestacados2Desktop" class="bloqueProductosDesktop2">
+                    <% for (let i = producto.length - 8; i < producto.length - 4; i++){ %>
+                        <a class="productoVinculo" href="/products/<%= producto[i - 1].id %>">
+                            <article class="productoDetalle">
+                                <img src="/imgProducts/<%= producto[i].imagen %>">
+                                <p class="nombreProducto"><%= producto[i].nombre %></p>
+                                <p class="precioProducto"><%= producto[i].precio %></p>
+                            </article>
+                        </a>
+                    <% } %>
+                </div>
+
+                <div id="productosDestacados3Desktop" class="bloqueProductosDesktop3">
+                    <% for (let i = producto.length - 12; i < producto.length - 8; i++){ %>
+                        <a class="productoVinculo" href="/products/<%= producto[i - 1].id %>">
+                            <article class="productoDetalle">
+                                <img src="/imgProducts/<%= producto[i].imagen %>">
+                                <p class="nombreProducto"><%= producto[i].nombre %></p>
+                                <p class="precioProducto"><%= producto[i].precio %></p>
+                            </article>
+                        </a>
+                    <% } %>
+                </div>
+
+            </div>
+
+    </section>
+
 <!------REDES SOCIALES DESKTOP------>
     <div class="container">
         <article class="redesDesktop">

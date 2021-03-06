@@ -19,102 +19,125 @@ body {
     section.barDeNav {
         display: none;
     }
-/*=========================
-----SECTION SLIDER---
-=========================*/
+/*==================================
+----SECTION SLIDER MOBILE Y TABLET---
+===================================*/
     section.slider {
+        margin-top: 10px;
+        margin-bottom: 10px;
         background-color: #fff;
         width: 100%;
-        height: 359px;
     }
-    section.slider img {
+    section.slider img.imagenSlider {
         width: 100%;
         height: 100%;
     }
+/*============================
+----SECTION SLIDER DESKTOP---
+==============================*/
+
+section.sliderDesktop{
+    display: none;
+}
+
 /*=========================
 ----SECTION CATEGORIAS-----
 =========================*/
-    section.categorias {
-        padding: 5px 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    section.categorias{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: 100%;
+        height: 100%;
         background-color: #fff;
-        
     }
-    section.categorias a.aireAcondicionado {
-        text-decoration: none;
-    }
-    section.categorias a.aireAcondicionado div {
+
+    section.categorias h1.tituloCategoria{
+        margin-bottom: 40px;
         padding: 20px 0;
-        width: 350px;
-        height: 370px;
-        margin-bottom: 10px;
-        border-radius: 20px;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
         background-color: var(--colorPrincipal);
     }
-    section.categorias a.aireAcondicionado div img {
-        border-radius: 10px;
-        margin: auto 25px;
+
+    section.categorias a{
+        text-decoration: none;
     }
-    section.categorias a.aireAcondicionado div h1 {
-        margin-top: 5px;
-        text-align: center;
-        font-size: 1.4rem;
+
+    section.categorias a div.catAireAcon{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15px;
+        width: 95%;
+        height: 100%;
+        padding: 30px;
+        background-color: var(--colorPrincipal);
+        border-radius: 30px;
+    }
+    section.categorias a div.catAireAcon img{
+        width: 100%;
+        border-radius: 20px;
+    }
+    section.categorias a div.catAireAcon h1{
+        margin-top: 10px;
         color: #fff;
         text-transform: uppercase;
     }
 
-    section.categorias a.calefaccion {
-        text-decoration: none;
-    }
-    section.categorias a.calefaccion div {
-        padding: 20px 0;
-        width: 350px;
-        height: 370px;
-        margin-bottom: 10px;
-        border-radius: 20px;
+    section.categorias a div.catCalefaccion{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15px;
+        width: 95%;
+        height: 100%;
+        padding: 30px;
         background-color: #F17F29;
+        border-radius: 30px;
     }
-    section.categorias a.calefaccion div img {
-        border-radius: 10px;
-        margin: auto 25px;
+    section.categorias a div.catCalefaccion img{
+        width: 100%;
+        border-radius: 20px;
     }
-    section.categorias a.calefaccion div h1 {
-        margin-top: 5px;
-        text-align: center;
-        font-size: 1.4rem;
+    section.categorias a div.catCalefaccion h1{
+        margin-top: 10px;
         color: #fff;
         text-transform: uppercase;
     }
 
-    section.categorias a.aguaCalienteSanitaria {
-        text-decoration: none;
-    }
-    section.categorias a.aguaCalienteSanitaria div {
-        padding: 20px 0;
-        width: 350px;
-        height: 370px;
-        border-radius: 20px;
+    section.categorias a div.catAguaCalienteSanitaria{
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+        height: 100%;
+        padding: 30px;
         background-color:  #EE6432;
+        border-radius: 30px;
     }
-    section.categorias a.aguaCalienteSanitaria div img {
-        border-radius: 10px;
-        margin: auto 25px;
+    section.categorias a div.catAguaCalienteSanitaria img{
+        width: 100%;
+        border-radius: 20px;
     }
-    section.categorias a.aguaCalienteSanitaria div h1 {
-        margin-top: 5px;
-        text-align: center;
-        font-size: 1.4rem;
+    section.categorias a div.catAguaCalienteSanitaria h1{
+        margin-top: 10px;
         color: #fff;
         text-transform: uppercase;
     }
+
 /*=========================
-----PRODUCTOS DESTACADOS----
+----PRODUCTOS DESTACADOS TABLET----
 =========================*/
     section.productosDestacados {
         display: none;
     }
+
+/*=========================
+----PRODUCTOS DESTACADOS DESKTOP----
+=========================*/
+section.productosDestacadosDesktop {
+    display: none;
+}
+    
 /*=========================
 ---REDES SOCIALES DESKTOP---
 =========================*/
@@ -125,45 +148,159 @@ body {
 /*----------------------TABLET--------------------*/
 
 @media (min-width: 768px) {
-/*=========================
-----PRODUCTOS DESTACADOS----
-=========================*/
-    section.productosDestacados {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    section.productosDestacados h2 {
-        padding: 20px 0;
-        width: 100%;
-        text-align: center;
-        text-transform: uppercase;
-        color: #fff;
-        background-color: var(--colorPrincipal);
-    }
-    
-    section.productosDestacados div.bloqueProductos1 {
-        padding: 15px 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-    section.productosDestacados div.bloqueProductos1 a {
-        margin-left: 10px;
-        margin-bottom: 10px;
-        width: 35%;
-        border-radius: 15px;
-        background-color: var(--colorPrincipal);
-    }
-    section.productosDestacados div.bloqueProductos1 a img {
-        width: 100%;
-        padding: 5px;
-        border-radius: 20px;
-    } 
 
-    section.productosDestacados div.bloqueProductos2 {
-        display: none;
-    }
+/*div container*/
+div.container {
+    position: relative;
+    padding: 0 100px
+}
+
+/*=========================
+----PRODUCTOS DESTACADOS DESKTOP----
+=========================*/
+section.productosDestacadosDesktop {
+    display: none;
+}
+
+/*=========================
+----PRODUCTOS DESTACADOS 1 TABLET----
+=========================*/
+section.productosDestacados {
+    display: block;
+    margin-bottom: 20px;
+}
+
+section.productosDestacados h2 {}
+
+section.productosDestacados div.container {
+    position: relative;
+}
+
+section.productosDestacados div.container i#flechaIzq {
+    position: absolute;
+    top: 90px;
+    left: 70px;
+    font-size: 25px;
+}
+section.productosDestacados div.container i#flechaDer {
+    position: absolute;
+    top: 90px;
+    right: 70px;
+    font-size: 25px;
+}
+
+/*BLOQUE 1*/
+
+section.productosDestacados div.container div.bloqueProductosTablet1 {
+    margin-top: 15px;
+    padding-left: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet1 a.productoVinculo {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet1 a.productoVinculo article.productoDetalle {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: var(--colorPrincipal);
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet1 a.productoVinculo article.productoDetalle img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet1 a.productoVinculo article.productoDetalle p.nombreProducto {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet1 a.productoVinculo article.productoDetalle p.precioProducto {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/*BLOQUE 2*/
+
+section.productosDestacados div.container div.bloqueProductosTablet2 {
+    margin-top: 15px;
+    padding-left: 30px;
+    display: none;
+    justify-content: space-between;
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet2 a.productoVinculo {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet2 a.productoVinculo article.productoDetalle {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: var(--colorPrincipal);
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet2 a.productoVinculo article.productoDetalle img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet2 a.productoVinculo article.productoDetalle p.nombreProducto {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet2 a.productoVinculo article.productoDetalle p.precioProducto {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/*BLOQUE 3*/
+
+section.productosDestacados div.container div.bloqueProductosTablet3 {
+    margin-top: 15px;
+    padding-left: 30px;
+    display: none;
+    justify-content: space-between;
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet3 a.productoVinculo {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet3 a.productoVinculo article.productoDetalle {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: var(--colorPrincipal);
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet3 a.productoVinculo article.productoDetalle img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet3 a.productoVinculo article.productoDetalle p.nombreProducto {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+section.productosDestacados div.container div.bloqueProductosTablet3 a.productoVinculo article.productoDetalle p.precioProducto {
+    color: #fff;
+    text-transform: uppercase;
 }
 
 /*----------------------DESKTOP--------------------*/
@@ -211,6 +348,27 @@ div.container {
     border-color: var(--colorPrincipal);
     }
 
+/*==================================
+----SECTION SLIDER MOBILE Y TABLET---
+===================================*/
+section.slider {
+    display: none;
+}
+/*============================
+----SECTION SLIDER DESKTOP---
+==============================*/
+section.sliderDesktop {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    width: 100%;
+}
+section.sliderDesktop img.imagenSliderDesktop {
+    width: 100%;
+    height: 100%;
+}  
+
 /*=========================
 ----SECTION CATEGORIAS-----
 =========================*/
@@ -220,39 +378,161 @@ div.container {
         flex-direction: row;
         justify-content: space-around;
     }
-/*=========================
-----PRODUCTOS DESTACADOS----
-=========================*/
-    section.productosDestacados h2 {
-        margin-bottom: var(--marginPrincipal);
-    }
-     
-    section.productosDestacados div.bloqueProductos1, section.productosDestacados div.bloqueProductos2 {
-        padding: 15px 0;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center;
-    }
-    section.productosDestacados div.bloqueProductos1 a {
-        margin-left: 10px;
-        margin-bottom: 10px;
-        width: 20%;
-        border-radius: 15px;
-        background-color: var(--colorPrincipal);
-    }
-    section.productosDestacados div.bloqueProductos2 a {
-        margin-left: 10px;
-        margin-bottom: 150px;
-        width: 20%;
-        border-radius: 15px;
-        background-color: var(--colorPrincipal);
-    }
-    section.productosDestacados div.bloqueProductos1 a img, section.productosDestacados div.bloqueProductos2 a img {
-        width: 100%;
-        padding: 5px;
-        border-radius: 20px;
-    }
+
+/*==================================
+----PRODUCTOS DESTACADOS TABLET----
+==================================*/
+
+section.productosDestacados {
+    display: none;
+}
+
+/*==================================
+----PRODUCTOS DESTACADOS 1 DESKTOP----
+==================================*/
+
+section.productosDestacadosDesktop {
+    display: block;
+    margin-bottom: 20px;
+}
+
+section.productosDestacadosDesktop h2 {}
+
+section.productosDestacadosDesktop div.container {
+    position: relative;
+}
+
+section.productosDestacadosDesktop div.container i#flechaIzqDesk{
+    position: absolute;
+    top: 110px;
+    left: 70px;
+    font-size: 30px;
+
+}
+section.productosDestacadosDesktop div.container i#flechaDerDesk{
+    position: absolute;
+    top: 110px;
+    right: 70px;
+    font-size: 30px;
+}
+
+/* BLOQUE 1 */
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop1 {
+    position: relative;
+    margin-top: 15px;
+    padding-left: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop1 a.productoVinculo {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop1 a.productoVinculo article.productoDetalle {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: var(--colorPrincipal);
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop1 a.productoVinculo article.productoDetalle img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop1 a.productoVinculo article.productoDetalle p.nombreProducto {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop1 a.productoVinculo article.productoDetalle p.precioProducto {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* BLOQUE 2 */
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop2 {
+    position: relative;
+    margin-top: 15px;
+    padding-left: 30px;
+    display: none;
+    justify-content: space-between;
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop2 a.productoVinculo {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop2 a.productoVinculo article.productoDetalle {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: var(--colorPrincipal);
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop2 a.productoVinculo article.productoDetalle img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop2 a.productoVinculo article.productoDetalle p.nombreProducto {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop2 a.productoVinculo article.productoDetalle p.precioProducto {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* BLOQUE 3 */
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop3 {
+    position: relative;
+    margin-top: 15px;
+    padding-left: 30px;
+    display: none;
+    justify-content: space-between;
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop3 a.productoVinculo {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop3 a.productoVinculo article.productoDetalle {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: var(--colorPrincipal);
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop3 a.productoVinculo article.productoDetalle img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop3 a.productoVinculo article.productoDetalle p.nombreProducto {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+section.productosDestacadosDesktop div.container div.bloqueProductosDesktop3 a.productoVinculo article.productoDetalle p.precioProducto {
+    color: #fff;
+    text-transform: uppercase;
+}
+    
 /*=========================
 ---REDES SOCIALES DESKTOP---
 =========================*/
@@ -285,7 +565,7 @@ div.container {
         color: #fff;
     }
     article.redesDesktop a.instagram {
-        background-image: url("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c5fe0378-6694-42e6-8495-8beff78ac206/instagram-gradient-background-1-normal-636.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210218T234359Z&X-Amz-Expires=86400&X-Amz-Signature=801302cbaf968fd9fa89e0ad4b21a990d948f830d3b3aad98688e98ed4ab2dc1&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22instagram-gradient-background-1-normal-636.png%22");
+        background-image: url("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c5fe0378-6694-42e6-8495-8beff78ac206/instagram-gradient-background-1-normal-636.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210303%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210303T132408Z&X-Amz-Expires=86400&X-Amz-Signature=a77887cfca5cd09a6e7654a9cfdbfc8806ed64eb8ad449220635f4f8445d0b12&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22instagram-gradient-background-1-normal-636.png%22");
         background-color: var(--colorPrincipal);
         border-radius: 140px;
     }

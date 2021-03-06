@@ -22,47 +22,55 @@ header.desktop {
 /*=========================
 -------HEADER MOBILE--------
 =========================*/    
-header.mobile {
-    height: 60px;
-    padding: 0 20px;
+header.mobile {}
+
+header.mobile div.headerMobileArriba {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
 }
-header.mobile div.bars {
-    position: relative;
-    width: 40px;
+
+header.mobile div.headerMobileArriba a.logo {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+header.mobile div.headerMobileArriba img {
     height: 40px;
 }
-header.mobile div.bars a {}
-header.mobile div.bars a i {
-    position: absolute;
-    top: 8px;
-    right: 10px;
+
+header.mobile div.headerMobileArriba div.iconos {}
+header.mobile div.headerMobileArriba div.iconos a.searchIcon {
+    margin-top: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+header.mobile div.headerMobileArriba div.iconos a.searchIcon i.fa-search {
+    color: black;
     font-size: 25px;
 }
 
-header.mobile a {
-    color: black;
+header.mobile div.headerMobileArriba div.iconos a.userIcon {
+    margin-top: 10px;
+    margin-right: 10px;
+    text-decoration: none;
 }
-header.mobile a img {
-    width: 250px;
+header.mobile div.headerMobileArriba div.iconos a.userIcon i.fa-user-circle {
+    color: black;
+    font-size: 25px;
 }
 
-header.mobile div.search {
-    position: relative;
-    width: 40px;
-    height: 40px;
+header.mobile div#searchBar {
+    display: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #ddd;
 }
-header.mobile div.search a {
-    color: black;
+header.mobile input#search {
+    width: 90%;
+    text-align: center;
+    color: lightslategrey;
 }
-header.mobile div.search a i {
-    position: absolute;
-    top: 20px;
-    right: 5px;
-}
+
 
 /*=============================
 --SECTION BAR. DE NAV. DESKTOP--
@@ -108,7 +116,7 @@ footer.footerMobile a.whatsapp i {
 }
 footer.footerMobile a.instagram {
     margin-left: 10px;
-    background-image: url("https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc5fe0378-6694-42e6-8495-8beff78ac206%2Finstagram-gradient-background-1-normal-636.png?table=block&id=4824b22f-48d1-423f-b327-40b63fb81d82&width=2720&userId=5a35f030-876c-4783-a4db-f50e00c4410d&cache=v2");
+    background-image: url("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c5fe0378-6694-42e6-8495-8beff78ac206/instagram-gradient-background-1-normal-636.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210303%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210303T132408Z&X-Amz-Expires=86400&X-Amz-Signature=a77887cfca5cd09a6e7654a9cfdbfc8806ed64eb8ad449220635f4f8445d0b12&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22instagram-gradient-background-1-normal-636.png%22");
     background-color: var(--colorPrincipal);
     border-radius: 140px;
 }
