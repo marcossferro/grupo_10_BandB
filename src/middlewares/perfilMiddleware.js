@@ -1,9 +1,11 @@
 function perfilMiddleware (req, res, next){
     if(req.session.usuarioLogueado == undefined){
         console.log(req.session.usuarioLogueado)
-        res.send("Debe iniciar sesion primero")
+        // alert('Por favor inicie sesion!')
+        res.render("users/login")
     }else if(!req.session.usuarioLogueado.id == req.params.id){
-        res.send("Usted no deberia estar aqui")
+        // alert('Usted ya esta Logeado')
+        res.render("index",{usuarioLogueado: usuario[0],producto: producto});
     }else{
         next()
     }

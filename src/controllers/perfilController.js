@@ -1,10 +1,5 @@
-const path = require("path")
-const fs = require("fs");
 const bcrypt = require("bcryptjs");
 const db = require ("../database/models")
-
-var usuarios = fs.readFileSync(path.join(__dirname, "../data/usuarios.json"), "utf8");
-usuarios = JSON.parse(usuarios);
 
 module.exports = {
     perfil: function(req,res){
@@ -17,11 +12,8 @@ module.exports = {
       })
     },
     edit: function(req, res){
-
         let usuario = db.Usuario.findByPk(req.params.id)
-        .then(function(usuario){
-            return usuario
-      });
+        .then(function(usuario){return usuario});
 
         let avatarAModificar = usuario.avatar;
         let contraseñaAModificar = usuario.contraseña;

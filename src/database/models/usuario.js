@@ -29,6 +29,7 @@ module.exports= function(sequelize, dataTypes){
         },
         tipo_usuario: {
             type: dataTypes.INTEGER(10).UNSIGNED,
+            default : 2,
             allowNull: false
         }
     }
@@ -40,7 +41,7 @@ module.exports= function(sequelize, dataTypes){
         paranoid: true
     }
     
-    let Usuario = sequelize.define(alias, cols, config);
+    const Usuario = sequelize.define(alias, cols, config);
 
     //Usuario.associate = function(models){
       //  Usuario.belongsTo(models.TipoUsuario, {

@@ -1,31 +1,38 @@
-const fs = require("fs");
-const path = require("path");
 const bcrypt = require("bcryptjs");
-const { check, validationResult, body } = require ("express-validator");
-
-var usuarios = fs.readFileSync(path.join(__dirname, "../data/usuarios.json"), "utf8");
-usuariosJson = JSON.parse(usuarios);
+const {validationResult} = require ("express-validator");
+const db = require('../database/models/index');
 
 module.exports = {
     register: function(req,res){
-        res.render("users/register", {
-            usuariosJson: usuariosJson
-        })
+        res.render("users/register")
     },
     create: function(req, res){
         let errores = validationResult(req);
 
         if(errores.isEmpty()){
-            usuariosJson.push({
-                id: req.body.id,
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                email: req.body.email,
-                contraseña: bcrypt.hashSync(req.body.contraseña, 12),
-                avatar: req.files[0].filename
+            db.Usuario.findOne({
+                where: {
+                    email: req.body.email
+                }
             })
-            fs.writeFileSync(path.join(__dirname, "../data/usuarios.json"), JSON.stringify(usuariosJson))
-            res.send("Registrado!")
+            .then(function(usuarioBuscado){
+                if(usuarioBuscado == null){
+                    db.Usuario.create({
+                        id: req.body.id,
+                        nombre: req.body.nombre,
+                        apellido: req.body.apellido,
+                        email: req.body.email,
+                        contraseña: bcrypt.hashSync(req.body.contraseña, 12),
+                        avatar: req.files[0].filename,
+                        tipo_usuario: 2
+                    })
+                    .then(function(){
+                        // req.session.usuarioLogueado = usuario[0].dataValues;
+                        res.redirect("/")})
+                }else{
+                    return res.render("users/login")
+                }
+            })
         }else{
             return res.render("users/register", {errores: errores.errors})
         }    

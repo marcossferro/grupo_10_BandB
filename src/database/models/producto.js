@@ -36,7 +36,7 @@ module.exports= function(sequelize, dataTypes){
         paranoid: true
     }
     
-    let Producto = sequelize.define(alias, cols, config);
+    const Producto = sequelize.define(alias, cols, config);
 
     //Producto.associate = function(models){
       //  Producto.belongsTo(models.Categoria, {

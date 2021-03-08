@@ -20,7 +20,7 @@ module.exports= function(sequelize, dataTypes){
         paranoid: true
     }
     
-    let TipoUsuario = sequelize.define(alias, cols, config);
+    const TipoUsuario = sequelize.define(alias, cols, config);
 
     //TipoUsuario.associate = function(models){
       //  TipoUsuario.hasMany(models.Usuario, {
