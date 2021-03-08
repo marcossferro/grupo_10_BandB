@@ -1,10 +1,10 @@
 module.exports= 
 {
-  "development": {
-    "username": "root",
-    "password": null,
-    "database": "grupo10",
-    "host": "127.0.0.1",
+  "production": {
+    "username": "228979",
+    "password": "Maradona_11",
+    "database": "bandbclima_grupo10",
+    "host": "mysql-bandbclima.alwaysdata.net",
     "dialect": "mysql"
   },
   "test": {
@@ -14,7 +14,7 @@ module.exports=
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
-  "production": {
+  "development": {
     "username": "root",
     "password": null,
     "database": "database_production",
