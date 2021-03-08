@@ -1,7 +1,7 @@
 module.exports= 
 {
   "production": {
-    "username": "228979",
+    "username": "bandbclima",
     "password": "Maradona_11",
     "database": "bandbclima_grupo10",
     "host": "mysql-bandbclima.alwaysdata.net",
