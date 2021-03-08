@@ -38,35 +38,65 @@ header.mobile div.headerMobileArriba img {
     height: 40px;
 }
 
-header.mobile div.headerMobileArriba div.iconos {}
-header.mobile div.headerMobileArriba div.iconos a.searchIcon {
-    margin-top: 10px;
-    margin-right: 10px;
-    text-decoration: none;
+header.mobile div.headerMobileArriba div.iconos {
+    display: flex;
+    align-items: center;
 }
-header.mobile div.headerMobileArriba div.iconos a.searchIcon i.fa-search {
+header.mobile div.headerMobileArriba div.iconos i.fa-search {
+    margin-right: 10px;
     color: black;
     font-size: 25px;
 }
 
 header.mobile div.headerMobileArriba div.iconos a.userIcon {
-    margin-top: 10px;
-    margin-right: 10px;
     text-decoration: none;
 }
 header.mobile div.headerMobileArriba div.iconos a.userIcon i.fa-user-circle {
+    margin-right: 10px;
     color: black;
     font-size: 25px;
 }
 
-header.mobile div.headerMobileArriba div.iconos a.userAvatarMobile {
+header.mobile div.headerMobileArriba div.iconos img#imgPerfil {
     margin-right: 10px;
-    text-decoration: none;
-}
-header.mobile div.headerMobileArriba div.iconos a.userAvatarMobile img {
     width: 25px;
     height: 25px;
-    border-radius: 30px;
+    border-radius: 100px;
+}
+
+header.mobile div.user {
+    display: none;
+    width: 100%;
+    height: 60px;
+    background-color: #424242;
+}
+header.mobile div.user ul {
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+}
+header.mobile div.user ul li.miperfil {
+    height: 50%;
+}
+header.mobile div.user ul li.miperfil a {}
+header.mobile div.user ul li.miperfil a button.misdatos {
+    width: 95%;
+    height: 90%;
+    background-color: #424242;
+    color: #fff;
+}
+header.mobile div.user ul li.logOut {
+    height: 50%;
+}
+header.mobile div.user ul li.logOut form{
+    width: 100%;
+    height: 100%;
+}
+header.mobile div.user ul li form button.cierreDeSesion {
+    width: 95%;
+    height: 90%;
+    background-color: #424242;
+    color: #fff;
 }
 
 header.mobile form#searchBar {

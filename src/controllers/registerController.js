@@ -18,7 +18,6 @@ module.exports = {
             .then(function(usuarioBuscado){
                 if(usuarioBuscado == null){
                     db.Usuario.create({
-                        id: req.body.id,
                         nombre: req.body.nombre,
                         apellido: req.body.apellido,
                         email: req.body.email,

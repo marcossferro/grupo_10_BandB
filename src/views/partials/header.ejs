@@ -41,19 +41,30 @@
         
         <div class="iconos">
             
-            <a class="searchIcon" id="searchIcon">
-                <i class="fas fa-search"></i>
-            </a>
+            <i id="searchIcon" class="fas fa-search"></i>
 
             <% if(typeof usuarioLogueado == 'undefined') { %>
             <a href="/login" class="userIcon"><i class="far fa-user-circle"></i></a>
             <% } else { %>
-            <a href="/perfil/<%= usuarioLogueado.id%>" class="userAvatarMobile"><img src="imgAvatar/<%= usuarioLogueado.avatar %>"></a>    
+            <img id= "imgPerfil" src="imgAvatar/<%= usuarioLogueado.avatar %>">    
             <% } %>
 
         </div>
 
     </div>
+
+    <% if(typeof usuarioLogueado != "undefined"){ %>
+        <div class="user" id="user">
+            <ul>
+                <li class="miperfil"><a href="/perfil/<%= usuarioLogueado.id%>"><button class="misdatos">Mis datos</button></a></li>
+                <li class="logOut">
+                    <form id="userLogOut" action="" method="POST">
+                        <button id= "logOut" class= "cierreDeSesion" onclick="closeSession('<%= usuarioLogueado.id %>')">Cerrar sesión</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    <% } %>
 
     <form id="searchBar" action="/search">
         <input type="text" name="search" id="search" placeholder="Encuentra lo que estas buscando">

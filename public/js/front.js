@@ -1,6 +1,6 @@
 window.addEventListener("load", function(){
 
-  // Funcion para el banner
+    // Funcion para el banner
     var myIndex = 0;
     carousel();
     
@@ -25,6 +25,18 @@ window.addEventListener("load", function(){
         searchBar.style.display = "none"
       }else{
         searchBar.style.display = "block"
+      }
+    });
+
+    // Funcion para perfil y cierre de sesion
+    let imgPerfil = document.getElementById("imgPerfil");
+    let divUser = document.getElementById("user");
+    
+    imgPerfil.addEventListener("click", function(){
+      if(divUser.style.display == "block"){
+        divUser.style.display = "none"
+      }else{
+        divUser.style.display = "block"
       }
     });
 

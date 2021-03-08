@@ -1,6 +1,6 @@
 const db = require("../database/models")
 
-function invitadoMiddleware (req, res, next){
+function logueadoMiddleware (req, res, next){
     if(req.session.usuarioLogueado == undefined) {
         next();
     }else{
@@ -57,16 +57,29 @@ function invitadoMiddleware (req, res, next){
             res.render("productCart", {usuarioLogueado: req.session.usuarioLogueado})
 
         }else if(req.originalUrl == "/perfil/" + req.params.id){
-
-            // Llamo a usuario por su PK desde la db
                 db.Usuario.findByPk(req.params.id)
-                .then(function(usuario){ 
+                .then(function(usuario){
                     res.render("users/perfil", {usuarios: usuario, usuarioLogueado: req.session.usuarioLogueado})
                 })
+        }else if(req.originalUrl == "/search?search=" + req.query.search){
+            db.Producto.findAll({
+                where:{
+                    nombre: {
+                        [db.Sequelize.Op.substring]: req.query.search
+                    }
+                }
+            })
+            .then(function(producto){
+                if(producto.length != 0){
+                res.render("products/productList", {productos: producto, usuarioLogueado: req.session.usuarioLogueado})
+                }else{
+                    res.send("No se encontraron productos")
+                }
+            })
         }else{
             res.send("Esta pagina no esta disponible")
         }
     }
 }
 
-module.exports = invitadoMiddleware
+module.exports = logueadoMiddleware
