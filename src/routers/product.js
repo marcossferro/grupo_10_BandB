@@ -25,10 +25,10 @@ router.get('/create', editCreateValidationMiddleware ,productController.createVi
 router.get('/:id', logueadoMiddleware ,productController.product)
 router.post('/:id', cierreSesionMiddleware, productController.product)
 
-router.post('/create', upload.any(), cierreSesionMiddleware ,productController.create)
+router.post('/create', upload.any(), cierreSesionMiddleware, productController.create)
 
-router.get('/:id/edit', editCreateValidationMiddleware ,productController.editView)
-router.post('/:id/edit', cierreSesionMiddleware ,productController.editView)
+router.get('/:id/edit', editCreateValidationMiddleware, productController.editView)
+router.post('/:id/edit', cierreSesionMiddleware, productController.editView)
 router.put('/:id/edit', upload.any(), productController.edit)
 router.delete('/:id/delete', productController.delete)
 

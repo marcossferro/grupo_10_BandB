@@ -4,8 +4,8 @@ const db = require("../database/models")
 
 
 // Llamo a producto desde el Json
-let productos = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
-productosJson = JSON.parse(productos);
+// let productos = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
+// productosJson = JSON.parse(productos);
 
 function invitadoMiddleware (req, res, next){
     if(req.session.usuarioLogueado == undefined) {
@@ -18,14 +18,20 @@ function invitadoMiddleware (req, res, next){
         }else if(req.originalUrl == "/register"){
             res.render("yaEstasLogueado", {usuarioLogueado: req.session.usuarioLogueado})
         }else if(req.originalUrl == "/products"){
-            res.render("products/productList",{usuarioLogueado: req.session.usuarioLogueado, productos: productosJson})
+            db.Producto.findAll()
+        .then(function(product){
+            res.render("products/productList", {productos: product, usuarioLogueado: req.session.usuarioLogueado})})
         }else if(req.originalUrl == "/products/" + req.params.id){
-            let idProduct = req.params.id - 1;
-            let product = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
-            product = JSON.parse(product); 
-            let productToEdit = product[idProduct]
+            db.Producto.findByPk(req.params.id)
+            .then(function(product){
+                res.render("products/product", {productos: product, usuarioLogueado: req.session.usuarioLogueado})})
+            // let idProduct = req.params.id - 1;
+            // let product = fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf8");
+            // product = JSON.parse(product); 
+            // let productToEdit = product[idProduct]
             
-            res.render("products/product", {productos: productToEdit, usuarioLogueado: req.session.usuarioLogueado})
+        
+            
         }else if(req.originalUrl == "/productCart"){
             res.render("productCart", {usuarioLogueado: req.session.usuarioLogueado})
         }else if(req.originalUrl == "/perfil/" + req.params.id){
