@@ -20,6 +20,9 @@ var storage = multer.diskStorage({
 const productController = require("../controllers/productController")
 
 router.get('/', logueadoMiddleware, productController.productList)
+router.get("/aireacondicionado", logueadoMiddleware, productController.aireAcon)
+router.get("/calefaccion", logueadoMiddleware, productController.calefaccion)
+router.get("/aguacaliente", logueadoMiddleware, productController.aguaCaliente)
 router.post('/', cierreSesionMiddleware, productController.productList)
 router.get('/create', editCreateValidationMiddleware ,productController.createView)
 router.get('/:id', logueadoMiddleware ,productController.product)

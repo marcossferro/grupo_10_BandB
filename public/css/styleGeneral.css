@@ -59,13 +59,23 @@ header.mobile div.headerMobileArriba div.iconos a.userIcon i.fa-user-circle {
     font-size: 25px;
 }
 
-header.mobile div#searchBar {
+header.mobile div.headerMobileArriba div.iconos a.userAvatarMobile {
+    margin-right: 10px;
+    text-decoration: none;
+}
+header.mobile div.headerMobileArriba div.iconos a.userAvatarMobile img {
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+}
+
+header.mobile form#searchBar {
     display: none;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #ddd;
 }
-header.mobile input#search {
+header.mobile form#searchBar input#search {
     width: 90%;
     text-align: center;
     color: lightslategrey;
@@ -146,50 +156,98 @@ footer.footerMobile a.instagram i {
     -------HEADER DESKTOP-------
     =========================*/
     header.desktop {
+        width: 100%;
         display: flex;
-        justify-content: space-between;
         align-items: center;
         height: 100px;
     }
-    header.desktop a.logo {}
-    header.desktop a.logo img {}
-    header.desktop form {}
+    header.desktop a.logo {
+        width: 30%;
+    }
+    header.desktop a.logo img {
+        width: 100%;
+    }
+    header.desktop form {
+        width: 45%;
+    }
     header.desktop form input {
-        width: 280px;
+        width: 85%;
         height: 30px;
         border-radius: 5px 0 0 5px;
         text-align: center;
     }
     header.desktop form button {
-        width: 30px;
+        width: 10%;
         height: 30px;
         border-radius: 0 5px 5px 0;
+        background-color: #fff;
     }
     header.desktop form button i {
         font-size: 15px;
     }
-    header.desktop nav {}
-    header.desktop nav ul {
+    header.desktop nav.default {
+        width: 25%;
+    }
+    header.desktop nav.default ul.default {
+        width: 100%;
         display: flex;
-        list-style-type: none;
-        justify-content: space-between;
-    }
-    header.desktop nav ul li {
-        margin: 0px 10px;
-    }
-    header.desktop nav ul li :first-child {
-        margin-left: 0px;
-    }
-    header.desktop nav ul li a {
-        text-decoration: none;
+        justify-content: space-around;
+        list-style: none;
         text-transform: uppercase;
+    }
+    header.desktop nav.default ul.default li {}
+    header.desktop nav.default ul.default li a {
+        text-decoration: none;
         color: black;
     }
-    header.desktop nav ul form button.cierreDeSesion {
-        width: 100px;
-        border-radius: 0px;
+
+    /*Con session*/
+
+    header.desktop nav.sessionOk {
+        width: 25%;
+    }
+    header.desktop nav.sessionOk ul.sessionOk {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        list-style: none;
+    }
+    header.desktop nav.sessionOk ul.sessionOk a.perfil {
+        width: 20%;
+        text-decoration: none;
+        color: black;
+    }
+    header.desktop nav.sessionOk ul.sessionOk a.perfil li.userName {
+        width: 50%;
+    }
+    header.desktop nav.sessionOk ul.sessionOk a.perfil li.userAvatar{
+        width: 30%;
+    }
+    header.desktop nav.sessionOk ul.sessionOk a.perfil li.userAvatar img {
+        width: 100%;
+        border-radius: 100px;  
+    }
+    header.desktop nav.sessionOk ul.sessionOk li.contacto {
+        width: 25%;
+    }
+    header.desktop nav.sessionOk ul.sessionOk li.contacto a.contacto {
+        text-decoration: none;
+        color: black;
+        text-transform: uppercase;
     }
 
+    header.desktop nav.sessionOk ul.sessionOk li.cierreSesion {
+        width: 35%;
+    }
+    header.desktop nav.sessionOk ul.sessionOk li.cierreSesion form {
+        width: 100%;
+    }
+    header.desktop nav.sessionOk ul.sessionOk li.cierreSesion form button.cierreDeSesion {
+        width: 100%;
+        border-radius: 10px;
+        background-color: #fff;
+    }
 
     
 /*=============================

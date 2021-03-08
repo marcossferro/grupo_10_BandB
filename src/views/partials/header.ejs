@@ -2,25 +2,31 @@
 <div class="container">    
     <header class="desktop">
         <a class="logo" href="/"><img src="/img/logo_B&B.jpg"></a>
-        <form action="" method="">
-            <input type="text" name="Search" placeholder="Encuentra tu próximo Aire Acondicionado"><button type="submit"><i class="fas fa-search"></i></button>
+        <form action="/search">
+            <input type="text" name="search" placeholder="Encuentra lo que estas buscando">
+            <button type="submit"><i class="fas fa-search"></i></button>
         </form>
         <% if(typeof usuarioLogueado == 'undefined') { %>
-            <nav>
-                <ul>
+            <nav class="default">
+                <ul class="default">
                     <li><a href="login">Login</a></li>
                     <li><a href="register">Registro</a></li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </nav>
         <% } else { %>
-            <nav>
-                <ul>
-                    <a href="/perfil/<%= usuarioLogueado.id%>"><li><%= usuarioLogueado.nombre %>, bienvenido!</li></a>
-                    <li><a href="#">Contacto</a></li>
-                    <form action="" method="POST">
-                        <button class= "cierreDeSesion" onclick="closeSession('<%= usuarioLogueado.id %>')">Cerrar sesión</button>
-                    </form>
+            <nav class="sessionOk">
+                <ul class="sessionOk">
+                    <a class="perfil" href="/perfil/<%= usuarioLogueado.id%>">
+                        <li class="userAvatar"><img src="imgAvatar/<%= usuarioLogueado.avatar %>"></li>
+                        <li class="userName">Bienvenido <%= usuarioLogueado.nombre %></li>
+                    </a>
+                    <li class="contacto"><a class= "contacto" href="#">Contacto</a></li>
+                    <li class="cierreSesion">
+                        <form action="" method="POST">
+                            <button class= "cierreDeSesion" onclick="closeSession('<%= usuarioLogueado.id %>')">Cerrar sesión</button>
+                        </form>
+                    </li>
                 </ul>
             </nav>
               
@@ -39,13 +45,18 @@
                 <i class="fas fa-search"></i>
             </a>
 
+            <% if(typeof usuarioLogueado == 'undefined') { %>
             <a href="/login" class="userIcon"><i class="far fa-user-circle"></i></a>
+            <% } else { %>
+            <a href="/perfil/<%= usuarioLogueado.id%>" class="userAvatarMobile"><img src="imgAvatar/<%= usuarioLogueado.avatar %>"></a>    
+            <% } %>
 
         </div>
 
     </div>
 
-    <div id="searchBar">
-        <input type="text" id="search" value="Encuentra lo que estas buscando">
-    </div>
+    <form id="searchBar" action="/search">
+        <input type="text" name="search" id="search" placeholder="Encuentra lo que estas buscando">
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
 </header>

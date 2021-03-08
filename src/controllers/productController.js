@@ -45,5 +45,35 @@ module.exports = {
         db.Producto.destroy({
             where: {id: req.params.id}})
         .then(function(){res.redirect("/products")})
+    },
+    aireAcon: function(req, res){
+        db.Producto.findAll({
+            where:{
+                categoria_id: "1"
+            }
+        })
+      .then(function(producto){
+        res.render("products/productList", {productos: producto})
+      })
+    },
+    calefaccion: function(req, res){
+        db.Producto.findAll({
+            where:{
+                categoria_id: "2"
+            }
+        })
+      .then(function(producto){
+        res.render("products/productList", {productos: producto})
+      })
+    },
+    aguaCaliente: function(req, res){
+        db.Producto.findAll({
+            where:{
+                categoria_id: "3"
+            }
+        })
+      .then(function(producto){
+        res.render("products/productList", {productos: producto})
+      })
     }
 }

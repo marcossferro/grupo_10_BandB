@@ -27,14 +27,6 @@ window.addEventListener("load", function(){
         searchBar.style.display = "block"
       }
     });
-    
-    // Funcion para borrar el value por defecto de la barra de busqueda
-    let valueInput = document.getElementById("search");
-
-    valueInput.addEventListener("click", function(){
-      valueInput.value = "";
-      valueInput.style.color = "black"
-    })
 
     // Funcion para carrete de productos destacados Tablet
 

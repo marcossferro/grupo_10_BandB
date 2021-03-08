@@ -1,0 +1,144 @@
+:root {
+    --colorPrincipal: #6EC1E4;
+    --marginPrincipal: 60px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Barlow";
+}
+
+/*TITULAR PERFIL DESKTOP*/
+
+section.tituloPerfilDesk {
+    display: none;
+}
+
+/*TITULAR PERFIL MOBILE*/
+
+section.tituloPerfil{
+        margin-top: 15px;
+        margin-bottom: 20px;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        background-color: var(--colorPrincipal);
+}
+section.tituloPerfil img.imgPerfil{
+    width: 90px;
+    height: 90px;
+    border-radius: 60px;
+}
+section.tituloPerfil h1.h1Perfil{
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/*FORM EDIT PERFIL*/
+
+section.sectionPerfil {}
+section.sectionPerfil h1.h1SectionPerfil {
+    text-transform: uppercase;
+}
+section.sectionPerfil p.pSectionPerfil {}
+
+form.formEditPerfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form.formEditPerfil input {
+    width: 230px;
+    height: 25px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+form.formEditPerfil label#id {
+    display: none;
+}
+form.formEditPerfil input#id {
+    display: none;
+}
+
+form.formEditPerfil input#email {
+    text-transform: lowercase;
+}
+
+form.formEditPerfil p.pFormEditPerfil {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form.formEditPerfil input.inputEnviar {
+    width: 100px;
+    height: 35px;
+}
+
+/*FORM DELETE PERFIL*/
+section.sectionPerfil p.pDeletePerfil {
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+section.sectionPerfil form.formDeletePerfil {
+    margin-bottom: 30px;
+}
+section.sectionPerfil form.formDeletePerfil a {}
+section.sectionPerfil form.formDeletePerfil a button#deleteButton {
+    width: 300px;
+    height: 20px;
+}
+
+/*------------DESKTOP-------------*/
+
+@media (min-width: 1024px) {
+/*TITULAR PERFIL MOBILE*/
+
+section.tituloPerfil {
+    display: none;
+}
+
+/*TITULAR PERFIL MOBILE*/
+
+div.containerPerfil{
+    margin: 0 150px;
+    background-color: lightgray;
+}
+
+section.tituloPerfilDesk{
+        display: block;
+        padding: 20px 0;
+        width: 100%;
+        background-color: var(--colorPrincipal);
+}
+section.tituloPerfilDesk img.imgPerfilDesk{
+    margin-bottom: 25px;
+    width: 250px;
+    height: 250px;
+    border-radius: 140px;
+}
+section.tituloPerfilDesk h1.h1PerfilDesk{
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/*FORM EDIT PERFIL*/
+
+section.sectionPerfil h1.h1SectionPerfil {
+    padding-top: 10px;
+}
+
+/*FORM DELETE PERFIL*/
+
+section.sectionPerfil form.formDeletePerfil {
+    margin-bottom: 0;
+}
+}

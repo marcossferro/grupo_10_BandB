@@ -13,64 +13,70 @@
 <!------SECTION BAR. DE NAV. DESKTOP------>
 <%- include("../partials/barraDeNavegacion.ejs") %>
     
-    <!------FORM DE REGISTRO------>
-    
-    <section class="editProducts">
-        <h1>MI PERFIL</h1>
-        <br>        
-        <h3>¿Quieres editar tu perfil?</h3>
-        <br>
-        <div>
-            <form action="/perfil/<%= usuarios.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
-            <div id = labelcontainer>
-                <label for="id">ID:</label>
+    <!------TITULAR PERFIL MOBILE------>
+    <section class="tituloPerfil">
+        <img class="imgPerfil" src="/imgAvatar/<%=usuarioLogueado.avatar%>">
+
+        <h1 class="h1Perfil">Bienvenido <%= usuarios.nombre%></h1>
+    </section>
+
+    <!------TITULAR PERFIL DESKTOP------>
+    <section class="tituloPerfilDesk">
+        <img class="imgPerfilDesk" src="/imgAvatar/<%=usuarioLogueado.avatar%>">
+
+        <h1 class="h1PerfilDesk">Bienvenido <%= usuarios.nombre%></h1>
+    </section>
+
+    <!------FORM EDIT PERFIL------>
+    <div class="containerPerfil">    
+        <section class="sectionPerfil">
+            
+            <h1 class="h1SectionPerfil" >datos de cuenta</h1>
+            <br>        
+            
+            <p class="pSectionPerfil">¿Quieres editar tus datos?</p>
+            <br>
+            
+            <form class="formEditPerfil" action="/perfil/<%= usuarios.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                
+                <label id="id" for="id">ID:</label>
                 <input id= "id" name="id" type="number" value="<%= usuarios.id %>" readonly>
-            </div>
-            <div>
+                
                 <label for="nombre">Nombre:</label>
                 <input id= "nombre" name="nombre" type="text" value="<%= usuarios.nombre%>">
-            </div>
-                <br>
-            <div>
+                
                 <label for="apellido">Apellido:</label>
                 <input id= "apellido" name="apellido" type="text" value="<%= usuarios.apellido%>">
-            </div>
-                <br>
-            <div>
+                
                 <label for="email">Email:</label>
                 <input id= "email" name="email" type="text" value="<%= usuarios.email%>">
-            </div>
-                <br>
-            <div>
+                
                 <label for="avatar">Avatar:</label>
-                <input type="file" name="avatar" value="<%= usuarios.avatar%>">
-            </div>
-                <br>
-                <p>¿Quieres cambiar la contraseña?</p>
-                <br>
-            <div>
+                <input id="avatar" type="file" name="avatar" value="<%= usuarios.avatar%>">
+                
+                <p class="pFormEditPerfil">¿Quieres cambiar la contraseña?</p>
+                
                 <label for="contraseñaActual">Contraseña Actual:</label>
                 <input id= "contraseñaActual" name="contraseñaActual" type="password">
-            </div>
-            <div>
+                
                 <label for="contraseña">Contraseña Nueva:</label>
                 <input id= "contraseña" name="contraseña" type="password">
-            </div>
-            <div>
+                
                 <label for="repassword">Repite la Contraseña:</label>
                 <input id= "repassword" name="repassword" type="password">
-            </div>
-                <br>
-            <div>
-                <input type="submit" value="Editar">
-            </div>
-        </form>
-
-        <form action="/perfil/<%= usuarios.id %>/delete?_method=DELETE" method="POST" enctype="multipart/form-data">
-            <a href="/perfil/<%= usuarios.id %>/delete"><button id="deleteButton"><i class="fas fa-trash-alt"></i></button></a>    
-        </form>
-
-    </section>
+                
+                <input class="inputEnviar" type="submit" value="Editar">
+            </form>
+            
+            <!------FORM DELETE PERFIL------>
+            <p class="pDeletePerfil">¿Quieres desactivar tu cuenta?</p>
+            
+            <form class="formDeletePerfil" action="/perfil/<%= usuarios.id %>/delete?_method=DELETE" method="POST" enctype="multipart/form-data">
+                <a href="/perfil/<%= usuarios.id %>/delete"><button id="deleteButton">Desactivar Cuenta</button></a>    
+            </form>
+            
+        </section>
+    </div>
         
         <!------REDES SOCIALES DESKTOP------>
     <div class="container">
