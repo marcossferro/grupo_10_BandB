@@ -10,11 +10,8 @@ module.exports = {
         let errores = validationResult(req);
 
         if(errores.isEmpty()){
-            db.Usuario.findOne({
-                where: {
-                    email: req.body.email
-                }
-            })
+            db.Usuario.findAll({
+                where: {email: req.body.email}})
             .then(function(usuarioBuscado){
                 if(usuarioBuscado == null){
                     db.Usuario.create({
