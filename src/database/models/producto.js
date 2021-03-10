@@ -38,12 +38,11 @@ module.exports= function(sequelize, dataTypes){
     
     const Producto = sequelize.define(alias, cols, config);
 
-    //Producto.associate = function(models){
-      //  Producto.belongsTo(models.Categoria, {
-        //    as: "categoria",
-          //  foreingKey: "id"
-        //})
-    //}
+    Producto.associate = function(models){
+        Producto.hasOne(models.Categoria, {
+            foreingKey: "id"
+        })
+    }
 
     return Producto
 

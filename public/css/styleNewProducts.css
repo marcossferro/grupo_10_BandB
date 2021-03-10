@@ -108,8 +108,8 @@ section.barDeNav {
             color: #fff;
         }
         article.redesDesktop a.instagram {
-            background-image: url("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c5fe0378-6694-42e6-8495-8beff78ac206/instagram-gradient-background-1-normal-636.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210218%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210218T234359Z&X-Amz-Expires=86400&X-Amz-Signature=801302cbaf968fd9fa89e0ad4b21a990d948f830d3b3aad98688e98ed4ab2dc1&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22instagram-gradient-background-1-normal-636.png%22");
             background-color: var(--colorPrincipal);
+            background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
             border-radius: 140px;
         }
         article.redesDesktop a.instagram i {

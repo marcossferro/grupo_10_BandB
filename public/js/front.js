@@ -28,18 +28,6 @@ window.addEventListener("load", function(){
       }
     });
 
-    // Funcion para perfil y cierre de sesion
-    let imgPerfil = document.getElementById("imgPerfil");
-    let divUser = document.getElementById("user");
-    
-    imgPerfil.addEventListener("click", function(){
-      if(divUser.style.display == "block"){
-        divUser.style.display = "none"
-      }else{
-        divUser.style.display = "block"
-      }
-    });
-
     // Funcion para carrete de productos destacados Tablet
 
     let flechaIzq = document.getElementById("flechaIzq");
@@ -123,6 +111,18 @@ window.addEventListener("load", function(){
         destacadosUnoDesk.style.display = "none"
         destacadosDosDesk.style.display = "flex"
         destacadosTresDesk.style.display = "none"
+      }
+    });
+
+    // Funcion para perfil y cierre de sesion
+    let imgPerfil = document.getElementById("imgPerfil");
+    let divUser = document.getElementById("user");
+    
+    imgPerfil.addEventListener("click", function(){
+      if(divUser.style.display == "block"){
+        divUser.style.display = "none"
+      }else{
+        divUser.style.display = "block"
       }
     });
 });

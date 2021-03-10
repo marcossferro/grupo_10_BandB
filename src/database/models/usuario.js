@@ -43,12 +43,11 @@ module.exports= function(sequelize, dataTypes){
     
     const Usuario = sequelize.define(alias, cols, config);
 
-    //Usuario.associate = function(models){
-      //  Usuario.belongsTo(models.TipoUsuario, {
-        //    as: "tiposUsuario",
-          //  foreingKey: "id"
-        //})
-    //}
+    Usuario.associate = function(models){
+        Usuario.hasOne(models.TipoUsuario, {
+            foreingKey: "id"
+        })
+    }
 
     return Usuario
 
