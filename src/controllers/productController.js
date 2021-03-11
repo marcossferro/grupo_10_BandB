@@ -1,3 +1,4 @@
+const {validationResult} = require ("express-validator");
 const db = require("../database/models")
 
 module.exports = {
@@ -9,15 +10,22 @@ module.exports = {
         res.render("products/newProducts")
     },
     create: function(req, res){
+        let errores = validationResult(req)
         
-        db.Producto.create({
-            nombre: req.body.nombre,
-            detalle: req.body.detalle,
-            imagen: req.files[0].filename,
-            categoria_id: req.body.categoria_id,
-            precio: req.body.precio
-        })
-        .then(function(){res.redirect("/products")})
+        if(errores.isEmpty()){
+            db.Producto.create({
+                nombre: req.body.nombre,
+                detalle: req.body.detalle,
+                imagen: req.files[0].filename,
+                categoria_id: req.body.categoria_id,
+                precio: req.body.precio
+            })
+            .then(function(){
+                res.redirect("/products")
+            })
+        }else{
+            res.render("products/editProducts", {usuarioLogueado: req.session.usuarioLogueado, errores: errores.mapped()})
+        }
     },
     productList: function(req,res){
         db.Producto.findAll()
@@ -29,18 +37,29 @@ module.exports = {
     },
     edit: function(req, res){
         var imagenGuardada = db.Producto.findByPk(req.params.id)
-        .then(function(producto){return producto})
-
-        db.Producto.update({
-            nombre: req.body.nombre,
-            detalle: req.body.detalle,
-            imagen: (req.files.length != 0) ? req.files[0].filename : imagenGuardada.imagen,
-            categoria_id: req.body.categoria_id,
-            precio: req.body.precio
-        }, {
-            where: {id: req.params.id}
+        .then(function(producto){
+            return producto
         })
-        .then(function(){res.redirect("/products")})
+
+        let errores = validationResult(req)
+
+        if(errores.isEmpty()){
+            db.Producto.update({
+                nombre: req.body.nombre,
+                detalle: req.body.detalle,
+                imagen: (req.files.length != 0) ? req.files[0].filename : imagenGuardada.imagen,
+                categoria_id: req.body.categoria_id,
+                precio: req.body.precio
+            }, {
+                where: {id: req.params.id}
+            })
+            .then(function(){res.redirect("/products")})
+        }else{
+            db.Producto.findByPk(req.params.id)
+            .then(function(producto){
+                res.render("products/editProducts", {usuarioLogueado: req.session.usuarioLogueado, productos: producto, errores: errores.mapped()})
+            })
+        }
     },
     delete: function(req, res){
         db.Producto.destroy({

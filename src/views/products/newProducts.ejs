@@ -22,21 +22,41 @@
         <br>
         <div>
             <form id="form_newProduct" action="" method="POST" enctype="multipart/form-data">
+                <div>
+                    <small style="color: red">
+                        <%= (typeof errores != "undefined" && errores.nombre) ? errores.nombre.msg : '' %>
+                    </small>
+                <div>
             <div>
                 <label for="nombre">Nombre del producto:</label>
                 <input id= "nombre_newProduct" name="nombre" type="text">
             </div>
                 <br>
+                <div>
+                    <small style="color: red">
+                        <%= (typeof errores != "undefined" && errores.descripcion) ? errores.descripcion.msg : '' %>
+                    </small>
+                    <div>
             <div>
                 <label for="detalle">Descripción del producto:</label>
-                <input id= "detalle_newProduct" name="descripcion" type="text">
+                <input id= "detalle_newProduct" name="detalle" type="text">
             </div>
                 <br>
+                <div>
+                    <small style="color: red">
+                        <%= (typeof errores != "undefined" && errores.imagen) ? errores.imagen.msg : '' %>
+                    </small>
+                    <div>
             <div>
                 <label for="imagen">Imagen del producto</label>
                 <input type="file" name="imagen" id="imagen_newProduct">
             </div>
                 <br>
+                <div>
+                    <small style="color: red">
+                        <%= (typeof errores != "undefined" && errores.categoria_id) ? errores.categoria_id.msg : '' %>
+                    </small>
+                    <div>
             <div>
                 <label for="categoria_id">Categoría:</label><br><br>
                 <label for="categoria_id">Aires acondicionados</label>
@@ -47,6 +67,11 @@
                 <input type="radio" id="3_newProduct" name="categoria_id" value="3">
             </div>
                 <br>
+                <div>
+                    <small style="color: red">
+                        <%= (typeof errores != "undefined" && errores.precio) ? errores.precio.msg : '' %>
+                    </small>
+                    <div>
             <div>
                 <label for="precio">Precio:</label>
                 <input id= "precio_newProduct" name="precio" type="number">

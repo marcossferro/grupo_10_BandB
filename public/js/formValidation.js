@@ -1,10 +1,10 @@
 // Register
 const boton_register = document.getElementById("boton_register");
-const nombre_register = document.getElementById("nombre");  
-const apellido_register = document.getElementById("apellido");
+const nombre_register = document.getElementById("nombre_register");  
+const apellido_register = document.getElementById("apellido_register");
 const email_register = document.getElementById("email_register");
 const contraseña_register = document.getElementById("contraseña_register");
-const repassword = document.getElementById("repassword");
+const repassword = document.getElementById("repassword_register");
 const form_register = document.getElementById("form_register");
 
 // Login
@@ -60,7 +60,7 @@ window.addEventListener("load", function(){
 window.addEventListener("load", function(){
     submit_newProduct.addEventListener("click", function(event){
         event.preventDefault();    
-        if((nombre_newProduct.value == "") || (detalle_newProduct.value =="") || (imagen_newProduct.value =="") ((cat1_newProduct.value =="") || (cat2_newProduct.value =="") || (cat3_newProduct.value ==""))|| (precio_newProduct.value =="") ){
+        if((nombre_newProduct.value == "") || (detalle_newProduct.value =="") || (imagen_newProduct.value =="") || (precio_newProduct.value =="") || ((cat1_newProduct.checked || cat2_newProduct.checked || cat3_newProduct.checked) == false) ){
             alert('Completa los campos');
         }else{
             form_newProduct.submit();

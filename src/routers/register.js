@@ -3,7 +3,6 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 const { check, validationResult, body } = require ("express-validator");
-const fs = require("fs");
 const logueadoMiddleware = require("../middlewares/logueadoMiddleware")
 const cierreSesionMiddleware = require("../middlewares/cierreSesionMiddleware")
 const db = require('../database/models');

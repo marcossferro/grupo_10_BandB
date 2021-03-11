@@ -53,6 +53,14 @@ function logueadoMiddleware (req, res, next){
             .then(function(product){
                 res.render("products/product", {productos: product, usuarioLogueado: req.session.usuarioLogueado})
             })
+        }else if(req.originalUrl == "/products/" + req.params.id + "/edit"){
+            db.Producto.findByPk(req.params.id)
+            .then(function(product){
+                res.render("products/editProducts", {productos: product, usuarioLogueado: req.session.usuarioLogueado})
+            })
+        }
+        else if(req.originalUrl == "/products/create"){
+            res.render("products/newProducts", {usuarioLogueado: req.session.usuarioLogueado})
         }else if(req.originalUrl == "/productCart"){
             res.render("productCart", {usuarioLogueado: req.session.usuarioLogueado})
 
