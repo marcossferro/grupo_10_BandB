@@ -9,6 +9,7 @@ module.exports = {
         res.render("products/newProducts")
     },
     create: function(req, res){
+        
         db.Producto.create({
             nombre: req.body.nombre,
             detalle: req.body.detalle,

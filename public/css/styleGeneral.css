@@ -22,7 +22,6 @@ header.desktop {
 /*=========================
 -------HEADER MOBILE--------
 =========================*/    
-header.mobile {}
 
 header.mobile div.headerMobileArriba {
     display: flex;

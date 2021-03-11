@@ -21,19 +21,19 @@
         <h3>Completá los datos del producto:</h3>
         <br>
         <div>
-            <form action="/products/<%= productos.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form id="form_editProduct" action="/products/<%= productos.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
             <div id = labelcontainer>
                 <label for="id">ID:</label>
                 <input id= "id" name="id" type="number" value="<%= productos.id %>" readonly>
             </div>
             <div>
                 <label for="nombre">Nombre del producto:</label>
-                <input id= "nombre" name="nombre" type="text" value="<%= productos.nombre%>">
+                <input id= "nombre_editProduct" name="nombre" type="text" value="<%= productos.nombre%>">
             </div>
                 <br>
             <div>
                 <label for="detalle">Descripción del producto:</label>
-                <input id= "detalle" name="descripcion" type="text" value="<%= productos.detalle%>">
+                <input id= "detalle_editProduct" name="descripcion" type="text" value="<%= productos.detalle%>">
             </div>
                 <br>
             <div>
@@ -59,11 +59,11 @@
                 <br>
             <div>
                 <label for="precio">Precio:</label>
-                <input id= "precio" name="precio" type="number" value="<%= productos.precio%>">
+                <input id= "precio_editProduct" name="precio" type="number" value="<%= productos.precio%>">
             </div>
                 <br>
             <div>
-                <input type="submit" value="Editar">
+                <input id="form_editProduct" type="submit" value="Editar">
             </div>
         </form>
     </section>
@@ -78,5 +78,6 @@
     </div>
 <!------FOOTER DESKTOP AND MOBILE------>
 <%- include("../partials/footer.ejs") %>
+<script src="/js/formValidation.js"></script>
 </body>
 </html>

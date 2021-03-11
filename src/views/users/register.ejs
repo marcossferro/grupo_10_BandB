@@ -19,46 +19,60 @@
     <br>
     <h2>Completa los datos:</h2>
     <br>
-    <%if (typeof errores != "undefined") { %>
-        <p class="errorP">ERROR</p>
-        <ul class="errorUl">
-            <% for(let i = 0; i < errores.length; i++){ %>
-                <li class="errorLi">
-                    <%= errores[i].msg%>
-                </li>
-           <% } %>
-        </ul>
-    
-        <% } %>
     <section class="form">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form id="form_register" action="" method="POST" enctype="multipart/form-data">
             <div>
             <div>
-                <label for="nombre">Nombre</label>
-                <input id="nombre" name="nombre" type="text">
+                <small style="color: red">
+                    <%= (typeof errores != "undefined" && errores.nombre) ? errores.nombre.msg : '' %>
+                </small>
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" name="nombre" type="text">
+                </div>
             </div>
             <div>
-                <label for="apellido">Apellido</label>
-                <input id="apellido" name="apellido" type="text">
+                <small style="color: red">
+                    <%= (typeof errores != 'undefined' && errores.apellido) ? errores.apellido.msg : '' %>
+                </small>
+                <div>
+                    <label for="apellido">Apellido</label>
+                    <input id="apellido" name="apellido" type="text">
+                </div>
             </div>
             <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email">
+                <small style="color: red">
+                    <%= (typeof errores != 'undefined' && errores.email) ? errores.email.msg : '' %>
+                </small>
+                <div>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email">
+                </div>
             </div>
             <div>
-                <label for="contraseña">Contraseña</label>
-                <input id="contraseña" name="contraseña" type="password">
+                <small style="color: red">
+                    <%= (typeof errores != 'undefined' && errores.contraseña) ? errores.contraseña.msg : '' %>
+                </small>
+                <div>
+                    <label for="contraseña">Contraseña</label>
+                    <input id="contraseña" name="contraseña" type="password">
+                </div>
             </div>
             <div>
-                <label for="repassword">Repite la contraseña</label>
-                <input id="repassword" name="repassword" type="password">
+                <small style="color: red">
+                    <%= (typeof errores != 'undefined' && errores.repassword) ? errores.repassword.msg : '' %>
+                </small>
+                <div>
+                    <label for="repassword">Repite la contraseña</label>
+                    <input id="repassword" name="repassword" type="password">
+                </div>
             </div>
             <div>
                 <label for="avatar">Avatar</label>
                 <input type="file" name="avatar" id="avatar">
             </div>            
             <br>
-            <button type="submit">Enviar</button>
+            <button id="boton_register" type="submit">Enviar</button>
         </form>
     </section>
     
@@ -72,5 +86,6 @@
     </div>
 <!------FOOTER DESKTOP AND MOBILE------>
 <%- include("../partials/footer.ejs") %>
+<script src="/js/formValidation.js"></script>
 </body>
 </html>

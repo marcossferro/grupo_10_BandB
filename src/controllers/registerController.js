@@ -1,6 +1,6 @@
 const bcrypt = require("bcryptjs");
 const {validationResult} = require ("express-validator");
-const db = require('../database/models/index');
+const db = require('../database/models');
 
 module.exports = {
     register: function(req,res){
@@ -30,7 +30,7 @@ module.exports = {
                 }
             })
         }else{
-            return res.render("users/register", {errores: errores.errors})
+            return res.render("users/register", {errores: errores.mapped()})
         }    
     }
 }

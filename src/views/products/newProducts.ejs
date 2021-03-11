@@ -21,39 +21,39 @@
         <h3>Completá los datos del producto:</h3>
         <br>
         <div>
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form id="form_newProduct" action="" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="nombre">Nombre del producto:</label>
-                <input id= "nombre" name="nombre" type="text">
+                <input id= "nombre_newProduct" name="nombre" type="text">
             </div>
                 <br>
             <div>
                 <label for="detalle">Descripción del producto:</label>
-                <input id= "detalle" name="descripcion" type="text">
+                <input id= "detalle_newProduct" name="descripcion" type="text">
             </div>
                 <br>
             <div>
                 <label for="imagen">Imagen del producto</label>
-                <input type="file" name="imagen" id="imagen">
+                <input type="file" name="imagen" id="imagen_newProduct">
             </div>
                 <br>
             <div>
                 <label for="categoria_id">Categoría:</label><br><br>
                 <label for="categoria_id">Aires acondicionados</label>
-                <input type="radio" id="1" name="categoria_id" value="1">
+                <input type="radio" id="1_newProduct" name="categoria_id" value="1">
                 <label for="categoria">Calefacción</label>
-                <input type="radio" id="2" name="categoria_id" value="2">
+                <input type="radio" id="2_newProduct" name="categoria_id" value="2">
                 <label for="categoria">Agua caliente sanitaria</label>
-                <input type="radio" id="3" name="categoria_id" value="3">
+                <input type="radio" id="3_newProduct" name="categoria_id" value="3">
             </div>
                 <br>
             <div>
                 <label for="precio">Precio:</label>
-                <input id= "precio" name="precio" type="number">
+                <input id= "precio_newProduct" name="precio" type="number">
             </div>
                 <br>
             <div>
-                <input type="submit" value="Confirmar">
+                <input id="submit_newProduct" type="submit" value="Confirmar">
             </div>
         </form>
     </section>
@@ -68,5 +68,6 @@
     </div>
 <!------FOOTER DESKTOP AND MOBILE------>
 <%- include("../partials/footer.ejs") %>
+<script src="/js/formValidation.js"></script>
 </body>
 </html>

@@ -80,7 +80,6 @@ section.barDeNav {
     background-color: #4054B2;
     height: 55px;
     }
-    section.barDeNav nav {}
     section.barDeNav nav ul {
     display: flex;
     list-style-type: none;
@@ -91,7 +90,6 @@ section.barDeNav {
     section.barDeNav nav ul li :first-child {
     margin-left: 0;
     }
-    section.barDeNav nav ul li a {}
     section.barDeNav nav ul li a button {
     width: 250px;
     height: 40px;

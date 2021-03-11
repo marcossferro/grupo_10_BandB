@@ -6,6 +6,7 @@ const { check, validationResult, body } = require ("express-validator");
 const fs = require("fs");
 const logueadoMiddleware = require("../middlewares/logueadoMiddleware")
 const cierreSesionMiddleware = require("../middlewares/cierreSesionMiddleware")
+const db = require('../database/models');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -34,16 +35,14 @@ router.post('/', upload.any() , [
     }
   }),
   body("email").custom(function(value){
-    let usuarios = fs.readFileSync(path.join(__dirname, "../data/usuarios.json"), "utf8");
-    usuarios = JSON.parse(usuarios);
-
-    for(let i = 0; i < usuarios.length; i++){
-      if(usuarios[i].email == value){
-        return false
-      }
-    }
-    return true;
-  }).withMessage("Este mail ya fue registrado")
+    db.Usuario.findAll({where: {email: value}})
+  .then(function(usuarioBuscado){
+    if(usuarioBuscado != null){
+      return false
+    }else{
+      return true
+    }})}).withMessage("Este mail ya fue registrado"),
+    check('avatar').isEmpty().withMessage("Por favor carga una imagen")
 ] , cierreSesionMiddleware ,registerController.create)
 
 
