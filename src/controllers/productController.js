@@ -24,7 +24,7 @@ module.exports = {
                 res.redirect("/products")
             })
         }else{
-            res.render("products/editProducts", {usuarioLogueado: req.session.usuarioLogueado, errores: errores.mapped()})
+            res.render("products/newProducts", {usuarioLogueado: req.session.usuarioLogueado, errores: errores.mapped()})
         }
     },
     productList: function(req,res){
