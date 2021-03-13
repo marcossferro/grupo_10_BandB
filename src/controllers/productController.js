@@ -24,6 +24,7 @@ module.exports = {
                 res.redirect("/products")
             })
         }else{
+            console.log(req.body.categoria_id)
             res.render("products/newProducts", {usuarioLogueado: req.session.usuarioLogueado, errores: errores.mapped()})
         }
     },

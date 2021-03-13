@@ -31,8 +31,8 @@ router.get("/calefaccion", logueadoMiddleware, productController.calefaccion)
 router.get("/aguacaliente", logueadoMiddleware, productController.aguaCaliente)
 
 
-router.get('/create',logueadoMiddleware, editCreateValidationMiddleware ,productController.createView)
-router.post('/create', upload.any(), productValidator[0], cierreSesionMiddleware, productController.create)
+router.get('/create',logueadoMiddleware, editCreateValidationMiddleware, cierreSesionMiddleware, productController.createView)
+router.post('/create', upload.any(), productValidator[0], productController.create)
 
 router.get('/:id', logueadoMiddleware ,productController.product)
 router.post('/:id', cierreSesionMiddleware, productController.product)
