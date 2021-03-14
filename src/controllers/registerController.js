@@ -13,7 +13,7 @@ module.exports = {
             db.Usuario.findAll({
                 where: {email: req.body.email}})
             .then(function(usuarioBuscado){
-                if(usuarioBuscado == null){
+                if(typeof usuarioBuscado[0] == 'undefined'){
                     db.Usuario.create({
                         nombre: req.body.nombre,
                         apellido: req.body.apellido,
