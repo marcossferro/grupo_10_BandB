@@ -1,4 +1,5 @@
 const { check, validationResult, body } = require ("express-validator");
+const db = require("../database/models")
 
 module.exports = [
     check("nombre").isLength({min:1}).withMessage("El nombre no puede estar vacio"),
@@ -12,12 +13,16 @@ module.exports = [
       }
     }),
     body("email").custom(function(value){
-      db.Usuario.findAll({where: {email: value}})
-    .then(function(usuarioBuscado){
-      if(usuarioBuscado != null){
-        return false
-      }else{
-        return true
-      }})}).withMessage("Este mail ya fue registrado"),
+      return db.Usuario.findAll({
+        where:{
+          email:value
+        }
+      })
+      .then(function(usuario){
+        if(usuario[0] != undefined){
+          return Promise.reject("Este email ya esta registrado");
+        }
+      })
+    }),
       check('avatar').isEmpty().withMessage("Por favor carga una imagen")
   ]
