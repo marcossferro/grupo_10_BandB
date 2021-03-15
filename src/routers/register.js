@@ -5,6 +5,7 @@ const path = require("path");
 const logueadoMiddleware = require("../middlewares/logueadoMiddleware")
 const cierreSesionMiddleware = require("../middlewares/cierreSesionMiddleware")
 const registerValidator = require("../validations/registerValidator")
+const registerController = require("../controllers/registerController")
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -15,12 +16,10 @@ var storage = multer.diskStorage({
     }
   })
    
-  var upload = multer({ storage: storage })
+var upload = multer({ storage: storage })
 
-const registerController = require("../controllers/registerController")
 
 router.get('/', logueadoMiddleware, registerController.register)
-
 router.post('/', upload.any(), registerValidator, cierreSesionMiddleware, registerController.create)
 
 

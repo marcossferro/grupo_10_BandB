@@ -13,11 +13,7 @@ module.exports = [
       }
     }),
     body("email").custom(function(value){
-      return db.Usuario.findAll({
-        where:{
-          email:value
-        }
-      })
+      return db.Usuario.findAll({where:{email:value}})
       .then(function(usuario){
         if(usuario[0] != undefined){
           return Promise.reject("Este email ya esta registrado");

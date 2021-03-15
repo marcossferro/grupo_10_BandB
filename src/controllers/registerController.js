@@ -11,7 +11,7 @@ module.exports = {
 
         if(errores.isEmpty()){
             db.Usuario.findAll({
-                where: {email: req.body.email}})
+                where: { email: req.body.email }})
             .then(function(usuarioBuscado){
                 if(typeof usuarioBuscado[0] == 'undefined'){
                     db.Usuario.create({
@@ -30,7 +30,7 @@ module.exports = {
                 }
             })
         }else{
-            return res.render("users/register", {errores: errores.mapped()})
+            return res.render("users/register", { errores: errores.mapped() })
         }    
     }
 }

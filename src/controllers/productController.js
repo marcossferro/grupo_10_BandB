@@ -25,16 +25,16 @@ module.exports = {
             })
         }else{
             console.log(req.body.categoria_id)
-            res.render("products/newProducts", {usuarioLogueado: req.session.usuarioLogueado, errores: errores.mapped()})
+            res.render("products/newProducts", { usuarioLogueado: req.session.usuarioLogueado, errores: errores.mapped() })
         }
     },
     productList: function(req,res){
         db.Producto.findAll()
-        .then(function(product){res.render("products/productList", {productos: product})})
+        .then(function(product){ res.render("products/productList", { productos: product })})
     },
     editView: function(req,res){
         db.Producto.findByPk(req.params.id)
-        .then(function(product){res.render("products/editProducts", {productos: product})})
+        .then(function(product){ res.render("products/editProducts", { productos: product })})
     },
     edit: function(req, res){
         var imagenGuardada = db.Producto.findByPk(req.params.id)
@@ -54,47 +54,35 @@ module.exports = {
             }, {
                 where: {id: req.params.id}
             })
-            .then(function(){res.redirect("/products")})
+            .then(function(){ res.redirect("/products") })
         }else{
             db.Producto.findByPk(req.params.id)
             .then(function(producto){
-                res.render("products/editProducts", {usuarioLogueado: req.session.usuarioLogueado, productos: producto, errores: errores.mapped()})
+                res.render("products/editProducts", { usuarioLogueado: req.session.usuarioLogueado, productos: producto, errores: errores.mapped() })
             })
         }
     },
     delete: function(req, res){
         db.Producto.destroy({
-            where: {id: req.params.id}})
-        .then(function(){res.redirect("/products")})
+            where: { id: req.params.id }})
+        .then(function(){ res.redirect("/products") })
     },
     aireAcon: function(req, res){
-        db.Producto.findAll({
-            where:{
-                categoria_id: "1"
-            }
-        })
+        db.Producto.findAll({ where:{ categoria_id: "1" }})
       .then(function(producto){
-        res.render("products/productList", {productos: producto})
+        res.render("products/productList", { productos: producto })
       })
     },
     calefaccion: function(req, res){
-        db.Producto.findAll({
-            where:{
-                categoria_id: "2"
-            }
-        })
+        db.Producto.findAll({ where:{ categoria_id: "2" }})
       .then(function(producto){
-        res.render("products/productList", {productos: producto})
+        res.render("products/productList", { productos: producto })
       })
     },
     aguaCaliente: function(req, res){
-        db.Producto.findAll({
-            where:{
-                categoria_id: "3"
-            }
-        })
+        db.Producto.findAll({ where:{ categoria_id: "3" }})
       .then(function(producto){
-        res.render("products/productList", {productos: producto})
+        res.render("products/productList", { productos: producto })
       })
     }
 }

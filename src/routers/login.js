@@ -4,7 +4,6 @@ const logueadoMiddleware = require("../middlewares/logueadoMiddleware");
 const cierreSesionMiddleware = require("../middlewares/cierreSesionMiddleware")
 const loginValidator = require('../validations/loginValidator')
 
-
 const loginController = require("../controllers/loginController")
 
 router.get('/', logueadoMiddleware ,loginController.login)

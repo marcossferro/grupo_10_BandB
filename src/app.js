@@ -37,5 +37,5 @@ app.use("/perfil", perfilRouter)
 let puerto = 3000;
 app.listen(port, function(){
     console.log('El servidor esta corriendo en el puerto '+ puerto);
-    console.log("http://localhost:3000")
+    console.log("http://localhost:"+ puerto)
 });

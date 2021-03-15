@@ -4,7 +4,7 @@ const db = require('../database/models/index');
 
 module.exports = {
     login: function(req, res){
-            res.render("users/login")
+        res.render("users/login")
     },
     processLogin: function(req, res){
         let errors = validationResult(req);
@@ -21,13 +21,12 @@ module.exports = {
                         console.log(`el email ${req.session.usuarioLogueado.email} con id ${req.session.usuarioLogueado.id} fue logueado`)
                         
                         db.Producto.findAll()
-                        .then(function(producto){res.render("index",{usuarioLogueado: usuario[0],producto: producto})});
+                        .then(function(producto){ res.render("index",{ usuarioLogueado: usuario[0],producto: producto })});
                     }
                 }
             })
-            
         }else{
-            return res.render("users/login", {errors: errors.errors})
+            return res.render("users/login", { errors: errors.mapped() })
         }
     }
 }

@@ -3,8 +3,8 @@ function cierreSesionMiddleware (req, res, next){
         next();
     }else{
         req.session.destroy(()=>{
-            console.log("Se ha cerrado sesion")
-            return res.redirect("/")
+            console.log("Se ha cerrado sesion");
+            return res.redirect("/");
         })
     }
 }
