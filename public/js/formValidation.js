@@ -36,8 +36,16 @@ const form_editProduct = document.getElementById("form_editProduct");
 window.addEventListener("load", function(){
     boton_register.addEventListener("click", function(event){
         event.preventDefault();    
-        if((nombre_register.value == "") || (apellido_register.value =="") || (email_register.value == "") || (!email_register.value.includes("@")) || (contraseña_register.value =="") || (repassword.value == contraseña_register.value)){
-            alert('Completa los campos');
+        if(nombre_register.value == "" || nombre_register.value.length < 2){
+            alert('El nombre debe tener al menos dos caracteres');
+        }else if(apellido_register.value =="" || apellido_register.value.length < 2){
+            alert('El apellido debe tener al menos dos caracteres');
+        }else if(email_register.value == "" || !email_register.value.includes("@")){
+            alert('El formato correcto es tuemail@email.com');
+        }else if(contraseña_register.value =="" || contraseña_register.value.length < 8){
+            alert("La contraseña debe contener al menos 8 caracteres, una mayuscula, un numero y un caracter especial ( .*+\-?^${}_()|[\]\\ )")
+        }else if(repassword.value != contraseña_register.value){
+            alert("Las contraseñas deben coincidir")
         }else{
             form_register.submit();
         }
@@ -48,8 +56,10 @@ window.addEventListener("load", function(){
 window.addEventListener("load", function(){
     boton_login.addEventListener("click", function(event){
         event.preventDefault();    
-        if((email_login.value == "") || (!email_login.value.includes("@")) || (contraseña_login.value =="")){
-            alert('Completa los campos');
+        if(email_login.value == "" || !email_login.value.includes("@")){
+            alert("El formato correcto es tuemail@email.com")
+        }else if(contraseña_login.value =="" || contraseña_login.value.length < 8){
+            alert("La contraseña debe contener al menos 8 caracteres")
         }else{
             form_login.submit();
         }

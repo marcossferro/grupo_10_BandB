@@ -7,6 +7,8 @@ module.exports = {
         res.render("users/register")
     },
     create: function(req, res){
+        let avatarPorDefecto = "avatarPorDefecto.png"
+
         let errores = validationResult(req);
 
         if(errores.isEmpty()){
@@ -19,7 +21,7 @@ module.exports = {
                         apellido: req.body.apellido,
                         email: req.body.email,
                         contraseña: bcrypt.hashSync(req.body.contraseña, 12),
-                        avatar: req.files[0].filename,
+                        avatar: (req.files.length != 0) ? req.files[0].filename : avatarPorDefecto,
                         tipo_usuario: 2
                     })
                     .then(function(){

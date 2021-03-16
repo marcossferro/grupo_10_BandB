@@ -68,6 +68,11 @@
                 </div>
             </div>
             <div>
+                <small style="color: red">
+                    <%= (typeof errores != 'undefined' && errores.avatar) ? errores.avatar.msg : '' %>
+                </small>
+                <div>
+            <div>
                 <label for="avatar">Avatar</label>
                 <input type="file" name="avatar" id="avatar_register">
             </div>            

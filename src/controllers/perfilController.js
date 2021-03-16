@@ -30,7 +30,9 @@ module.exports = {
     delete: function(req, res){
         db.Usuario.destroy({ where: { id:req.params.id }})
         .then(()=>{
-            res.redirect("/")
+            req.session.destroy(()=>{
+                return res.redirect("/");
+            })
         })
     }
 }
