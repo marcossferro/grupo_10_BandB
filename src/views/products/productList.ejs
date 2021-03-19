@@ -14,34 +14,54 @@
 <%- include("../partials/barraDeNavegacion.ejs") %>
 
 <!------LISTADO DE PREDUCTOS------>
-<h2>Listado de Productos</h2>
+<h2 class="tituloProductos">Listado de Productos</h2>
 <div class="container">
 
-    <% for (let i = 0; i < productos.length ; i++) { %>
-        <a class="aProduct" href="/products/<%= productos[i].id %>">
-            <article class="product">
-                <div class="productConteiner">
-                    
-                    <% if(typeof usuarioLogueado == "undefined" || !usuarioLogueado.email == 'maximilianoalbeldas@gmail.com' || !usuarioLogueado.email == 'marcosferro_10@hotmail.com'){ %>
-                            <img src="/imgProducts/<%= productos[i].imagen%>">
-                        <% }else{ %>
-                            <img src="/imgProducts/<%= productos[i].imagen%>">
-                            <div class="yoyo">
-                                <a href="/products/<%= productos[i].id%>/edit"><button><i class="fas fa-pencil-alt"></i></button></a>   
-                            <form action="/products/<%= productos[i].id %>/delete?_method=DELETE" method="POST" enctype="multipart/form-data">
-                                <a href="/products/<%= productos[i].id %>/delete"><button id="deleteButton"><i class="fas fa-trash-alt"></i></button></a>    
-                            </form>
-                            </div>
-                        <% } %>
-                    
-                    <div class="detalle">
-                        <h3 class="nombre"><%= productos[i].nombre %></h3>
-                        <h1>$ <%= productos[i].precio %></h1>
+    <% if(typeof usuarioLogueado == "undefined" || !usuarioLogueado.tipo_usuario == 1){ %>
+        <% for (let i = 0; i < productos.length; i++) { %>
+            <a class="aProduct" href="/products/<%= productos[i].id %>">
+                <div class="detalleProducto">
+                    <img class="crearImg" src="/imgProducts/<%= productos[i].imagen%>">
+
+                    <div class="contenido">
+                        <div class="tituloPrecio">
+                            <h2 class="nombreProducto"><%= productos[i].nombre %></h2>
+                            <p class="precioProducto">$ <%= productos[i].precio %></p>
+                        </div>
                     </div>
                 </div>
-            </article>
-        </a>
-        <% } %>
+            </a>
+            <%}%>
+        <% }else{ %>
+            <a class="aProduct" href="/products/create">
+                <div class="detalleProducto">
+                    <img class="crearImg" src="/img/agregarIcon3.png">
+    
+                    <div class="contenido">
+                        <div class="tituloPrecio">
+                            <h2 class="nombreProducto">¿Quieres agregar un producto?</h2>
+                            <p class="precioProducto">Crear Nuevo</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+        <% for (let i = 0; i < productos.length; i++) { %>
+            <a class="aProduct" href="/products/<%= productos[i].id %>">
+                <div class="detalleProducto">
+                    <img class="crearImg" src="/imgProducts/<%= productos[i].imagen%>">
+
+                    <div class="contenido">
+                        <div class="tituloPrecio">
+                            <h2 class="nombreProducto"><%= productos[i].nombre %></h2>
+                            <p class="precioProducto">$ <%= productos[i].precio %></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <%}%>
+        <%}%>
         
 </div>
 <!------REDES SOCIALES DESKTOP------>

@@ -42,26 +42,47 @@
                 <label id="id" for="id">ID:</label>
                 <input id= "id" name="id" type="number" value="<%= usuarios.id %>" readonly>
                 
+                <small style="color: red">
+                    <%= (typeof errores != "undefined" && errores.nombre) ? errores.nombre.msg : '' %>
+                </small>
                 <label for="nombre">Nombre:</label>
                 <input id= "nombre" name="nombre" type="text" value="<%= usuarios.nombre%>">
                 
+                <small style="color: red">
+                    <%= (typeof errores != "undefined" && errores.apellido) ? errores.apellido.msg : '' %>
+                </small>
                 <label for="apellido">Apellido:</label>
                 <input id= "apellido" name="apellido" type="text" value="<%= usuarios.apellido%>">
                 
+                <small style="color: red">
+                    <%= (typeof errores != "undefined" && errores.email) ? errores.email.msg : '' %>
+                </small>
                 <label for="email">Email:</label>
                 <input id= "email" name="email" type="text" value="<%= usuarios.email%>">
                 
+                <small style="color: red">
+                    <%= (typeof errores != "undefined" && errores.avatar) ? errores.avatar.msg : '' %>
+                </small>
                 <label for="avatar">Avatar:</label>
                 <input id="avatar" type="file" name="avatar" value="<%= usuarios.avatar%>">
                 
                 <p class="pFormEditPerfil">¿Quieres cambiar la contraseña?</p>
                 
+                <small style="color: red">
+                    <%= (typeof errores != "undefined" && errores.contraseñaActual) ? errores.contraseñaActual.msg : '' %>
+                </small>
                 <label for="contraseñaActual">Contraseña Actual:</label>
                 <input id= "contraseñaActual" name="contraseñaActual" type="password">
                 
+                <small style="color: red">
+                    <%= (typeof errores != "undefined" && errores.contraseña) ? errores.contraseña.msg : '' %>
+                </small>
                 <label for="contraseña">Contraseña Nueva:</label>
                 <input id= "contraseña" name="contraseña" type="password">
                 
+                <small style="color: red">
+                    <%= (typeof errores != "undefined" && errores.repassword) ? errores.repassword.msg : '' %>
+                </small>
                 <label for="repassword">Repite la Contraseña:</label>
                 <input id= "repassword" name="repassword" type="password">
                 

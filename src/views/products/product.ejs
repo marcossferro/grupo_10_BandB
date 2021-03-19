@@ -16,7 +16,17 @@
     <div class="productoDesktop">
         <div class="productoGeneral">
             <section class="productoMitad1">
-                <img src="/imgProducts/<%= productos.imagen %>" alt="imagenProducto">
+                <%if(typeof usuarioLogueado == "undefined" || !usuarioLogueado.tipo_usuario == 1){%>
+                    <img src="/imgProducts/<%= productos.imagen %>" alt="imagenProducto">
+                    <%}else{%>
+                        <img src="/imgProducts/<%= productos.imagen %>" alt="imagenProducto">
+                        <div>
+                            <a href="/products/<%= productos.id%>/edit"><button><i class="fas fa-pencil-alt"></i></button></a>   
+                            <form action="/products/<%= productos.id %>/delete?_method=DELETE" method="POST" enctype="multipart/form-data">
+                                <a href="/products/<%= productos.id %>/delete"><button id="deleteButton"><i class="fas fa-trash-alt"></i></button></a>    
+                            </form>
+                        </div>    
+                    <%}%>
                 <h2>FICHA TECNICA</h2>
                 <hr>
                 <div class="fichaTecnica">

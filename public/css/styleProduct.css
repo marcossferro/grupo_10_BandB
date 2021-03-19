@@ -408,3 +408,33 @@ article.mediosDePago img {
         height: 200px;
     }
 }
+/*a.aProduct div.note div.contenido div.edit {
+    display: flex;
+    margin-top: 20px;
+    justify-content: flex-end;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+a.aProduct div.note div.contenido div.edit > * {
+    margin-left: 7px
+}
+
+a.aProduct div.note div.contenido div.edit form > * {
+    background: none;
+    border: 0;
+}
+
+a.aProduct div.note div.contenido div.edit > a, main .list .note .edit form > * {
+    color: rgba(0,0,0,.2);
+    transition: color 0.15s ease-out;
+}
+
+a.aProduct div.note div.contenido div.edit > a:hover {
+    color: rgba(0,0,0,.8)
+}
+
+a.aProduct div.note div.contenido div.edit form > *:hover {
+    color: rgba(255,0,0,.8);
+    cursor: pointer;
+}*/

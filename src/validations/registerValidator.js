@@ -22,9 +22,17 @@ module.exports = [
     }),
     body("avatar").custom((avatar, {req})=>{
       if(req.files[0] != undefined){
-        if(req.files[0].mimetype != "image/jpeg"){
-          throw new Error("JPG es el unico formato valido hasta el momento")
-        }
-      } return true
+        if(req.files[0].mimetype == "image/png"){
+          console.log(req.files[0].mimetype)
+          return true
+        }else if(req.files[0].mimetype == "image/jpeg"){
+          console.log(req.files[0].mimetype)
+          return true
+        }else if(req.files[0].mimetype == "image/jpg"){
+          console.log(req.files[0].mimetype)
+          return true
+        }console.log(req) 
+        throw new Error("Los unicos formatos validos son JPG, JPEG y PNG")
+      }return true
     })
   ]

@@ -32,7 +32,7 @@ module.exports = {
                 }
             })
         }else{
-            return res.render("users/register", { errores: errores.mapped() })
+            return res.render("users/register", { errores: errores.mapped()})
         }    
     }
 }

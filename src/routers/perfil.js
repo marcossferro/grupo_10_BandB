@@ -21,7 +21,7 @@ var upload = multer({ storage: storage })
 
 router.get('/:id', logueadoMiddleware, perfilMiddleware ,perfilController.perfil)
 router.post("/:id", cierreSesionMiddleware, perfilController.perfil)
-router.put("/:id/edit", upload.any() ,perfilController.edit)
+router.put("/:id/edit", upload.any(), perfilController.edit)
 router.delete("/:id/delete", perfilController.delete)
 
 module.exports = router
