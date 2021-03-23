@@ -38,9 +38,12 @@ function logueadoMiddleware (req, res, next){
             })
         }else if(req.originalUrl == "/products/" + req.params.id){
             db.Producto.findByPk(req.params.id)
-            .then(function(product){
-                res.render("products/product",{ productos: product, usuarioLogueado: req.session.usuarioLogueado })
+        .then(function(producto){
+            db.Producto.findAll()
+            .then(function(totalProductos){
+                res.render('products/product', {totalProductos: totalProductos, productos: producto, usuarioLogueado: req.session.usuarioLogueado})
             })
+        })
         }else if(req.originalUrl == "/products/" + req.params.id + "/edit"){
             db.Producto.findByPk(req.params.id)
             .then(function(product){

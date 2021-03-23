@@ -65,7 +65,11 @@ section.sliderDesktop{
         text-decoration: none;
     }
 
-    section.categorias a div.catAireAcon{
+    section.categorias a.catAireAcon{
+        margin-bottom: 15px;
+    }
+
+    section.categorias a.catAireAcon div.catAireAcon{
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 15px;
@@ -78,20 +82,23 @@ section.sliderDesktop{
         cursor: pointer;
         transition: box-shadow 0.2s ease-in-out;
     }
-    section.categorias a div.catAireAcon:hover {
+    section.categorias a.catAireAcon div.catAireAcon:hover {
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
     }
-    section.categorias a div.catAireAcon img{
+    section.categorias a.catAireAcon div.catAireAcon img{
         width: 100%;
         border-radius: 20px;
     }
-    section.categorias a div.catAireAcon h1{
+    section.categorias a.catAireAcon div.catAireAcon h1{
         margin-top: 10px;
         color: #fff;
         text-transform: uppercase;
     }
-
-    section.categorias a div.catCalefaccion{
+    
+    section.categorias a.catCalefaccion{
+        margin-bottom: 15px;
+    }
+    section.categorias a.catCalefaccion div.catCalefaccion{
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 15px;
@@ -104,20 +111,20 @@ section.sliderDesktop{
         cursor: pointer;
         transition: box-shadow 0.2s ease-in-out;
     }
-    section.categorias a div.catCalefaccion:hover {
+    section.categorias a.catCalefaccion div.catCalefaccion:hover {
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
     }
-    section.categorias a div.catCalefaccion img{
+    section.categorias a.catCalefaccion div.catCalefaccion img{
         width: 100%;
         border-radius: 20px;
     }
-    section.categorias a div.catCalefaccion h1{
+    section.categorias a.catCalefaccion div.catCalefaccion h1{
         margin-top: 10px;
         color: #fff;
         text-transform: uppercase;
     }
 
-    section.categorias a div.catAguaCalienteSanitaria{
+    section.categorias a.catAguaCalienteSanitaria div.catAguaCalienteSanitaria{
         margin-left: auto;
         margin-right: auto;
         width: 95%;
@@ -129,14 +136,14 @@ section.sliderDesktop{
         cursor: pointer;
         transition: box-shadow 0.2s ease-in-out;
     }
-    section.categorias a div.catAguaCalienteSanitaria:hover {
+    section.categorias a.catAguaCalienteSanitaria div.catAguaCalienteSanitaria:hover {
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
     }
-    section.categorias a div.catAguaCalienteSanitaria img{
+    section.categorias a.catAguaCalienteSanitaria div.catAguaCalienteSanitaria img{
         width: 100%;
         border-radius: 20px;
     }
-    section.categorias a div.catAguaCalienteSanitaria h1{
+    section.categorias a.catAguaCalienteSanitaria div.catAguaCalienteSanitaria h1{
         margin-top: 10px;
         color: #fff;
         text-transform: uppercase;

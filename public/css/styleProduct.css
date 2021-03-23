@@ -14,427 +14,216 @@ body {
 }
 
 /*---------------------MOBILE----------------------*/
+/*----PRODUCTO MOBILE----*/
 
-/*=========================
-------PRODUCTO DESKTOP------
-=========================*/
-
-div.productoDesktop {
-    display: none;
+h2.tituloProducto{
+    margin-top: 20px;
+    margin-left: 15px;
+    font-size: 15px;
+    text-align: left;
 }
 
-/*=========================
-------PRODUCTO MOBILE------
-=========================*/
-
-section.productoMobile {
+div.contenedorProducto{
     position: relative;
-}
-section.productoMobile h2 {}
-section.productoMobile img {
+    margin-bottom: 10px;
     width: 100%;
-    margin-bottom: 15px;
+    height: 315px;
 }
-section.productoMobile a.favHeart {
-    display: block;
+div.contenedorProducto img.imagenProducto{
+    height: 100%;
+}
+
+div.contenedorProducto i.fa-heart{
     position: absolute;
-    top: 325px;
-    right: 45px;
-    width: 70px;
-    height: 62px;
-    border-radius: 500px;
-    text-align: center;
-    background-color: var(--colorPrincipal);
-    text-decoration: none;
-}
-section.productoMobile a.favHeart h3 {
-    padding: 15px;
-    font-size: 1.7rem;
-    color: #fff;
-}
-
-section.productoMobile h1 {
-    font-size: 2.2rem;
-}
-section.productoMobile a.mediosDePago {
-    font-size: 0.7rem;
-    text-decoration: none;
-    color: #4054B2;
-}
-section.productoMobile a.mediosDePago h3 {
-    margin-bottom: 25px;
-    font-size: 1rem;
-}
-section.productoMobile h3.envios {
+    right: 20px;
+    top: 240px;
     padding: 10px;
-    background-color: var(--colorPrincipal);
+    font-size: 15px;
     color: #fff;
-    text-transform: uppercase;
+    background-color: #b9e7fa;
+    border-radius: 50px;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+    transition: box-shadow 0.2s ease-in-out;
 }
 
-section.productoMobile form.enviosCodPos {
-    margin-bottom: 25px;
-}
-section.productoMobile form.enviosCodPos label {
-    background-color: #fff;
-    font-size: 0.9rem;
-    width: 45%;
-}
-section.productoMobile form.enviosCodPos input.text {
-    width: 45%;
-    height: 25px;
-}
-section.productoMobile form.enviosCodPos input.button {
-    width: 50%;
-    height: 30px;
-    border-radius: 5px;
-    background-color: var(--colorPrincipal);
-    color: #fff;
+div.contenedorProducto i.fa-heart:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
 }
 
-section.productoMobile form.unidades {
-    margin-bottom: 25px;
-    text-align: center;
-}
-section.productoMobile form.unidades label {
-    text-transform: uppercase;
-}
-section.productoMobile form.unidades input {
-    width: 100px;
-    height: 40px;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 1.1rem;
+h1.precioProducto{
+    margin-left: 15px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: 300;
 }
 
-section.productoMobile div.botonesHorizontales{
+h5{
+    margin-left: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+h5 a.mediosDePagoLink{
+    text-decoration: none;
+    color:#3483fa;
+    cursor: pointer;
+}
+
+div.botones{
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+div.botones h2.comprarBoton {
+    margin-bottom: 5px;
+    padding: 5px 0;
+    width: 80%;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: var(--colorPrincipal);
+    border-radius: 15px;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+    transition: box-shadow 0.2s ease-in-out;
+}
+div.botones h2.comprarBoton:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+}
+div.botones h2.carritoBoton {
+    margin-bottom: var(--marginPrincipal);
+    padding: 5px 0;
+    width: 80%;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: #b9e7fa;
+    border-radius: 15px;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+    transition: box-shadow 0.2s ease-in-out;
+}
+div.botones h2.carritoBoton:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+}
+
+h3.caractTitulo{
+    margin-bottom: 5px;
+    margin-left: 15px;
+    text-align: left;
+}
+
+p.detalleProducto{
+    margin-bottom: var(--marginPrincipal);
+    margin-left: 10px;
+    text-align: left;
+}
+
+h3.imgMercadoPagoTitulo{
+    margin-top: var(--marginPrincipal);
+    margin-left: 15px;
+    text-align: left;
+}
+img.imgMercadoPago{
+    margin-top: 10px;
+    margin-bottom: var(--marginPrincipal);
+    width: 100%;
+}
+/*----BOTONES EDIT Y DELETE----*/
+div.editDelete {
+    height: 30px;
+    display: flex;
     justify-content: center;
     align-items: center;
-}
-section.productoMobile div.botonesHorizontales a.comprar {
-    width: 95%;
-    padding: 10px 0;
-    border-radius: 10px;
-    margin-bottom: 5px;
-    text-align: center;
-    text-decoration: none;
-    background-color: #4054B2;
-}
-section.productoMobile div.botonesHorizontales a.comprar h3 {
-    
-    color: #fff;
-}
-section.productoMobile div.botonesHorizontales a.carrito {
-    width: 95%;
-    padding: 10px 0;
-    margin-bottom: 25px;
-    border-radius: 10px;
-    text-align: center;
-    text-decoration: none;
-    background-color: var(--colorPrincipal);
-}
-section.productoMobile div.botonesHorizontales a.carrito h3 {
-    color: #fff;
-}
-
-/*=========================
-----ALTERNATIVAS MOBILE-----
-=========================*/
-
-article.producAlternativos {
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-article.producAlternativos h3 {
-    margin-bottom: 20px;
-}
-article.producAlternativos a {
-    text-decoration: none;
-}
-article.producAlternativos a div.producConteiner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-article.producAlternativos a div.producConteiner img {
-    width: 35%;
-}
-article.producAlternativos a div.producConteiner div.detalle {
-    width: 65%;
-}
-article.producAlternativos a div.producConteiner div.detalle h3 {
-    color: black;
-}
-article.producAlternativos a div.producConteiner div.detalle h1 {
-    color: black;
-}
-
-article.producAlternativos a.alternativaTablet {
-    display: none;
-}
-
-/*=========================
-------CARACTERISTICAS------
-=========================*/
-
-section.caracteristicas {
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-section.caracteristicas h2 {}
-section.caracteristicas ul {
-    padding-left: 30px;
-}
-section.caracteristicas ul li {}
-
-/*=========================
-------MEDIOS DE PAGO------
-=========================*/
-
-article.mediosDePago {
-    width: 100%;
-    margin-bottom: 25px;
-}
-article.mediosDePago h3 {
-    margin-bottom: 25px;
-}
-article.mediosDePago img {
-    width: 100%;
-}
-
-/*---------------------TABLET----------------------*/
-@media (min-width: 768px) {
-    div.containerTablet {
-        padding: 0px 100px;
-    }
-
-/*=========================
-------PRODUCTO TABLET------
-=========================*/
-
-    section.productoMobile a.favHeart {
-        display: block;
-        position: absolute;
-        top: 500px;
-        right: 45px;
-        width: 70px;
-        height: 62px;
-        border-radius: 500px;
-        text-align: center;
-        background-color: var(--colorPrincipal);
-        text-decoration: none;
-    }
-
-/*=========================
-----ALTERNATIVAS TABLET-----
-=========================*/
-
-    article.producAlternativos a{
-        display: inline-block;
-        width: 45%;
-    }
-    article.producAlternativos a.alternativaTablet {
-        display: inline-block;
-        width: 45%;
-    }
-}
-
-/*--------------------DESKTOP---------------------*/
-
-@media (min-width: 1024px) {
-    div.containerTablet {
-        display: none;
-    }
-
-    div.productoDesktop {
-        display: block;
-        padding: 0 100px
-    }
-
-/*=========================
-----------PRODUCTO-----------
-=========================*/
-
-    div.productoGeneral {
-        margin: var(--marginPrincipal);
-        display: flex;
-    }
-
-    div.productoGeneral section.productoMitad1 {
-        width: 60%;
-    }
-    div.productoGeneral section.productoMitad1 img {
-        padding: 0 150px;
-        margin-bottom: 155px;
-        height: 400px;
-    }
-    div.productoGeneral section.productoMitad1 h2 {
-        margin-bottom: 10px;
-    }
-    div.productoGeneral section.productoMitad1 div.fichaTecnica {
-        margin-top: 10px;
-        display: flex;
-    }
-    div.productoGeneral section.productoMitad1 ul {
-        list-style-type: none;
-        width: 50%;
-        margin-left: 5px;
-    }
-    div.productoGeneral section.productoMitad1 ul li {}
-
-    div.productoGeneral section.productoMitad2 {
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-    }
-    div.productoGeneral section.productoMitad2 div.titulo {
-        height: 33%;
-    }
-    div.productoGeneral section.productoMitad2 div.titulo h1 {}
-    div.productoGeneral section.productoMitad2 div.titulo div.estrellasOpiniones {
-        display: flex;
-        align-items: center;
-        margin: 2px 0px;
-    }
-    div.productoGeneral section.productoMitad2 div.titulo div.estrellasOpiniones h4 {
-        margin-left: 10px;
-    }
-    div.productoGeneral section.productoMitad2 div.titulo div.estrellasOpiniones h4 i {
-        color: var(--colorPrincipal);
-    }
-    div.productoGeneral section.productoMitad2 div.titulo div.estrellasOpiniones h5 {
-        margin-left: 10px;
-    }
-    div.productoGeneral section.productoMitad2 div.titulo h3 {
-        margin: 20px 0px;
-    }
-    div.productoGeneral section.productoMitad2 div.titulo ul {
-        list-style-type: none;
-    }
-    div.productoGeneral section.productoMitad2 div.titulo ul li {}
-
-    div.productoGeneral section.productoMitad2 div.precio {
-        margin-bottom: 200px;
-        height: 33%;
-    }
-    div.productoGeneral section.productoMitad2 div.precio h3 {
-        margin: 10px 0;
-        font-size: 50px;
-    }
-    div.productoGeneral section.productoMitad2 div.precio h4 {
-        padding: 5px 0px 5px 10px;
-        background-color: var(--colorPrincipal);
-        text-transform: uppercase;
-        color: #fff;
-    }
-    div.productoGeneral section.productoMitad2 div.precio img {
-        width: 100%;
-        margin: 10px 0;
-    }
-    div.productoGeneral section.productoMitad2 div.precio h5 {
-        padding: 5px 0px 5px 10px;
-        background-color: var(--colorPrincipal);
-        text-transform: uppercase;
-        color: #fff;
-    }
-    div.productoGeneral section.productoMitad2 div.precio form.enviosCodPos {
-        margin: 10px 0;
-    }
-    div.productoGeneral section.productoMitad2 div.precio form.enviosCodPos label {}
-    div.productoGeneral section.productoMitad2 div.precio form.enviosCodPos input {}
-
-    div.productoGeneral section.productoMitad2 div.precio form.unidades {
-        padding: 10px 0;
-        text-align: center;
-        background-color: var(--colorPrincipal);
-    }
-    div.productoGeneral section.productoMitad2 div.precio form.unidades label {
-        text-transform: uppercase;
-        color: #fff;
-        font-size: 20px;
-    }
-    div.productoGeneral section.productoMitad2 div.precio form.unidades input {
-        margin-bottom: 15px;
-        width: 95px;
-        height: 25px;
-        text-align: center;
-    }
-
-
-    div.productoGeneral section.productoMitad2 div.botones {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 34%;
-    }
-    div.productoGeneral section.productoMitad2 div.botones a {
-        margin: 0px 10px;
-        padding: 15px;
-        border-radius: 100px;
-        background-color: var(--colorPrincipal);
-    }
-    div.productoGeneral section.productoMitad2 div.botones a.comprar {
-        margin: 0px 10px;
-        padding: 20px 100px;
-        text-decoration: none;
-    }
-    div.productoGeneral section.productoMitad2 div.botones a.comprar h3 {
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 20px;
-    }
-    div.productoGeneral section.productoMitad2 div.botones a h3 {
-        font-size: 20px;
-    }
-    div.productoGeneral section.productoMitad2 div.botones a h3 i {
-        color: #fff;
-    }
-
-    section.productosSimilares {
-        margin-top: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    section.productosSimilares div {}
-    section.productosSimilares h2 {
-        text-transform: uppercase;
-    }
-    section.productosSimilares a {}
-    section.productosSimilares a img {
-        height: 200px;
-    }
-}
-/*a.aProduct div.note div.contenido div.edit {
-    display: flex;
-    margin-top: 20px;
-    justify-content: flex-end;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
 }
 
-a.aProduct div.note div.contenido div.edit > * {
+div.editDelete > * {
     margin-left: 7px
 }
 
-a.aProduct div.note div.contenido div.edit form > * {
+div.editDelete form.delete > * {
     background: none;
     border: 0;
 }
 
-a.aProduct div.note div.contenido div.edit > a, main .list .note .edit form > * {
+div.editDelete form.delete > * {
+    font-size: 15px;
+}
+
+div.editDelete > a.edit, div.editDelete form.delete > * {
     color: rgba(0,0,0,.2);
     transition: color 0.15s ease-out;
 }
 
-a.aProduct div.note div.contenido div.edit > a:hover {
+div.editDelete > a.edit:hover {
+    font-size: 20px;
     color: rgba(0,0,0,.8)
 }
 
-a.aProduct div.note div.contenido div.edit form > *:hover {
+div.editDelete form.delete > *:hover {
+    font-size: 20px;
     color: rgba(255,0,0,.8);
     cursor: pointer;
-}*/
+}
+
+/*----PRODUCTOS SIMILARES MOBILE----*/
+h2.productosSimilares {
+    margin-bottom: 40px;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: var(--colorPrincipal);
+}
+
+a.aProduct{
+    display: flex;
+    width: 30%;
+    text-decoration: none;
+}
+
+a.aProduct div.detalleProductoM {
+    display: flex;
+    width: 100%;
+    padding: 22px 22px;
+    margin: 0 2.5%;
+    margin-bottom: 3.2vw;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+a.aProduct div.detalleProductoM:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+}
+a.aProduct div.detalleProductoM:nth-of-type(5n+1) { order: 1 }
+a.aProduct div.detalleProductoM:nth-of-type(5n+2) { order: 2 }
+a.aProduct div.detalleProductoM:nth-of-type(5n+3) { order: 3 }
+a.aProduct div.detalleProductoM:nth-of-type(5n+4) { order: 4 }
+a.aProduct div.detalleProductoM:nth-of-type(5n)   { order: 5 }
+
+a.aProduct div.detalleProductoM img.crearImg{
+    width: 50%;
+    height: auto;
+}
+
+a.aProduct div.detalleProductoM div.contenido{
+    width: 50%;
+}
+
+a.aProduct div.detalleProductoM div.contenido div.tituloPrecio {
+    text-align: end;
+    height: 80%;
+    color: black;
+}
+a.aProduct div.detalleProductoM div.contenido div.tituloPrecio h2.nombreProducto {
+    height: 70%;
+    font-size: 20px;
+    color: black;
+}
+a.aProduct div.detalleProductoM div.contenido div.tituloPrecio p.precioProducto {
+    height: 30%;
+    font-size: 15px;
+}

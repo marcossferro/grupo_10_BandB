@@ -3,8 +3,14 @@ const db = require("../database/models")
 
 module.exports = {
     product: function(req,res){
+        
         db.Producto.findByPk(req.params.id)
-        .then(function(producto){ res.render('products/product', {productos: producto} )})
+        .then(function(producto){
+            db.Producto.findAll()
+            .then(function(totalProductos){
+                res.render('products/product', {totalProductos: totalProductos, productos: producto})
+            })
+        })
     },
     createView: function(req,res){
         res.render("products/newProducts")
