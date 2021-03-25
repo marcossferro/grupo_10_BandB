@@ -17,7 +17,7 @@
 
 - 😛 Equipo:
     - Marcos Ferro: 
-        - 23 años
+        - 24 años
         - Expenses Lead - Globant
         - Administracion de Empresas
         - Juego al Rugby en Regatas de Bella Vista

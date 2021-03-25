@@ -27,24 +27,24 @@
                 <input id= "id" name="id" type="number" value="<%= productos.id %>" readonly>
             </div>
             <div>
+                <label for="nombre">Nombre del producto:</label>
+                <input id= "nombre_editProduct" name="nombre" type="text" value="<%= productos.nombre%>">
+            </div>
+            <div>
                 <small style="color: red">
                     <%= (typeof errores != "undefined" && errores.nombre) ? errores.nombre.msg : '' %>
                 </small>
             <div>
-            <div>
-                <label for="nombre">Nombre del producto:</label>
-                <input id= "nombre_editProduct" name="nombre" type="text" value="<%= productos.nombre%>">
-            </div>
                 <br>
+                <div>
+                    <label for="detalle">Descripción del producto:</label>
+                    <input id= "detalle_editProduct" name="detalle" type="text" value="<%= productos.detalle%>">
+                </div>
                 <div>
                     <small style="color: red">
                         <%= (typeof errores != "undefined" && errores.detalle) ? errores.detalle.msg : '' %>
                     </small>
                 <div>
-            <div>
-                <label for="detalle">Descripción del producto:</label>
-                <input id= "detalle_editProduct" name="detalle" type="text" value="<%= productos.detalle%>">
-            </div>
                 <br>
             <div>
                 <label for="imagen">Imagen del producto</label>
@@ -68,14 +68,14 @@
             </div>
                 <br>
                 <div>
+                    <label for="precio">Precio:</label>
+                    <input id= "precio_editProduct" name="precio" type="number" value="<%= productos.precio%>">
+                </div>
+                <div>
                     <small style="color: red">
                         <%= (typeof errores != "undefined" && errores.precio) ? errores.precio.msg : '' %>
                     </small>
                 <div>
-            <div>
-                <label for="precio">Precio:</label>
-                <input id= "precio_editProduct" name="precio" type="number" value="<%= productos.precio%>">
-            </div>
                 <br>
             <div>
                 <input id="submit_editProduct" type="submit" value="Editar">
@@ -93,6 +93,6 @@
     </div>
 <!------FOOTER DESKTOP AND MOBILE------>
 <%- include("../partials/footer.ejs") %>
-<script src="/js/formValidation.js"></script>
+<script src="/js/productFormValidation.js"></script>
 </body>
 </html>

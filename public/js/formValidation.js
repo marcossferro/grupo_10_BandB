@@ -13,23 +13,6 @@ const email_login = document.getElementById("email_login");
 const contraseña_login = document.getElementById("contraseña_login");
 const form_login = document.getElementById("form_login");
 
-// New Products
-const submit_newProduct = document.getElementById("submit_newProduct");
-const nombre_newProduct = document.getElementById("nombre_newProduct");
-const detalle_newProduct = document.getElementById("detalle_newProduct");
-const imagen_newProduct = document.getElementById("imagen_newProduct");
-const cat1_newProduct = document.getElementById("1_newProduct");
-const cat2_newProduct = document.getElementById("2_newProduct");
-const cat3_newProduct = document.getElementById("3_newProduct");
-const precio_newProduct = document.getElementById("precio_newProduct");
-const form_newProduct = document.getElementById("form_newProduct");
-
-// Edit Products
-const submit_editProduct = document.getElementById("submit_editProduct");
-const nombre_editProduct = document.getElementById("nombre_editProduct");
-const detalle_editProduct = document.getElementById("detalle_editProduct");
-const precio_editProduct = document.getElementById("precio_editProduct");
-const form_editProduct = document.getElementById("form_editProduct");
 
 
 // Register
@@ -66,27 +49,3 @@ window.addEventListener("load", function(){
     })
 })
 
-// New Products
-window.addEventListener("load", function(){
-    submit_newProduct.addEventListener("click", function(event){
-        event.preventDefault();    
-        if((nombre_newProduct.value == "") || (detalle_newProduct.value =="") || (imagen_newProduct.value =="") || (precio_newProduct.value =="") || ((cat1_newProduct.checked || cat2_newProduct.checked || cat3_newProduct.checked) == false) ){
-            alert('Completa los campos');
-        }else{
-            form_newProduct.submit();
-        }
-    })
-})
-
-// Edit Products
-window.addEventListener("load", function(){
-    submit_editProduct.addEventListener("click", function(event){
-        event.preventDefault();
-        if((nombre_editProduct.value == "") || (detalle_editProduct.value =="") || (precio_editProduct.value =="")){
-            alert('Completa los campos');
-        }else{
-            form_editProduct.submit();
-        }
-    })
-})
-  

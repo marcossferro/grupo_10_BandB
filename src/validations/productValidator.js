@@ -4,7 +4,7 @@ module.exports = [
     [
         check("nombre").isLength({min:1}).withMessage("El nombre no puede estar vacio"),
         check("detalle").isLength({min:1}).withMessage("El detalle no puede estar vacio"),
-        check("imagen").isEmpty({min:1}).withMessage("Debes subir una imagen"),
+        check('imagen').not().isEmpty().withMessage("Debes subir una imagen"),
         body("categoria_id").custom(function(value){
             if(value == undefined){
                 return false
