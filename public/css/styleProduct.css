@@ -14,26 +14,30 @@ body {
 }
 
 /*---------------------MOBILE----------------------*/
-/*----PRODUCTO MOBILE----*/
 
-h2.tituloProducto{
+/*----PRODUCTO MOBILE----*/
+div.contenedorTodo{
+    display: none;
+}
+
+h2.tituloProductoMobile{
     margin-top: 20px;
     margin-left: 15px;
     font-size: 15px;
     text-align: left;
 }
 
-div.contenedorProducto{
+div.contenedorProductoMobile{
     position: relative;
     margin-bottom: 10px;
     width: 100%;
     height: 315px;
 }
-div.contenedorProducto img.imagenProducto{
+div.contenedorProductoMobile img.imagenProducto{
     height: 100%;
 }
 
-div.contenedorProducto i.fa-heart{
+div.contenedorProductoMobile i.fa-heart{
     position: absolute;
     right: 20px;
     top: 240px;
@@ -46,36 +50,38 @@ div.contenedorProducto i.fa-heart{
     transition: box-shadow 0.2s ease-in-out;
 }
 
-div.contenedorProducto i.fa-heart:hover {
+div.contenedorProductoMobile i.fa-heart:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
 }
 
-h1.precioProducto{
+div.detailProductMobile{}
+
+div.detailProductMobile h1.precioProducto{
     margin-left: 15px;
     margin-bottom: 10px;
     text-align: left;
     font-weight: 300;
 }
 
-h5{
+div.detailProductMobile h5{
     margin-left: 15px;
     margin-bottom: 20px;
     text-align: left;
 }
 
-h5 a.mediosDePagoLink{
+div.detailProductMobile h5 a.mediosDePagoLink{
     text-decoration: none;
     color:#3483fa;
     cursor: pointer;
 }
 
-div.botones{
+div.detailProductMobile div.botones{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-div.botones h2.comprarBoton {
+div.detailProductMobile div.botones h2.comprarBoton {
     margin-bottom: 5px;
     padding: 5px 0;
     width: 80%;
@@ -86,10 +92,10 @@ div.botones h2.comprarBoton {
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
     transition: box-shadow 0.2s ease-in-out;
 }
-div.botones h2.comprarBoton:hover {
+div.detailProductMobile div.botones h2.comprarBoton:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
 }
-div.botones h2.carritoBoton {
+div.detailProductMobile div.botones h2.carritoBoton {
     margin-bottom: var(--marginPrincipal);
     padding: 5px 0;
     width: 80%;
@@ -100,32 +106,172 @@ div.botones h2.carritoBoton {
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
     transition: box-shadow 0.2s ease-in-out;
 }
-div.botones h2.carritoBoton:hover {
+div.detailProductMobile div.botones h2.carritoBoton:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
 }
 
-h3.caractTitulo{
+div.detailProductMobile h3.caractTitulo{
     margin-bottom: 5px;
     margin-left: 15px;
     text-align: left;
 }
 
-p.detalleProducto{
+div.detailProductMobile p.detalleProducto{
     margin-bottom: var(--marginPrincipal);
     margin-left: 10px;
     text-align: left;
 }
 
-h3.imgMercadoPagoTitulo{
+div.detailProductMobile h3.imgMercadoPagoTitulo{
     margin-top: var(--marginPrincipal);
     margin-left: 15px;
     text-align: left;
 }
-img.imgMercadoPago{
+div.detailProductMobile img.imgMercadoPago{
     margin-top: 10px;
     margin-bottom: var(--marginPrincipal);
     width: 100%;
 }
+
+/*----PRODUCTO DESKTOP----*/
+@media (min-width: 1024px){
+    div.editDeleteMobile{
+        display: none;
+    }
+
+    h2.tituloProductoMobile{
+        display: none;
+    }
+
+    div.contenedorProductoMobile{
+        display: none;
+    }
+
+    div.detailProductMobile{
+        display: none;
+    }
+
+    div.contenedorTodo{
+        padding: 0 100px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    div.contenedorProductoDesktop{
+        position: relative;
+        margin-bottom: 10px;
+        width: 50%;
+        height: 315px;
+    }
+
+    div.contenedorProductoDesktop h2.tituloProducto{
+        margin-left: 15px;
+        font-size: 15px;
+        text-align: left;
+    }
+    div.contenedorProductoDesktop img.imagenProducto{
+        height: 100%;
+    }
+    
+    div.contenedorProductoDesktop i.fa-heart{
+        position: absolute;
+        right: 20px;
+        top: 240px;
+        padding: 10px;
+        font-size: 15px;
+        color: #fff;
+        background-color: #b9e7fa;
+        border-radius: 50px;
+        box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+        transition: box-shadow 0.2s ease-in-out;
+    }
+    
+    div.contenedorProductoDesktop i.fa-heart:hover {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+    }
+    
+    div.detailProductDesktop{
+        width: 40%;
+    }
+
+    div.detailProductDesktop h3.caractTitulo{
+        margin-bottom: 5px;
+        margin-left: 15px;
+        text-align: left;
+    }
+    
+    div.detailProductDesktop p.detalleProducto{
+        margin-bottom: var(--marginPrincipal);
+        margin-left: 10px;
+        text-align: left;
+    }
+
+    div.detailProductDesktop h1.precioProducto{
+        margin-left: 15px;
+        margin-bottom: var(--marginPrincipal);
+        text-align: left;
+        font-weight: 300;
+    }
+
+    div.detailProductDesktop div.botones{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    div.detailProductDesktop div.botones h2.comprarBoton {
+        margin-bottom: 5px;
+        padding: 5px 0;
+        width: 80%;
+        font-weight: 400;
+        font-size: 20px;
+        background-color: var(--colorPrincipal);
+        border-radius: 15px;
+        box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+        transition: box-shadow 0.2s ease-in-out;
+    }
+    div.detailProductDesktop div.botones h2.comprarBoton:hover {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+    }
+    div.detailProductDesktop div.botones h2.carritoBoton {
+        padding: 5px 0;
+        width: 80%;
+        font-weight: 400;
+        font-size: 20px;
+        background-color: #b9e7fa;
+        border-radius: 15px;
+        box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+        transition: box-shadow 0.2s ease-in-out;
+    }
+    div.detailProductDesktop div.botones h2.carritoBoton:hover {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+    }
+    
+    div.detailProductDesktop h5{
+        margin-top: 10px;
+        margin-left: 15px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    
+    div.detailProductDesktop h5 a.mediosDePagoLink{
+        text-decoration: none;
+        color:#3483fa;
+        cursor: pointer;
+    }
+    
+    div.detailProductDesktop h3.imgMercadoPagoTitulo{
+        margin-top: var(--marginPrincipal);
+        margin-left: 15px;
+        text-align: left;
+    }
+    div.detailProductDesktop img.imgMercadoPago{
+        margin-top: 10px;
+        margin-bottom: var(--marginPrincipal);
+        width: 100%;
+    }
+}
+
 /*----BOTONES EDIT Y DELETE----*/
 div.editDelete {
     height: 30px;
@@ -176,13 +322,17 @@ h2.productosSimilares {
     background-color: var(--colorPrincipal);
 }
 
-a.aProduct{
+div.contenedorProductosSim{
+    width: 100%;
+}
+
+div.contenedorProductosSim a.aProduct{
     display: flex;
-    width: 30%;
+    width: 100%;
     text-decoration: none;
 }
 
-a.aProduct div.detalleProductoM {
+div.contenedorProductosSim a.aProduct div.detalleProductoM {
     display: flex;
     width: 100%;
     padding: 22px 22px;
@@ -195,35 +345,68 @@ a.aProduct div.detalleProductoM {
     transition: box-shadow 0.2s ease-in-out;
 }
 
-a.aProduct div.detalleProductoM:hover {
+div.contenedorProductosSim a.aProduct div.detalleProductoM:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
 }
-a.aProduct div.detalleProductoM:nth-of-type(5n+1) { order: 1 }
-a.aProduct div.detalleProductoM:nth-of-type(5n+2) { order: 2 }
-a.aProduct div.detalleProductoM:nth-of-type(5n+3) { order: 3 }
-a.aProduct div.detalleProductoM:nth-of-type(5n+4) { order: 4 }
-a.aProduct div.detalleProductoM:nth-of-type(5n)   { order: 5 }
+div.contenedorProductosSim a.aProduct div.detalleProductoM:nth-of-type(5n+1) { order: 1 }
+div.contenedorProductosSim a.aProduct div.detalleProductoM:nth-of-type(5n+2) { order: 2 }
+div.contenedorProductosSim a.aProduct div.detalleProductoM:nth-of-type(5n+3) { order: 3 }
+div.contenedorProductosSim a.aProduct div.detalleProductoM:nth-of-type(5n+4) { order: 4 }
+div.contenedorProductosSim a.aProduct div.detalleProductoM:nth-of-type(5n)   { order: 5 }
 
-a.aProduct div.detalleProductoM img.crearImg{
+div.contenedorProductosSim a.aProduct div.detalleProductoM img.crearImg{
     width: 50%;
     height: auto;
 }
 
-a.aProduct div.detalleProductoM div.contenido{
+div.contenedorProductosSim a.aProduct div.detalleProductoM div.contenido{
     width: 50%;
 }
 
-a.aProduct div.detalleProductoM div.contenido div.tituloPrecio {
+div.contenedorProductosSim a.aProduct div.detalleProductoM div.contenido div.tituloPrecio {
     text-align: end;
     height: 80%;
     color: black;
 }
-a.aProduct div.detalleProductoM div.contenido div.tituloPrecio h2.nombreProducto {
+div.contenedorProductosSim a.aProduct div.detalleProductoM div.contenido div.tituloPrecio h2.nombreProducto {
     height: 70%;
     font-size: 20px;
     color: black;
 }
-a.aProduct div.detalleProductoM div.contenido div.tituloPrecio p.precioProducto {
+div.contenedorProductosSim a.aProduct div.detalleProductoM div.contenido div.tituloPrecio p.precioProducto {
     height: 30%;
     font-size: 15px;
+}
+
+/*----PRODUCTOS SIMILARES TABLET----*/
+@media (min-width: 768px) {
+    img.imgMercadoPago{
+        width: 70%;
+    }
+
+    div.contenedorProductosSim{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    div.contenedorProductosSim a.aProduct{
+        width: 50%;
+    }
+
+}
+/*----PRODUCTOS SIMILARES DESKTOP----*/
+@media (min-width: 1024px) {
+    img.imgMercadoPago{
+        width: 50%;
+    }
+
+    div.contenedorProductosSim{
+        justify-content: center;
+    }
+    
+    div.contenedorProductosSim a.aProduct{
+        width: 30%;
+    }
+    
 }

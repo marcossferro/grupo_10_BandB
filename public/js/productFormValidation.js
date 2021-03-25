@@ -21,16 +21,15 @@ window.addEventListener("load", function(){
     submit_newProduct.addEventListener("click", function(event){
         event.preventDefault();
         if(nombre_newProduct.value == "" || nombre_newProduct.value.length < 2){
-            console.log("categoriaaaaaaaaaaa", cat1_newProduct.checked);
-            alert('El nombre debe tener al menos dos caracteres');
+            alert('El nombre debe tener al menos 5 caracteres');
         }else if(detalle_newProduct.value =="" || detalle_newProduct.value.length < 2){
-            alert('El detalle debe tener al menos dos caracteres');
+            alert('El detalle debe tener al menos 20 caracteres');
         }else if(((cat1_newProduct.checked || cat2_newProduct.checked || cat3_newProduct.checked) == false)){
-            alert("Debes seleccionar al menos una categoria");
+            alert("Debes seleccionar una categoria");
         }else if(precio_newProduct.value =="" || precio_newProduct.value.length < 1){
             alert("El precio no puede estar vacio");
         }else if(imagen_newProduct.value == ""){
-            alert('Debes cargar una imagen');
+            alert('Debes cargar una imagen en formato JPG, JPEG o PNG');
         }else{
             form_newProduct.submit();
         }

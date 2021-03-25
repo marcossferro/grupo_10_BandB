@@ -18,10 +18,19 @@ var storage = multer.diskStorage({
     }
   })
    
-  var upload = multer({ storage: storage })
-
-
-
+  var upload = multer({ 
+    storage: storage,
+    limits: { fileSize: 1*1024*1024 },
+    fileFilter: function (req, file, cb) {
+      if (file.mimetype === 'image/png') {
+        return cb(null, true);
+      }else if(file.mimetype === 'image/jpeg'){
+        return cb(null, true);
+      }
+      cb(null, false);
+     }
+    })
+    
 
 router.get('/', logueadoMiddleware, productController.productList)
 router.post('/', cierreSesionMiddleware, productController.productList)

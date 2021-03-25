@@ -12,68 +12,118 @@
 <!------SECTION BAR. DE NAV. DESKTOP------>
 <%- include("../partials/barraDeNavegacion.ejs") %>
 
-<!------PRODUCTO MOBILE------>
-<h2 class="tituloProducto">Lorem ipsum dolor sit amet</h2>
+<!------PRODUCTO MOBILE Y TABLET------>
+<h2 class="tituloProductoMobile">Lorem ipsum dolor sit amet</h2>
 
-<div class="contenedorProducto">
+<div class="contenedorProductoMobile">
     <img class="imagenProducto" src="/imgProducts/<%= productos.imagen %>">
     <i id="favoritosIcon" class="fas fa-heart"></i>
 </div>
 
-    <%if(typeof usuarioLogueado == "undefined" || !usuarioLogueado.tipo_usuario == 1){%>
-        <div class="editDelete" style="display: none;">
-            <a class="edit" href="/products/<%= productos.id %>/edit"><i class="far fa-edit"></i></a>
-            
-            <form class="delete" action="/products/<%= productos.id%>/delete?_method=DELETE" method="POST">
-                <button class="delete" type="submit"><i class="far fa-trash-alt"></i></button>
-            </form>
-        </div>
-    <%}else{%>
-        <div class="editDelete" style="display: flex;">
-            <a class="edit" href="/products/<%= productos.id %>/edit"><i class="far fa-edit"></i></a>
-            
-            <form class="delete" action="/products/<%= productos.id%>/delete?_method=DELETE" method="POST">
-                <button class="delete" type="submit"><i class="far fa-trash-alt"></i></button>
-            </form>
-        </div>
-        <%}%>
+    <div class="editDeleteMobile">
+        <%if(typeof usuarioLogueado == "undefined" || !usuarioLogueado.tipo_usuario == 1){%>
+            <div class="editDelete" style="display: none;">
+                <a class="edit" href="/products/<%= productos.id %>/edit"><i class="far fa-edit"></i></a>
+                
+                <form id="formDelete" class="delete" action="/products/<%= productos.id%>/delete?_method=DELETE" method="POST">
+                    <button id="deleteBoton" class="delete" type="submit"><i class="far fa-trash-alt"></i></button>
+                </form>
+            </div>
+        <%}else{%>
+            <div class="editDelete" style="display: flex;">
+                <a class="edit" href="/products/<%= productos.id %>/edit"><i class="far fa-edit"></i></a>
+                
+                <form id="formDelete" class="delete" action="/products/<%= productos.id%>/delete?_method=DELETE" method="POST">
+                    <button id="deleteBoton" class="delete" type="submit"><i class="far fa-trash-alt"></i></button>
+                </form>
+            </div>
+            <%}%>
+    </div>
 
-<h1 class="precioProducto">$ <%= productos.precio %> </h1>
-<h5><a class="mediosDePagoLink" href="#">Ver los medios de pago</a></h5>
-
-<div class="botones">
-    <h2 class="comprarBoton">Comprar ahora</h2>
-    <h2 class="carritoBoton">Agregar al carrito</h2>
+<div class="detailProductMobile">
+    <h1 class="precioProducto">$ <%= productos.precio %> </h1>
+    <h5><a class="mediosDePagoLink" href="#">Ver los medios de pago</a></h5>
+    
+    <div class="botones">
+        <h2 class="comprarBoton">Comprar ahora</h2>
+        <h2 class="carritoBoton">Agregar al carrito</h2>
+    </div>
+    
+    <h3 class="caractTitulo">Caracteristicas</h3>
+    <p class="detalleProducto"><%= productos.detalle %></p>
+    
+    <h3 class="imgMercadoPagoTitulo">Medios de pago</h3>
+    <img class="imgMercadoPago" src="/img/994049-MERCADO_PAGO.png">
 </div>
 
-<h3 class="caractTitulo">Caracteristicas</h3>
-<p class="detalleProduct"><%= productos.detalle %></p>
+<!------PRODUCTO DESKTOP------>
+<div class="contenedorTodo">
+    <div class="contenedorProductoDesktop">
+        <h2 class="tituloProducto">Lorem ipsum dolor sit amet</h2>
+        <img class="imagenProducto" src="/imgProducts/<%= productos.imagen %>">
+        <i id="favoritosIcon" class="fas fa-heart"></i>
+    
+        <%if(typeof usuarioLogueado == "undefined" || !usuarioLogueado.tipo_usuario == 1){%>
+            <div class="editDelete" style="display: none;">
+                <a class="edit" href="/products/<%= productos.id %>/edit"><i class="far fa-edit"></i></a>
+                
+                <form id="formDelete" class="delete" action="/products/<%= productos.id%>/delete?_method=DELETE" method="POST">
+                    <button id="deleteBoton" class="delete" type="submit"><i class="far fa-trash-alt"></i></button>
+                </form>
+            </div>
+        <%}else{%>
+            <div class="editDelete" style="display: flex;">
+                <a class="edit" href="/products/<%= productos.id %>/edit"><i class="far fa-edit"></i></a>
+                
+                <form id="formDelete" class="delete" action="/products/<%= productos.id%>/delete?_method=DELETE" method="POST">
+                    <button id="deleteBoton" class="delete" type="submit"><i class="far fa-trash-alt"></i></button>
+                </form>
+            </div>
+            <%}%>
+    </div>
+    
+    <div class="detailProductDesktop">
+        <h3 class="caractTitulo">Caracteristicas</h3>
+        <p class="detalleProducto"><%= productos.detalle %></p>
+        
+        <h1 class="precioProducto">$ <%= productos.precio %></h1>
+        
+        <div class="botones">
+            <h2 class="comprarBoton">Comprar ahora</h2>
+            <h2 class="carritoBoton">Agregar al carrito</h2>
+        </div>
+        <h5><a class="mediosDePagoLink" href="#">Ver todos los medios de pago</a></h5>
+    
+        <h3 class="imgMercadoPagoTitulo">¿Tenes Mercado Pago?</h3>
+        <img class="imgMercadoPago" src="/img/994049-MERCADO_PAGO.png">
+    </div>
+</div>
 
-<h3 class="imgMercadoPagoTitulo">Medios de pago</h3>
-<img class="imgMercadoPago" src="/img/994049-MERCADO_PAGO.png">
 
 
 <!------PRODUCTOS SIMILARES MOBILE------>
 <h2 class="productosSimilares" >Productos similares</h2>
-<%for(let i = 0; i < totalProductos.length; i++){%>
-    <%if(totalProductos[i].categoria_id == productos.categoria_id){%>
-        <a class="aProduct" href="/products/<%= totalProductos[i].id %>">
-            <div class="detalleProductoM">
-                <img class="crearImg" src="/imgProducts/<%= totalProductos[i].imagen%>">
-        
-                <div class="contenido">
-                    <div class="tituloPrecio">
-                        <h2 class="nombreProducto"><%= totalProductos[i].nombre %></h2>
-                        <p class="precioProducto">$ <%= totalProductos[i].precio %></p>
+<div class="contenedorProductosSim">
+    <%for(let i = 0; i < totalProductos.length; i++){%>
+        <%if(totalProductos[i].categoria_id == productos.categoria_id){%>
+            <a class="aProduct" href="/products/<%= totalProductos[i].id %>">
+                <div class="detalleProductoM">
+                    <img class="crearImg" src="/imgProducts/<%= totalProductos[i].imagen%>">
+            
+                    <div class="contenido">
+                        <div class="tituloPrecio">
+                            <h2 class="nombreProducto"><%= totalProductos[i].nombre %></h2>
+                            <p class="precioProducto">$ <%= totalProductos[i].precio %></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
+        <%}%>
     <%}%>
-<%}%>
+</div>
 
 <!------FOOTER DESKTOP AND MOBILE------>
 <%- include("../partials/footer.ejs") %>
-<script src="/js/botonesProductos.js"></script>
+<script src="/js/productDelete.js"></script>
 </body>
 </html>

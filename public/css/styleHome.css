@@ -65,10 +65,6 @@ section.sliderDesktop{
         text-decoration: none;
     }
 
-    section.categorias a.catAireAcon{
-        margin-bottom: 15px;
-    }
-
     section.categorias a.catAireAcon div.catAireAcon{
         margin-left: auto;
         margin-right: auto;
@@ -95,9 +91,6 @@ section.sliderDesktop{
         text-transform: uppercase;
     }
     
-    section.categorias a.catCalefaccion{
-        margin-bottom: 15px;
-    }
     section.categorias a.catCalefaccion div.catCalefaccion{
         margin-left: auto;
         margin-right: auto;
@@ -195,7 +188,15 @@ section.productosDestacados {
     margin-bottom: 20px;
 }
 
-section.productosDestacados h2 {}
+section.productosDestacados h2 {
+    margin-bottom: 40px;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: var(--colorPrincipal);
+}
 
 section.productosDestacados div.container {
     position: relative;
@@ -438,7 +439,15 @@ section.productosDestacadosDesktop {
     margin-bottom: 20px;
 }
 
-section.productosDestacadosDesktop h2 {}
+section.productosDestacadosDesktop h2 {
+    margin-bottom: 40px;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: var(--colorPrincipal);
+}
 
 section.productosDestacadosDesktop div.container {
     position: relative;

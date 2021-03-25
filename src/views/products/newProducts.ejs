@@ -31,7 +31,7 @@
                 </div>
                 <br>
                 <small style="color: red">
-                    <%= (typeof errores != "undefined" && errores.descripcion) ? errores.descripcion.msg : '' %>
+                    <%= (typeof errores != "undefined" && errores.detalle) ? errores.detalle.msg : '' %>
                 </small>
                 <div>
                     <label for="detalle">Descripción del producto:</label>
@@ -85,6 +85,6 @@
     </div>
 <!------FOOTER DESKTOP AND MOBILE------>
 <%- include("../partials/footer.ejs") %>
-<script src="/js/productFormValidation.js"></script>
+<!--<script src="/js/productFormValidation.js"></script>-->
 </body>
 </html>
