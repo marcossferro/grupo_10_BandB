@@ -87,11 +87,8 @@ header.mobile div.user ul li.miperfil a button.misdatos {
 header.mobile div.user ul li.logOut {
     height: 50%;
 }
-header.mobile div.user ul li.logOut form{
-    width: 100%;
-    height: 100%;
-}
-header.mobile div.user ul li form button.cierreDeSesion {
+header.mobile div.user ul li.logOut a {}
+header.mobile div.user ul li.logOut a button.logOut{
     width: 95%;
     height: 90%;
     background-color: #424242;
@@ -269,13 +266,10 @@ footer.footerMobile a.instagram i {
     header.desktop nav.sessionOk ul.sessionOk li.cierreSesion {
         width: 35%;
     }
-    header.desktop nav.sessionOk ul.sessionOk li.cierreSesion form {
-        width: 100%;
-    }
-    header.desktop nav.sessionOk ul.sessionOk li.cierreSesion form button.cierreDeSesion {
-        width: 100%;
-        border-radius: 10px;
-        background-color: #fff;
+    header.desktop nav.sessionOk ul.sessionOk li.cierreSesion a.cierreSesion {
+        text-decoration: none;
+        color: black;
+        text-transform: uppercase;   
     }
 
     
@@ -333,14 +327,13 @@ section.barDeNav {
         justify-content: space-between;
         align-items: center;
     }
-    footer.footerDesktop div.container a.logofooter {}
     footer.footerDesktop div.container a.logofooter img {
         width: 80px;
     }
     footer.footerDesktop div.container ul {
         list-style-type: none;
     }
-    footer.footerDesktop div.container ul li {}
+
     footer.footerDesktop div.container ul li a {
         color: #fff;
         text-decoration: none;
@@ -356,7 +349,7 @@ section.barDeNav {
     footer.footerDesktop div.container ul.redSocial li :first-child {
         margin-left: 0px;
     }
-    footer.footerDesktop div.container ul.redSocial li a {}
+
     footer.footerDesktop div.container ul.redSocial li a i {
         font-size: 30px;
         color: #fff;

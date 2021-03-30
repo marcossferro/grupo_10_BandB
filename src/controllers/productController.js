@@ -1,5 +1,6 @@
 const {validationResult} = require ("express-validator");
 const db = require("../database/models")
+const fs = require("fs");
 
 module.exports = {
     product: function(req,res){
@@ -63,6 +64,7 @@ module.exports = {
         }else{
             db.Producto.findByPk(req.params.id)
             .then(function(producto){
+                fs.unlinkSync("../../public/imgProducts/"+req.files[0].filename)
                 res.render("products/editProducts", { usuarioLogueado: req.session.usuarioLogueado, productos: producto, errores: errores.mapped() })
             })
         }

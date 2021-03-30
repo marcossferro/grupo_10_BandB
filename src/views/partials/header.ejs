@@ -22,11 +22,7 @@
                         <li class="userName">Bienvenido <%= usuarioLogueado.nombre %></li>
                     </a>
                     <li class="contacto"><a class= "contacto" href="#">Contacto</a></li>
-                    <li class="cierreSesion">
-                        <form action="" method="POST">
-                            <button class= "cierreDeSesion" onclick="closeSession('<%= usuarioLogueado.id %>')">Cerrar sesión</button>
-                        </form>
-                    </li>
+                    <li class="cierreSesion"><a class= "cierreSesion" href="login/logout">Cerrar Sesion</a></li>
                 </ul>
             </nav>
               
@@ -58,9 +54,7 @@
             <ul>
                 <li class="miperfil"><a href="/perfil/<%= usuarioLogueado.id%>"><button class="misdatos">Mis datos</button></a></li>
                 <li class="logOut">
-                    <form id="userLogOut" action="" method="POST">
-                        <button id= "logOut" class= "cierreDeSesion" onclick="closeSession('<%= usuarioLogueado.id %>')">Cerrar sesión</button>
-                    </form>
+                    <a href="login/logout"><button class= "logOut">Cerrar Sesion</button></a>
                 </li>
             </ul>
         </div>

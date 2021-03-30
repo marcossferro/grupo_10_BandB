@@ -1,7 +1,11 @@
 const db = require("../database/models")
 
 function logueadoMiddleware (req, res, next){
-    if(req.session.usuarioLogueado == undefined) {
+    if(typeof req.session.usuarioLogueado != "undefined"){
+        res.locals.usuarioLogueado = req.session.usuarioLogueado;
+    }
+    next();
+    /*    if(req.session.usuarioLogueado == undefined) {
         next();
     }else{
         if(req.originalUrl == "/"){
@@ -72,7 +76,7 @@ function logueadoMiddleware (req, res, next){
         }else{
             res.send("Esta pagina no esta disponible")
         }
-    }
+    }*/
 }
 
 module.exports = logueadoMiddleware

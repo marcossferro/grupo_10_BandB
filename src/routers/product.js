@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
-const logueadoMiddleware = require("../middlewares/logueadoMiddleware")
-const cierreSesionMiddleware = require("../middlewares/cierreSesionMiddleware")
 const editCreateValidationMiddleware = require("../middlewares/editCreateValidationMiddleware")
 const productValidator = require('../validations/productValidator')
 
@@ -31,26 +29,23 @@ var storage = multer.diskStorage({
      }
     })
     
+router.get('/', productController.productList)
+router.post('/', productController.productList)
 
-router.get('/', logueadoMiddleware, productController.productList)
-router.post('/', cierreSesionMiddleware, productController.productList)
+router.get("/aireacondicionado", productController.aireAcon)
+router.get("/calefaccion", productController.calefaccion)
+router.get("/aguacaliente", productController.aguaCaliente)
 
-router.get("/aireacondicionado", logueadoMiddleware, productController.aireAcon)
-router.get("/calefaccion", logueadoMiddleware, productController.calefaccion)
-router.get("/aguacaliente", logueadoMiddleware, productController.aguaCaliente)
-
-
-router.get('/create',logueadoMiddleware, editCreateValidationMiddleware, cierreSesionMiddleware, productController.createView)
+router.get('/create',editCreateValidationMiddleware, productController.createView)
 router.post('/create', upload.any(), productValidator[0], productController.create)
 
-router.get('/:id', logueadoMiddleware ,productController.product)
-router.post('/:id', cierreSesionMiddleware, productController.product)
+router.get('/:id', productController.product)
+router.post('/:id', productController.product)
 
-router.get('/:id/edit', logueadoMiddleware, editCreateValidationMiddleware, productController.editView)
-router.post('/:id/edit', cierreSesionMiddleware, productController.editView)
+router.get('/:id/edit', editCreateValidationMiddleware, productController.editView)
+router.post('/:id/edit', productController.editView)
 router.put('/:id/edit', upload.any(), productValidator[1], productController.edit)
 
 router.delete('/:id/delete', productController.delete)
-
 
 module.exports = router;

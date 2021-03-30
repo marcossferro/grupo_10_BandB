@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
-const logueadoMiddleware = require ("../middlewares/logueadoMiddleware")
-const cierreSesionMiddleware = require ("../middlewares/cierreSesionMiddleware")
 const perfilMiddleware = require ("../middlewares/perfilMiddleware")
 
 const perfilController = require("../controllers/perfilController");
@@ -19,8 +17,8 @@ var storage = multer.diskStorage({
    
 var upload = multer({ storage: storage })
 
-router.get('/:id', logueadoMiddleware, perfilMiddleware ,perfilController.perfil)
-router.post("/:id", cierreSesionMiddleware, perfilController.perfil)
+router.get('/:id', perfilMiddleware, perfilController.perfil)
+router.post("/:id", perfilController.perfil)
 router.put("/:id/edit", upload.any(), perfilController.edit)
 router.delete("/:id/delete", perfilController.delete)
 

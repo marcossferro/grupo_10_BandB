@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
-const logueadoMiddleware = require("../middlewares/logueadoMiddleware")
-const cierreSesionMiddleware = require("../middlewares/cierreSesionMiddleware")
 const registerValidator = require("../validations/registerValidator")
 const registerController = require("../controllers/registerController")
 
@@ -29,9 +27,7 @@ var upload = multer({
    }
   })
 
-
-router.get('/', logueadoMiddleware, registerController.register)
-router.post('/', upload.any(),  registerValidator, cierreSesionMiddleware, registerController.create)
-
+router.get('/', registerController.register)
+router.post('/', upload.any(),  registerValidator, registerController.create)
 
 module.exports = router

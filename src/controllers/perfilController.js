@@ -22,7 +22,7 @@ module.exports = {
             contraseña: (!req.body.contraseña == undefined && req.body.contraseña == req.body.repassword) ? bcrypt.hashSync(req.body.contraseña, 12) : contraseñaAModificar,
             tipo_usuario: "2"
         },{
-            where: {id: req.params.id}
+            where: { id: req.params.id }
         }).then(()=>{
             res.redirect("/")
         })

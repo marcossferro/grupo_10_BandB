@@ -28,7 +28,7 @@ window.addEventListener("load", function(){
             alert("Debes seleccionar una categoria");
         }else if(precio_newProduct.value =="" || precio_newProduct.value.length < 1){
             alert("El precio no puede estar vacio");
-        }else if(imagen_newProduct.value == ""){
+        }else if(imagen_newProduct.value == ""){ //agregar validacion de extensiones
             alert('Debes cargar una imagen en formato JPG, JPEG o PNG');
         }else{
             form_newProduct.submit();
