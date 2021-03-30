@@ -14,70 +14,47 @@
 <%- include("../partials/barraDeNavegacion.ejs") %>
     
     <!------FORM DE REGISTRO------>
-    
-    <h1>Formulario de registro</h1>
-    <br>
-    <h2>Completa los datos:</h2>
-    <br>
-    <section class="form">
+    <section class="register">
+        <h1 class="register">Formulario de registro</h1>
+
         <form id="form_register" action="" method="POST" enctype="multipart/form-data">
-            <div>
-            <div>
-                <small style="color: red">
-                    <%= (typeof errores != "undefined" && errores.nombre) ? errores.nombre.msg : '' %>
-                </small>
-                <div>
-                    <label for="nombre">Nombre</label>
-                    <input id="nombre_register" name="nombre" type="text">
-                </div>
-            </div>
-            <div>
-                <small style="color: red">
-                    <%= (typeof errores != 'undefined' && errores.apellido) ? errores.apellido.msg : '' %>
-                </small>
-                <div>
-                    <label for="apellido">Apellido</label>
-                    <input id="apellido_register" name="apellido" type="text">
-                </div>
-            </div>
-            <div>
-                <small style="color: red">
-                    <%= (typeof errores != 'undefined' && errores.email) ? errores.email.msg : '' %>
-                </small>
-                <div>
-                    <label for="email">Email</label>
-                    <input id="email_register" name="email" type="email">
-                </div>
-            </div>
-            <div>
-                <small style="color: red">
-                    <%= (typeof errores != 'undefined' && errores.contraseña) ? errores.contraseña.msg : '' %>
-                </small>
-                <div>
-                    <label for="contraseña">Contraseña</label>
-                    <input id="contraseña_register" name="contraseña" type="password">
-                </div>
-            </div>
-            <div>
-                <small style="color: red">
-                    <%= (typeof errores != 'undefined' && errores.repassword) ? errores.repassword.msg : '' %>
-                </small>
-                <div>
-                    <label for="repassword">Repite la contraseña</label>
-                    <input id="repassword_register" name="repassword" type="password">
-                </div>
-            </div>
-            <div>
-                <small style="color: red">
-                    <%= (typeof errores != 'undefined' && errores.avatar) ? errores.avatar.msg : '' %>
-                </small>
-                <div>
-            <div>
-                <label for="avatar">Avatar</label>
-                <input type="file" name="avatar" id="avatar_register">
-            </div>            
-            <br>
-            <button id="boton_register" type="submit">Enviar</button>
+            <small style="color: red">
+                <%= (typeof errores != "undefined" && errores.nombre) ? errores.nombre.msg : '' %>
+            </small>
+            <label for="nombre">Nombre</label>
+            <input id="nombre_register" name="nombre" type="text">
+            
+            <small style="color: red">
+                <%= (typeof errores != 'undefined' && errores.apellido) ? errores.apellido.msg : '' %>
+            </small>
+            <label for="apellido">Apellido</label>
+            <input id="apellido_register" name="apellido" type="text">
+            
+            <small style="color: red">
+                <%= (typeof errores != 'undefined' && errores.email) ? errores.email.msg : '' %>
+            </small>
+            <label for="email">Email</label>
+            <input id="email_register" name="email" type="email">
+            
+            <small style="color: red">
+                <%= (typeof errores != 'undefined' && errores.contraseña) ? errores.contraseña.msg : '' %>
+            </small>
+            <label for="contraseña">Contraseña</label>
+            <input id="contraseña_register" name="contraseña" type="password">
+            
+            <small style="color: red">
+                <%= (typeof errores != 'undefined' && errores.repassword) ? errores.repassword.msg : '' %>
+            </small>
+            <label for="repassword">Repite la contraseña</label>
+            <input id="repassword_register" name="repassword" type="password">
+            
+            <small style="color: red">
+                <%= (typeof errores != 'undefined' && errores.avatar) ? errores.avatar.msg : '' %>
+            </small>
+            <label for="avatar">Avatar</label>
+            <input type="file" name="avatar" id="avatar_register">
+            
+            <input id="boton_register" type="submit" value="Registrarse">
         </form>
     </section>
     

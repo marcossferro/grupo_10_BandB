@@ -12,23 +12,52 @@ body {
 }
 
 /*----------------------MOBILE--------------------*/
-h1{
+section.login{
     text-align: center;
+    margin-top: 10px;
+}
+section.login h1.login{}
+section.login form#form_login{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 15px var(--marginPrincipal) 15px;
+    padding: 10px 20px;
+    background-color: var(--colorPrincipal);
+    border-radius: 20px;
 }
 
-h4{
-    text-align: center;
+section.login form#form_login label{}
+section.login form#form_login small{}
+section.login form#form_login input{
+    margin-bottom: 15px;
+    height: 25px;
+    border-color: #fff;
+    border-radius: 10px;
 }
 
-form{
-    text-align: center;
-    /* display: inline-block; */
-    flex-wrap: nowrap;
+section.login form#form_login input#boton_login{
+    width: 150px;
+    background-color: #fff;
+    border-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
 }
 
-.ingreso{
-    text-align: center;
+section.login form#form_login input#boton_login:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+} 
+
+section.login form#form_login div.checkbox {}
+section.login form#form_login div.checkbox label.checkbox{}
+section.login form#form_login div.checkbox input.checkbox{
+    height: auto;
 }
+
+section.login small.forgotPass {}
+
 
 /*=========================
 ---REDES SOCIALES DESKTOP---
@@ -37,9 +66,31 @@ article.redesDesktop {
     display: none;
 }
 
-
+/*----------------------TABLET--------------------*/
+@media (min-width: 768px) {
+    section.login{
+        padding: 0 100px;
+    }
+}
+/*----------------------DESKTOP-------------------*/
 @media (min-width: 1024px) {
-/*=========================
+
+    section.login{
+        padding: 0 400px;
+    }
+
+    section.login form#form_login input{
+        margin: 0 auto 15px;
+        width: 40%;
+    }
+
+    section.login form#form_login div.checkbox input.checkbox{
+        margin: auto;
+        width: auto;
+        height: auto;
+    }
+
+    /*=========================
 -------DIV CONTAINER--------
 =========================*/
     div.container {

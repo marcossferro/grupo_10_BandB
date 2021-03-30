@@ -17,11 +17,14 @@
         <% } else { %>
             <nav class="sessionOk">
                 <ul class="sessionOk">
-                    <a class="perfil" href="/perfil/<%= usuarioLogueado.id%>">
-                        <li class="userAvatar"><img src="imgAvatar/<%= usuarioLogueado.avatar %>"></li>
-                        <li class="userName">Bienvenido <%= usuarioLogueado.nombre %></li>
-                    </a>
+                    <li class="perfil"><a href="perfil/<%= usuarioLogueado.id%>">
+                        <img src="imgAvatar/<%= usuarioLogueado.avatar %>">
+
+                        <p class="userName"><%= usuarioLogueado.nombre %></p>
+                    </a></li>
+
                     <li class="contacto"><a class= "contacto" href="#">Contacto</a></li>
+
                     <li class="cierreSesion"><a class= "cierreSesion" href="login/logout">Cerrar Sesion</a></li>
                 </ul>
             </nav>

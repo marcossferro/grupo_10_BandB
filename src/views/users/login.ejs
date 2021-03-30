@@ -14,47 +14,32 @@
 <%- include("../partials/barraDeNavegacion.ejs") %>
     
     <!-- FORM DE INGRESO -->
-    <section class="ingreso">
-        <h1>INGRESO</h1>
-        <br>
-        <h4>Por favor ingresa los datos con los que te registraste:</h4>
-        <br>
-        <%if (typeof errors != "undefined") { %>
-            <p class="errorP">ERROR</p>
-            <ul class="errorUl">
-                <% for(let i = 0; i < errors.length; i++){ %>
-                    <li class="errorLi">
-                        <%= errors[i].msg%>
-                    </li>
-               <% } %>
-            </ul>
-        
-            <% } %>
+
+    <section class="login">
+        <h1 class="login">LOGIN</h1>
+
         <form id="form_login" action="/login" method="POST">
             <label for="email">Email:</label>
-            <br>
             <small style="color: red">
                 <%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %>
             </small>
             <input type="email" name="email" id="email_login">
-            <br>
-            <br>
+
             <label for= "contraseña" >Contraseña:</label>
-            <br>
             <small style="color: red">
                 <%= (typeof errors != 'undefined' && errors.contraseña) ? errors.contraseña.msg : '' %>
             </small>            
             <input type="password" name="contraseña" id="contraseña_login">
-            <br>
-            <br>
+
             <input id="boton_login" type="submit" value="Ingresar">
-            <br>
-            <br>
-            <label for="recordame">No cerrar sesion</label>
-            <input type="checkbox" name="recordame">
+
+            <div class="checkbox">    
+                <label class="checkbox" for="recordame">No cerrar sesion</label>
+                <input class="checkbox" type="checkbox" name="recordame">
+            </div>
         </form>
-        <br>
-        <h6>¿Has olvidado tu contraseña?</h6>
+
+        <small class="forgotPass">¿Has olvidado tu contraseña?</small>
     </section>
     
     <!------REDES SOCIALES DESKTOP------>

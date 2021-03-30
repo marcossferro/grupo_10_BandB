@@ -239,23 +239,26 @@ footer.footerMobile a.instagram i {
         width: 100%;
         list-style: none;
     }
-    header.desktop nav.sessionOk ul.sessionOk a.perfil {
-        width: 20%;
+
+    header.desktop nav.sessionOk ul.sessionOk li.perfil{
+        width: 30%;
+        text-transform: uppercase;
+    }
+    header.desktop nav.sessionOk ul.sessionOk li.perfil a{
+        width: 100%;
         text-decoration: none;
         color: black;
     }
-    header.desktop nav.sessionOk ul.sessionOk a.perfil li.userName {
-        width: 50%;
+    header.desktop nav.sessionOk ul.sessionOk li.perfil a img{
+        width: 20px;
+        height: 20px;
+        border-radius: 100px;
     }
-    header.desktop nav.sessionOk ul.sessionOk a.perfil li.userAvatar{
-        width: 30%;
-    }
-    header.desktop nav.sessionOk ul.sessionOk a.perfil li.userAvatar img {
-        width: 100%;
-        border-radius: 100px;  
-    }
+    header.desktop nav.sessionOk ul.sessionOk li.perfil a p.userName{}
+
+    
     header.desktop nav.sessionOk ul.sessionOk li.contacto {
-        width: 25%;
+        width: 30%;
     }
     header.desktop nav.sessionOk ul.sessionOk li.contacto a.contacto {
         text-decoration: none;
@@ -264,7 +267,7 @@ footer.footerMobile a.instagram i {
     }
 
     header.desktop nav.sessionOk ul.sessionOk li.cierreSesion {
-        width: 35%;
+        width: 40%;
     }
     header.desktop nav.sessionOk ul.sessionOk li.cierreSesion a.cierreSesion {
         text-decoration: none;

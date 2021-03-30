@@ -9,116 +9,117 @@
 }
 body {
     font-family: "Barlow";
-    text-align: center;
-}
-
-.forms{
-    text-align: center;
-}
-
-section.form form div.id {
-    display: none;
 }
 
 /*----------------------MOBILE--------------------*/
+section.register{
+    margin-top: 10px;
+}
+section.register h1.register{}
+section.register form#form_register{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: 10px 15px var(--marginPrincipal) 15px;
+    padding: 10px 20px;
+    background-color: var(--colorPrincipal);
+    border-radius: 20px;
+}
 
-/*=============================
---SECTION BAR. DE NAV. DESKTOP--
-==============================*/
-section.barDeNav {
+section.register form#form_register label{}
+section.register form#form_register small{}
+section.register form#form_register input{
+    margin-bottom: 15px;
+    height: 25px;
+    border-color: #fff;
+    border-radius: 10px;
+}
+
+section.register form#form_register input#boton_register{
+    background-color: #fff;
+    border-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+section.register form#form_register input#boton_register:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+} 
+
+/*=========================
+---REDES SOCIALES DESKTOP---
+=========================*/
+article.redesDesktop {
     display: none;
 }
 
-h1{
-    text-align: center;
+/*----------------------TABLET--------------------*/
+@media (min-width: 768px) {
+    section.register{
+        padding: 0 100px;
+    }
 }
-
-h3{
-    text-align: center;
-}
-
-
+/*----------------------DESKTOP-------------------*/
 @media (min-width: 1024px) {
+
+    section.register{
+        padding: 0 400px;
+    }
+
+    section.register form#form_register input{
+        margin: 0 auto 15px;
+        width: 40%;
+    }
+
     /*=========================
-    -------DIV CONTAINER--------
-    =========================*/
+-------DIV CONTAINER--------
+=========================*/
     div.container {
         position: relative;
         padding: 0 100px
     }
 
-/*=============================
---SECTION BAR. DE NAV. DESKTOP--
-==============================*/
-section.barDeNav {
-    margin-bottom: var(--marginPrincipal);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #4054B2;
-    height: 55px;
+/*=========================
+---REDES SOCIALES DESKTOP---
+=========================*/
+    article.redesDesktop {
+        position: absolute;
+        top: 150px;
+        bottom: 100px;
+        right: 100px;
+        left: 100px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
     }
-    section.barDeNav nav ul {
-    display: flex;
-    list-style-type: none;
+    article.redesDesktop a.facebook {
+        background-color: #3b5998;
+        border-radius: 140px;
     }
-    section.barDeNav nav ul li {
-    margin-left: 35px;
+    article.redesDesktop a.facebook i {
+        padding: 75px;
+        font-size: 75px;
+        color: #fff;
     }
-    section.barDeNav nav ul li :first-child {
-    margin-left: 0;
+    article.redesDesktop a.whatsapp {
+        background-color: #25d366;
+        border-radius: 140px;
     }
-
-    section.barDeNav nav ul li a button {
-    width: 250px;
-    height: 40px;
-    text-decoration: none;
-    text-transform: uppercase;
-    background-color: var(--colorPrincipal);
-    color: #fff;
-    border-radius: 5px;
-    border-color: var(--colorPrincipal);
+    article.redesDesktop a.whatsapp i {
+        padding: 75px;
+        font-size: 75px;
+        color: #fff;
     }
-
-    /*=========================
-    ---REDES SOCIALES DESKTOP---
-    =========================*/
-        article.redesDesktop {
-            position: absolute;
-            top: 150px;
-            bottom: 100px;
-            right: 100px;
-            left: 100px;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-        }
-        article.redesDesktop a.facebook {
-            background-color: #3b5998;
-            border-radius: 140px;
-        }
-        article.redesDesktop a.facebook i {
-            padding: 75px;
-            font-size: 75px;
-            color: #fff;
-        }
-        article.redesDesktop a.whatsapp {
-            background-color: #25d366;
-            border-radius: 140px;
-        }
-        article.redesDesktop a.whatsapp i {
-            padding: 75px;
-            font-size: 75px;
-            color: #fff;
-        }
-        article.redesDesktop a.instagram {
-            background-color: var(--colorPrincipal);
-            background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-            border-radius: 140px;
-        }
-        article.redesDesktop a.instagram i {
-            padding: 75px;
-            font-size: 75px;
-            color: #fff;
-        }
+    article.redesDesktop a.instagram {
+        background-color: var(--colorPrincipal);
+        background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        border-radius: 140px;
     }
+    article.redesDesktop a.instagram i {
+        padding: 75px;
+        font-size: 75px;
+        color: #fff;
+    }
+}
