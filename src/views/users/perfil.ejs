@@ -28,76 +28,72 @@
     </section>
 
     <!------FORM EDIT PERFIL------>
-    <div class="containerPerfil">    
-        <section class="sectionPerfil">
+    <section class="sectionPerfil">
+        <h1 class="h1SectionPerfil" >datos de cuenta</h1>
+        <br>        
             
-            <h1 class="h1SectionPerfil" >datos de cuenta</h1>
-            <br>        
+        <p class="pSectionPerfil">¿Quieres editar tus datos?</p>
+        <br>
             
-            <p class="pSectionPerfil">¿Quieres editar tus datos?</p>
-            <br>
-            
-            <form class="formEditPerfil" action="/perfil/<%= usuarios.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form class="formEditPerfil" action="/perfil/<%= usuarios.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+            <label id="id" for="id">ID:</label>
+            <input id= "id" name="id" type="number" value="<%= usuarios.id %>" readonly>
                 
-                <label id="id" for="id">ID:</label>
-                <input id= "id" name="id" type="number" value="<%= usuarios.id %>" readonly>
+            <small style="color: red">
+                <%= (typeof errores != "undefined" && errores.nombre) ? errores.nombre.msg : '' %>
+            </small>
+            <label for="nombre">Nombre:</label>
+            <input id= "nombre" name="nombre" type="text" value="<%= usuarios.nombre%>">
                 
-                <small style="color: red">
-                    <%= (typeof errores != "undefined" && errores.nombre) ? errores.nombre.msg : '' %>
-                </small>
-                <label for="nombre">Nombre:</label>
-                <input id= "nombre" name="nombre" type="text" value="<%= usuarios.nombre%>">
+            <small style="color: red">
+                <%= (typeof errores != "undefined" && errores.apellido) ? errores.apellido.msg : '' %>
+            </small>
+            <label for="apellido">Apellido:</label>
+            <input id= "apellido" name="apellido" type="text" value="<%= usuarios.apellido%>">
                 
-                <small style="color: red">
-                    <%= (typeof errores != "undefined" && errores.apellido) ? errores.apellido.msg : '' %>
-                </small>
-                <label for="apellido">Apellido:</label>
-                <input id= "apellido" name="apellido" type="text" value="<%= usuarios.apellido%>">
+            <small style="color: red">
+                <%= (typeof errores != "undefined" && errores.email) ? errores.email.msg : '' %>
+            </small>
+            <label for="email">Email:</label>
+            <input id= "email" name="email" type="text" value="<%= usuarios.email%>">
                 
-                <small style="color: red">
-                    <%= (typeof errores != "undefined" && errores.email) ? errores.email.msg : '' %>
-                </small>
-                <label for="email">Email:</label>
-                <input id= "email" name="email" type="text" value="<%= usuarios.email%>">
+            <small style="color: red">
+                <%= (typeof errores != "undefined" && errores.avatar) ? errores.avatar.msg : '' %>
+            </small>
+            <label for="avatar">Avatar:</label>
+            <input id="avatar" type="file" name="avatar" value="<%= usuarios.avatar%>">
                 
-                <small style="color: red">
-                    <%= (typeof errores != "undefined" && errores.avatar) ? errores.avatar.msg : '' %>
-                </small>
-                <label for="avatar">Avatar:</label>
-                <input id="avatar" type="file" name="avatar" value="<%= usuarios.avatar%>">
+            <p class="pFormEditPerfil">¿Quieres cambiar la contraseña?</p>
                 
-                <p class="pFormEditPerfil">¿Quieres cambiar la contraseña?</p>
+            <small style="color: red">
+                <%= (typeof errores != "undefined" && errores.contraseñaActual) ? errores.contraseñaActual.msg : '' %>
+            </small>
+            <label for="contraseñaActual">Contraseña Actual:</label>
+            <input id= "contraseñaActual" name="contraseñaActual" type="password">
                 
-                <small style="color: red">
-                    <%= (typeof errores != "undefined" && errores.contraseñaActual) ? errores.contraseñaActual.msg : '' %>
-                </small>
-                <label for="contraseñaActual">Contraseña Actual:</label>
-                <input id= "contraseñaActual" name="contraseñaActual" type="password">
+            <small style="color: red">
+                <%= (typeof errores != "undefined" && errores.contraseña) ? errores.contraseña.msg : '' %>
+            </small>
+            <label for="contraseña">Contraseña Nueva:</label>
+            <input id= "contraseña" name="contraseña" type="password">
                 
-                <small style="color: red">
-                    <%= (typeof errores != "undefined" && errores.contraseña) ? errores.contraseña.msg : '' %>
-                </small>
-                <label for="contraseña">Contraseña Nueva:</label>
-                <input id= "contraseña" name="contraseña" type="password">
+            <small style="color: red">
+                <%= (typeof errores != "undefined" && errores.repassword) ? errores.repassword.msg : '' %>
+            </small>
+            <label for="repassword">Repite la Contraseña:</label>
+            <input id= "repassword" name="repassword" type="password">
                 
-                <small style="color: red">
-                    <%= (typeof errores != "undefined" && errores.repassword) ? errores.repassword.msg : '' %>
-                </small>
-                <label for="repassword">Repite la Contraseña:</label>
-                <input id= "repassword" name="repassword" type="password">
-                
-                <input class="inputEnviar" type="submit" value="Editar">
-            </form>
-            
+            <input class="inputEditar" type="submit" value="Editar">
+        </form>
+
             <!------FORM DELETE PERFIL------>
-            <p class="pDeletePerfil">¿Quieres desactivar tu cuenta?</p>
-            
-            <form class="formDeletePerfil" action="/perfil/<%= usuarios.id %>/delete?_method=DELETE" method="POST" enctype="multipart/form-data">
-                <a href="/perfil/<%= usuarios.id %>/delete"><button id="deleteButton">Desactivar Cuenta</button></a>    
-            </form>
-            
-        </section>
-    </div>
+        <p class="pDeletePerfil">¿Quieres desactivar tu cuenta?</p>
+           
+        <form class="formDeletePerfil" action="/perfil/<%= usuarios.id %>/delete?_method=DELETE" method="POST" enctype="multipart/form-data">
+            <a href="/perfil/<%= usuarios.id %>/delete"><button id="deleteButton">Desactivar Cuenta</button></a>    
+        </form>
+
+    </section>
         
         <!------REDES SOCIALES DESKTOP------>
     <div class="container">

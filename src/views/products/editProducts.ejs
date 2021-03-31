@@ -14,72 +14,58 @@
 <%- include("../partials/barraDeNavegacion.ejs") %>
     
     <!------FORM DE REGISTRO------>
-    
-    <section class="editProducts">
-        <h1>EDITANDO PRODUCTO NUMERO <%= productos.id %></h1>
-        <br>        
-        <h3>Completá los datos del producto:</h3>
-        <br>
-        <div>
-            <form id="form_editProduct" action="/products/<%= productos.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
-            <div id = labelcontainer>
+    <section class="editProduct">
+        <h1 class="editProduct">Editando producto nro. <%= productos.id %></h1>
+
+        <form id="form_editProduct" action="/products/<%= productos.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
                 <label for="id">ID:</label>
                 <input id= "id" name="id" type="number" value="<%= productos.id %>" readonly>
-            </div>
-            <div>
-                <label for="nombre">Nombre del producto:</label>
-                <input id= "nombre_editProduct" name="nombre" type="text" value="<%= productos.nombre%>">
-            </div>
-            <div>
+
                 <small style="color: red">
                     <%= (typeof errores != "undefined" && errores.nombre) ? errores.nombre.msg : '' %>
                 </small>
-            <div>
-                <br>
-                <div>
-                    <label for="detalle">Descripción del producto:</label>
-                    <input id= "detalle_editProduct" name="detalle" type="text" value="<%= productos.detalle%>">
-                </div>
-                <div>
-                    <small style="color: red">
-                        <%= (typeof errores != "undefined" && errores.detalle) ? errores.detalle.msg : '' %>
-                    </small>
-                <div>
-                <br>
-            <div>
+                <label for="nombre">Nombre del producto:</label>
+                <input id= "nombre_editProduct" name="nombre" type="text" value="<%= productos.nombre%>">
+
+                <small style="color: red">
+                    <%= (typeof errores != "undefined" && errores.detalle) ? errores.detalle.msg : '' %>
+                </small>
+                <label for="detalle">Descripción del producto:</label>
+                <textarea id= "detalle_editProduct" name="detalle" type="text" rows="10" cols="50"><%= productos.detalle%>"</textarea>
+       
                 <label for="imagen">Imagen del producto</label>
                 <input type="file" name="imagen" value="<%= productos.imagen%>" accept="image/jpeg, image/png, image/jpg"> <!-- limita el tipo de archivo a estas extenciones -->                
-            </div>
-                <br>
-            <div>
-                <label for="categoria_id">Categoría:</label><br><br>
-                <label for="categoria">Aires acondicionados</label>
-                <input type="radio" id="1" name="categoria" <%if(productos.categoria_id == "1"){%> 
-                    checked
-                <%}%>>
-                <label for="categoria_id">Calefacción</label>
-                <input type="radio" id="2" name="categoria" <%if(productos.categoria_id == "2"){%> 
-                    checked
-                <%}%>>
-                <label for="categoria_id">Agua Caliente Sanitaria</label>
-                <input type="radio" id="3" name="categoria" <%if(productos.categoria_id == "3"){%> 
-                    checked
-                <%}%>>
-            </div>
-                <br>
-                <div>
-                    <label for="precio">Precio:</label>
-                    <input id= "precio_editProduct" name="precio" type="number" value="<%= productos.precio%>">
+            
+                <label class="categoriaTitulo" for="categoria_id">Categoría:</label>
+                
+                <div class="categoriaEditProduct">
+                    <div class="cat_editProduct">
+                        <label for="categoria">Aires acondicionados</label>
+                        <input class="cat_editProduct" type="radio" id="1" name="categoria" <%if(productos.categoria_id == "1"){%> 
+                                checked
+                            <%}%>>
+                    </div>
+                    <div class="cat_editProduct">
+                        <label for="categoria_id">Calefacción</label>
+                        <input class="cat_editProduct" type="radio" id="2" name="categoria" <%if(productos.categoria_id == "2"){%> 
+                                checked
+                            <%}%>>
+                    </div>
+                    <div class="cat_editProduct">
+                        <label for="categoria_id">Agua Caliente Sanitaria</label>
+                        <input class="cat_editProduct" type="radio" id="3" name="categoria" <%if(productos.categoria_id == "3"){%> 
+                                checked
+                            <%}%>>
+                    </div>
                 </div>
-                <div>
-                    <small style="color: red">
-                        <%= (typeof errores != "undefined" && errores.precio) ? errores.precio.msg : '' %>
-                    </small>
-                <div>
-                <br>
-            <div>
+
+                <small style="color: red">
+                    <%= (typeof errores != "undefined" && errores.precio) ? errores.precio.msg : '' %>
+                </small>
+                <label for="precio">Precio:</label>
+                <input id= "precio_editProduct" name="precio" type="number" value="<%= productos.precio%>">
+
                 <input id="submit_editProduct" type="submit" value="Editar">
-            </div>
         </form>
     </section>
         

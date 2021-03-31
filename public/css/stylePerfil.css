@@ -41,16 +41,24 @@ section.tituloPerfil h1.h1Perfil{
 
 /*FORM EDIT PERFIL*/
 
-section.sectionPerfil {}
+section.sectionPerfil {
+    padding: 0 10px;
+}
 section.sectionPerfil h1.h1SectionPerfil {
+    text-align: center;
     text-transform: uppercase;
 }
-section.sectionPerfil p.pSectionPerfil {}
+section.sectionPerfil p.pSectionPerfil {
+    text-align: center;
+}
 
 form.formEditPerfil {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--colorPrincipal);
+    border-radius: 20px;
+    padding: 10px 0;
 }
 
 form.formEditPerfil input {
@@ -58,6 +66,8 @@ form.formEditPerfil input {
     height: 25px;
     text-transform: uppercase;
     margin-bottom: 10px;
+    border-color: #fff;
+    border-radius: 10px;
 }
 
 form.formEditPerfil label#id {
@@ -76,29 +86,56 @@ form.formEditPerfil p.pFormEditPerfil {
     margin-bottom: 20px;
 }
 
-form.formEditPerfil input.inputEnviar {
+form.formEditPerfil input.inputEditar {
     width: 100px;
     height: 35px;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+form.formEditPerfil input.inputEditar:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 /*FORM DELETE PERFIL*/
 section.sectionPerfil p.pDeletePerfil {
+    text-align: center;
     margin-top: 100px;
     margin-bottom: 10px;
 }
 
 section.sectionPerfil form.formDeletePerfil {
+    text-align: center;
     margin-bottom: 30px;
 }
 section.sectionPerfil form.formDeletePerfil a {}
 section.sectionPerfil form.formDeletePerfil a button#deleteButton {
     width: 300px;
     height: 20px;
+    border-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
+}
+section.sectionPerfil form.formDeletePerfil a button#deleteButton:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
+/*------------TABLET-------------*/
+@media (min-width: 768px){
+    section.sectionPerfil {
+        padding: 0 70px;
+    }
+}
 /*------------DESKTOP-------------*/
 
 @media (min-width: 1024px) {
+section.sectionPerfil {
+    padding: 0 100px;
+}
+
 /*TITULAR PERFIL MOBILE*/
 
 section.tituloPerfil {
@@ -113,10 +150,11 @@ div.containerPerfil{
 }
 
 section.tituloPerfilDesk{
-        display: block;
-        padding: 20px 0;
-        width: 100%;
-        background-color: var(--colorPrincipal);
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    background-color: var(--colorPrincipal);
 }
 section.tituloPerfilDesk img.imgPerfilDesk{
     margin-bottom: 25px;

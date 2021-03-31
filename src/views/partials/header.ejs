@@ -17,10 +17,8 @@
         <% } else { %>
             <nav class="sessionOk">
                 <ul class="sessionOk">
-                    <li class="perfil"><a href="perfil/<%= usuarioLogueado.id%>">
-                        <img src="imgAvatar/<%= usuarioLogueado.avatar %>">
-
-                        <p class="userName"><%= usuarioLogueado.nombre %></p>
+                    <li class="perfil"><a class="perfil" href="perfil/<%= usuarioLogueado.id%>">
+                        <img class="avatar" src="imgAvatar/<%= usuarioLogueado.avatar %>">
                     </a></li>
 
                     <li class="contacto"><a class= "contacto" href="#">Contacto</a></li>

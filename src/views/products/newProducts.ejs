@@ -14,65 +14,58 @@
 <%- include("../partials/barraDeNavegacion.ejs") %>
     
     <!------FORM DE REGISTRO------>
-    
-    <section class="newProducts">
-        <h1>NUEVA PUBLICACIÓN</h1>
-        <br>        
-        <h3>Completá los datos del producto:</h3>
-        <br>
-        <div>
-            <form id="form_newProduct" action="" method="POST" enctype="multipart/form-data">
-                <small style="color: red">
-                    <%= (typeof errores != "undefined" && errores.nombre) ? errores.nombre.msg : '' %>
-                </small>
-                <div>
-                    <label for="nombre">Nombre del producto:</label>
-                    <input id= "nombre_newProduct" name="nombre" type="text">
+    <section class="newProduct">
+        <h1 class="newProduct">Ingresar nuevo producto</h1>
+
+        <form id="form_newProduct" action="" method="POST" enctype="multipart/form-data">
+            <small style="color: red">
+                <%= (typeof errores != "undefined" && errores.nombre) ? errores.nombre.msg : '' %>
+            </small>
+            <label for="nombre">Nombre del producto:</label>
+            <input id= "nombre_newProduct" name="nombre" type="text">
+            
+            <small style="color: red">
+                <%= (typeof errores != "undefined" && errores.detalle) ? errores.detalle.msg : '' %>
+            </small>
+            <label for="detalle">Descripción del producto:</label>
+            <textarea id= "detalle_newProduct" name="detalle" type="text" rows="10" cols="50"></textarea>
+            
+            <small style="color: red">
+                <%= (typeof errores != "undefined" && errores.imagen) ? errores.imagen.msg : '' %>
+            </small>
+            <label for="imagen">Imagen del producto</label>
+            <input type="file" name="imagen" id="imagen_newProduct">
+            
+            <label class="categoriaTitulo" for="categoria_id">Categoría:</label><br><br>
+            <small style="color: red">
+                <%= (typeof errores != "undefined" && errores.categoria_id) ? errores.categoria_id.msg : '' %>
+            </small>
+            
+            <div class="categoriaNewProduct">
+                <div class="cat_newProduct">
+                    <label id="cat_newProduct" for="categoria_id">Aires acondicionados</label>
+                    <input type="radio" id="cat_newProduct" name="categoria_id" value="1">
                 </div>
-                <br>
-                <small style="color: red">
-                    <%= (typeof errores != "undefined" && errores.detalle) ? errores.detalle.msg : '' %>
-                </small>
-                <div>
-                    <label for="detalle">Descripción del producto:</label>
-                    <input id= "detalle_newProduct" name="detalle" type="text">
+            
+                <div class="cat_newProduct">
+                    <label id="cat_newProduct" for="categoria_id">Calefacción</label>
+                    <input type="radio" id="cat_newProduct" name="categoria_id" value="2">
+                </div>    
+            
+                <div class="cat_newProduct">
+                    <label id="cat_newProduct" for="categoria_id">Agua caliente sanitaria</label>
+                    <input type="radio" id="cat_newProduct" name="categoria_id" value="3">
                 </div>
-                <br>
-                <small style="color: red">
-                    <%= (typeof errores != "undefined" && errores.imagen) ? errores.imagen.msg : '' %>
-                </small>
-                <div>
-                    <label for="imagen">Imagen del producto</label>
-                    <input type="file" name="imagen" id="imagen_newProduct">
-                </div>
-                <br>
-                <div>
-                    <label for="categoria_id">Categoría:</label><br><br>
-                    <small style="color: red">
-                        <%= (typeof errores != "undefined" && errores.categoria_id) ? errores.categoria_id.msg : '' %>
-                    </small>
-                    <br>
-                    <label for="categoria_id">Aires acondicionados</label>
-                    <input type="radio" id="cat1_newProduct" name="categoria_id" value="1">
-                    <label for="categoria">Calefacción</label>
-                    <input type="radio" id="cat2_newProduct" name="categoria_id" value="2">
-                    <label for="categoria">Agua caliente sanitaria</label>
-                    <input type="radio" id="cat3_newProduct" name="categoria_id" value="3">
-                </div>
-                <br>
-                <small style="color: red">
-                    <%= (typeof errores != "undefined" && errores.precio) ? errores.precio.msg : '' %>
-                </small>
-                <div>
-                    <label for="precio">Precio:</label>
-                    <input id= "precio_newProduct" name="precio" type="number">
-                </div>
-                <br>
-                <div>
-                    <input id="submit_newProduct" type="submit" value="Confirmar">
-                </div>
-            </form>
-        </div>
+            </div>
+   
+            <small style="color: red">
+                <%= (typeof errores != "undefined" && errores.precio) ? errores.precio.msg : '' %>
+            </small>
+            <label for="precio">Precio:</label>
+            <input id= "precio_newProduct" name="precio" type="number">
+            
+            <input id="submit_newProduct" type="submit" value="Confirmar">
+        </form>
     </section>
         
         <!------REDES SOCIALES DESKTOP------>

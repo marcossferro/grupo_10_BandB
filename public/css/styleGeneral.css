@@ -233,46 +233,33 @@ footer.footerMobile a.instagram i {
         width: 25%;
     }
     header.desktop nav.sessionOk ul.sessionOk {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
         list-style: none;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
     }
 
-    header.desktop nav.sessionOk ul.sessionOk li.perfil{
-        width: 30%;
-        text-transform: uppercase;
-    }
-    header.desktop nav.sessionOk ul.sessionOk li.perfil a{
-        width: 100%;
-        text-decoration: none;
-        color: black;
-    }
-    header.desktop nav.sessionOk ul.sessionOk li.perfil a img{
-        width: 20px;
-        height: 20px;
+    header.desktop nav.sessionOk ul.sessionOk li.perfil{}
+    header.desktop nav.sessionOk ul.sessionOk li.perfil a.perfil{}
+    header.desktop nav.sessionOk ul.sessionOk li.perfil a.perfil img.avatar{
+        width: 25px;
+        height: 25px;
         border-radius: 100px;
     }
-    header.desktop nav.sessionOk ul.sessionOk li.perfil a p.userName{}
-
     
-    header.desktop nav.sessionOk ul.sessionOk li.contacto {
-        width: 30%;
-    }
+    header.desktop nav.sessionOk ul.sessionOk li.contacto {}
     header.desktop nav.sessionOk ul.sessionOk li.contacto a.contacto {
         text-decoration: none;
-        color: black;
         text-transform: uppercase;
+        color: black;
     }
 
-    header.desktop nav.sessionOk ul.sessionOk li.cierreSesion {
-        width: 40%;
-    }
+    header.desktop nav.sessionOk ul.sessionOk li.cierreSesion {}
     header.desktop nav.sessionOk ul.sessionOk li.cierreSesion a.cierreSesion {
         text-decoration: none;
+        text-transform: uppercase;
         color: black;
-        text-transform: uppercase;   
     }
 
     
