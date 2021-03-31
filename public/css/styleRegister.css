@@ -15,7 +15,9 @@ body {
 section.register{
     margin-top: 10px;
 }
-section.register h1.register{}
+section.register h1.register{
+    text-align: center;
+}
 section.register form#form_register{
     display: flex;
     text-align: center;
@@ -65,7 +67,7 @@ article.redesDesktop {
 @media (min-width: 1024px) {
 
     section.register{
-        padding: 0 400px;
+        padding: 0 200px;
     }
 
     section.register form#form_register input{

@@ -76,7 +76,7 @@ article.redesDesktop {
 @media (min-width: 1024px) {
 
     section.login{
-        padding: 0 400px;
+        padding: 0 200px;
     }
 
     section.login form#form_login input{

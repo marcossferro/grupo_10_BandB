@@ -82,6 +82,7 @@ div.detailProductMobile div.botones{
     align-items: center;
 }
 div.detailProductMobile div.botones h2.comprarBoton {
+    text-align: center;
     margin-bottom: 5px;
     padding: 5px 0;
     width: 80%;
@@ -96,6 +97,7 @@ div.detailProductMobile div.botones h2.comprarBoton:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
 }
 div.detailProductMobile div.botones h2.carritoBoton {
+    text-align: center;
     margin-bottom: var(--marginPrincipal);
     padding: 5px 0;
     width: 80%;
@@ -220,6 +222,7 @@ div.detailProductMobile img.imgMercadoPago{
         align-items: center;
     }
     div.detailProductDesktop div.botones h2.comprarBoton {
+        text-align: center;
         margin-bottom: 5px;
         padding: 5px 0;
         width: 80%;
@@ -234,6 +237,7 @@ div.detailProductMobile img.imgMercadoPago{
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
     }
     div.detailProductDesktop div.botones h2.carritoBoton {
+        text-align: center;
         padding: 5px 0;
         width: 80%;
         font-weight: 400;
