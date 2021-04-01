@@ -87,8 +87,7 @@ header.mobile div.user ul li.miperfil a button.misdatos {
 header.mobile div.user ul li.logOut {
     height: 50%;
 }
-header.mobile div.user ul li.logOut a {}
-header.mobile div.user ul li.logOut a button.logOut{
+header.mobile div.user ul li form button.cierreDeSesion {
     width: 95%;
     height: 90%;
     background-color: #424242;
@@ -255,11 +254,16 @@ footer.footerMobile a.instagram i {
         color: black;
     }
 
-    header.desktop nav.sessionOk ul.sessionOk li.cierreSesion {}
-    header.desktop nav.sessionOk ul.sessionOk li.cierreSesion a.cierreSesion {
-        text-decoration: none;
-        text-transform: uppercase;
-        color: black;
+    header.desktop nav.sessionOk ul.sessionOk li.cierreSesion {
+        width: 35%;
+    }
+    header.desktop nav.sessionOk ul.sessionOk li.cierreSesion form {
+        width: 100%;
+    }
+    header.desktop nav.sessionOk ul.sessionOk li.cierreSesion form button.cierreDeSesion {
+        width: 100%;
+        border-radius: 10px;
+        background-color: #fff;
     }
 
     

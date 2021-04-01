@@ -15,5 +15,22 @@ module.exports = {
                 res.send("No se encontraron productos")
             }
         })
+    },
+    logout: function(req, res){
+        req.session.destroy(()=>{
+            console.log("Se ha cerrado sesion");
+            return res.redirect("/");
+        }
+    )},
+    processLogout: function(req, res){
+        let allCookies = req.cookies
+        let cookiObjects = Object.keys(allCookies);
+        
+        for(let i=0; i< cookiObjects.length; i++){
+            let singleCookie = cookiObjects[i];
+            res.clearCookie(singleCookie);
+        }
+        
+        return res.status(200).redirect('/');
     }
 }
