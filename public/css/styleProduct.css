@@ -161,6 +161,7 @@ div.detailProductMobile img.imgMercadoPago{
     
     div.contenedorProductoDesktop{
         position: relative;
+        text-align: center;
         margin-bottom: 10px;
         width: 50%;
         height: 315px;
