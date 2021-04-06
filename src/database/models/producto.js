@@ -37,10 +37,18 @@ module.exports= function(sequelize, dataTypes){
     }
     
     const Producto = sequelize.define(alias, cols, config);
-
     Producto.associate = function(models){
-        Producto.hasOne(models.Categoria, {
-            foreingKey: "id"
+        Producto.belongsTo(models.Categoria,{
+            foreignKey: 'categoriaId',
+            constraints: false,
+            as: 'categoria'
+        })
+        Producto.belongsToMany(models.Usuario, {
+            as: 'carrito',
+            through: 'producto_usuario',
+            foreingKey: 'producto_id',
+            otherKey: 'usuario_id',
+            timestamps: true
         })
     }
 
