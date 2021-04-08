@@ -1,72 +1,127 @@
-const db = require('../../database/models')
+const db = require("../../../database/models")
 
 module.exports = {
-
-    getProduct: function(req, res) {
-        db.Producto.findByPk(req.params.id)
-            .then(products => {
-                if (products) {
-                    return res.status(200).json({
-                        meta: {
-                            status: res.statusCode,
-                            msg: 'success',
-                            url: req.originalUrl
-                        },
-                        data: products,
-                    })
-                } else {
-                    return res.json({
-                        meta: {
-                            status: 204, 
-                            msg: 'no data found',
-                            url: req.originalUrl
-                        },
-                        data: {},
-                    })
-                }
-            })
-            .catch(err => {
-                console.error(err);
-                return res.json({
-                    error: 'Internal error. Try again!'
-                })
-            })
-    },
-
-    getCategories: function(req, res){
-        db.Categoria.findAll({
-            include: 'products'
+    productos: function(req, res){
+        db.Producto.findAndCountAll({
+            include:"categoria"
         })
-        .then(categories => {
-            if(categories.length > 0) {
-                return res.json({
-                    meta: {
-                        status: 200,
-                        msg: 'success',
+        .then(function(productos){
+            if(productos.rows.length > 0 && productos.count > 0){
+                return res.status(200).json({
+                    meta:{
+                        status: res.statusCode,
+                        msg: "success",
                         url: req.originalUrl
                     },
-                    data: categories,
+                    data: productos
                 })
-            }else {
-                return res.json({
+            }else{
+                return res.status(204).json({
                     meta: {
-                        status: 204,
-                        msg: 'no data found',
+                        status: res.statusCode,
+                        msg: "no data found",
                         url: req.originalUrl
                     },
                     data: []
                 })
             }
         })
-            .catch(err => {
-                console.error(err);
-                return res.json({
-                    error: 'Internal error. Try again!'
-                })
+        .catch(function(error){
+            return res.json({
+                error: "Internal error. Try again!"
             })
-    }, 
+        })
+    },
 
-    count: function(req, res){
-        db.Producto.count()
-    }
+    productoPorId: function(req, res){
+        db.Producto.findByPk(req.params.id)
+        .then(function(producto){
+            if(producto){
+                return res.status(200).json({
+                    meta:{
+                        status: res.statusCode,
+                        msg: "success",
+                        url: req.originalUrl
+                    },
+                    data: producto
+                })
+            }else{
+                return res.status(204).json({
+                    meta: {
+                        status: res.statusCode,
+                        msg: "no data found",
+                        url: req.originalUrl
+                    },
+                    data: {}
+                })
+            }
+        })
+        .catch(function(error){
+            return res.json({
+                error: "Internal error. Try again!"
+            })
+        })
+    },
+
+    categorias: function(req, res){
+        db.Categoria.findAndCountAll()
+        .then(function(categorias){
+            if(categorias.rows.length > 0 && categorias.count > 0){
+                return res.status(200).json({
+                    meta:{
+                        status: res.statusCode,
+                        msg: "success",
+                        url: req.originalUrl
+                    },
+                    data: categorias
+                })
+            }else{
+                return res.status(204).json({
+                    meta: {
+                        status: res.statusCode,
+                        msg: "no data found",
+                        url: req.originalUrl
+                    },
+                    data: []
+                })
+            }
+        })
+        .catch(function(error){
+            return res.json({
+                error: "Internal error. Try again!"
+            })
+        })
+    },
+    productosPorCategoria: function(req, res){
+        db.Categoria.findAll({
+            include: "productos"
+        })
+        .then(function(categorias){
+            if(categorias.length > 0){
+                return res.status(200).json({
+                    meta:{
+                        status: res.statusCode,
+                        msg: "success",
+                        url: req.originalUrl
+                    },
+                    data: categorias
+                })
+            }else{
+                return res.status(204).json({
+                    meta: {
+                        status: res.statusCode,
+                        msg: "no data found",
+                        url: req.originalUrl
+                    },
+                    data: []
+                })
+            }
+        })
+        .catch(function(error){
+            return res.json({
+                error: "Internal error. Try again!"
+            })
+        })
+    }   
+    
 }

@@ -10,6 +10,9 @@ const { check, body } = require("express-validator");
 const logueadoMiddleware = require("./middlewares/logueadoMiddleware");
 const recordameMiddleware = require("./middlewares/recordameMiddleware");
 
+const apiProductsRouter = require ('./routers/api/product');
+const apiUsersRouter = require ('./routers/api/user');
+
 const generalRouter = require ("./routers/general");
 const loginRouter = require ("./routers/login");
 const registerRouter = require ("./routers/register");
@@ -17,8 +20,6 @@ const productRouter = require ("./routers/product");
 const productCartRouter = require ("./routers/productCart");
 const perfilRouter = require ("./routers/perfil");
 
-const apiProductsRouter = require ('./routers/api/product');
-const apiUsersRouter = require ('./routers/api/user');
 
 let port = process.env.PORT || 3000;
 
@@ -39,6 +40,9 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(recordameMiddleware);
 app.use(logueadoMiddleware);
 
+app.use('/api/product', apiProductsRouter);
+app.use('/api/user', apiUsersRouter);
+
 app.use("/", generalRouter);
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
@@ -46,8 +50,6 @@ app.use("/products", productRouter);
 app.use("/productCart", productCartRouter);
 app.use("/perfil", perfilRouter);
 
-app.use('/api/product', apiProductsRouter);
-app.use('/api/user', apiUsersRouter);
 
 let puerto = 3000;
 app.listen(port, function(){
