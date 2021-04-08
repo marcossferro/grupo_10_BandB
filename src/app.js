@@ -17,6 +17,9 @@ const productRouter = require ("./routers/product");
 const productCartRouter = require ("./routers/productCart");
 const perfilRouter = require ("./routers/perfil");
 
+const apiProductsRouter = require ('./routers/api/product');
+const apiUsersRouter = require ('./routers/api/user');
+
 let port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
@@ -42,6 +45,9 @@ app.use("/register", registerRouter);
 app.use("/products", productRouter);
 app.use("/productCart", productCartRouter);
 app.use("/perfil", perfilRouter);
+
+app.use('/api/product', apiProductsRouter);
+app.use('/api/user', apiUsersRouter);
 
 let puerto = 3000;
 app.listen(port, function(){
