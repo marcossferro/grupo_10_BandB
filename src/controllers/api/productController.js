@@ -27,6 +27,7 @@ module.exports = {
             }
         })
         .catch(function(error){
+            console.log(error);
             return res.json({
                 error: "Internal error. Try again!"
             })
@@ -57,6 +58,7 @@ module.exports = {
             }
         })
         .catch(function(error){
+            console.log(error);
             return res.json({
                 error: "Internal error. Try again!"
             })
@@ -87,6 +89,7 @@ module.exports = {
             }
         })
         .catch(function(error){
+            console.log(error);
             return res.json({
                 error: "Internal error. Try again!"
             })
@@ -118,6 +121,7 @@ module.exports = {
             }
         })
         .catch(function(error){
+            console.log(error);
             return res.json({
                 error: "Internal error. Try again!"
             })

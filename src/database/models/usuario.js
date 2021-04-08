@@ -47,6 +47,13 @@ module.exports= function(sequelize, dataTypes){
         Usuario.hasOne(models.TipoUsuario, {
             foreingKey: "id"
         })
+        Usuario.belongsToMany(models.Usuario, {
+            as: 'carrito',
+            through: 'producto_usuario',
+            foreingKey: 'usuario_id',
+            otherKey: 'producto_id',
+            timestamps: true
+        })
     }
 
     return Usuario
