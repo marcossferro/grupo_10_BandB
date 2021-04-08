@@ -40,8 +40,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(recordameMiddleware);
 app.use(logueadoMiddleware);
 
-app.use('/api/product', apiProductsRouter);
-app.use('/api/user', apiUsersRouter);
+app.use('/api/products', apiProductsRouter);
+app.use('/api/users', apiUsersRouter);
 
 app.use("/", generalRouter);
 app.use("/login", loginRouter);
