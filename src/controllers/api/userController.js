@@ -33,11 +33,8 @@ module.exports = {
     },
 
     getById: function(req, res){
-        db.Usuario.findByPk(req.params.id,{
-            include = [{
-                model: model.Usuario,
-                attributes: ['id', 'nombre', 'apellido', 'email'],
-            }]
+        db.Usuario.findByPk(req.params.id, {
+                attributes: ['id', 'nombre', 'apellido', 'email']
         })
         .then(function(usuario){
             if(usuario){
