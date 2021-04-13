@@ -13,8 +13,7 @@
 <%- include("../partials/barraDeNavegacion.ejs") %>
 
 <!------PRODUCTO MOBILE Y TABLET------>
-<h2 class="tituloProductoMobile">Lorem ipsum dolor sit amet</h2>
-
+<h2 class="tituloProductoMobile"><%= productos.nombre %></h2>
 <div class="contenedorProductoMobile">
     <img class="imagenProducto" src="/imgProducts/<%= productos.imagen %>">
     <i id="favoritosIcon" class="fas fa-heart"></i>
@@ -41,13 +40,15 @@
     </div>
 
 <div class="detailProductMobile">
-    <h1 class="precioProducto">$ <%= productos.precio %> </h1>
+    <h1 id="producto_precio" class="precioProducto">$ <%= productos.precio %> </h1>
     <h5><a class="mediosDePagoLink" href="#">Ver los medios de pago</a></h5>
     
-    <div class="botones">
-        <h2 class="comprarBoton">Comprar ahora</h2>
-        <h2 class="carritoBoton">Agregar al carrito</h2>
-    </div>
+    <form action="">
+        <div class="botones">
+            <input id="boton_comprar" class="comprarBoton" type="submit">Comprar ahora</input>
+            <input id="boton_carrito" class="carritoBoton" type="submit">Agregar al carrito</input>
+        </div>
+    </form>
     
     <h3 class="caractTitulo">Caracteristicas</h3>
     <p class="detalleProducto"><%= productos.detalle %></p>
@@ -59,7 +60,7 @@
 <!------PRODUCTO DESKTOP------>
 <div class="contenedorTodo">
     <div class="contenedorProductoDesktop">
-        <h2 class="tituloProducto">Lorem ipsum dolor sit amet</h2>
+        <h2 class="tituloProducto"><%= productos.nombre %></h2>
         <img class="imagenProducto" src="/imgProducts/<%= productos.imagen %>">
         <i id="favoritosIcon" class="fas fa-heart"></i>
     
@@ -86,12 +87,16 @@
         <h3 class="caractTitulo">Caracteristicas</h3>
         <p class="detalleProducto"><%= productos.detalle %></p>
         
-        <h1 class="precioProducto">$ <%= productos.precio %></h1>
+        <h1 class="producto_precio">$ <%= productos.precio %></h1>
+        <label for="producto_cantidad">Cantidad</label><br>
+        <input id="producto_cantidad" type="number" min="0">
         
         <div class="botones">
-            <h2 class="comprarBoton">Comprar ahora</h2>
-            <h2 class="carritoBoton">Agregar al carrito</h2>
+            <input id="comprar" class="comprarBoton" type="submit" value="Comprar ahora"></input>
+            <input id="agregarCarrito" class="carritoBoton" type="submit" value="Agregar al carrito" onclick="addProduct()"></input>
         </div>
+        
+
         <h5><a class="mediosDePagoLink" href="#">Ver todos los medios de pago</a></h5>
     
         <h3 class="imgMercadoPagoTitulo">¿Tenes Mercado Pago?</h3>
@@ -125,5 +130,6 @@
 <!------FOOTER DESKTOP AND MOBILE------>
 <%- include("../partials/footer.ejs") %>
 <script src="/js/productDelete.js"></script>
+<script src="/js/carritoValidator.js"></script>
 </body>
 </html>
