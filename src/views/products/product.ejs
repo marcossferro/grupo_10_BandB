@@ -13,8 +13,8 @@
 <%- include("../partials/barraDeNavegacion.ejs") %>
 
 <!------PRODUCTO MOBILE Y TABLET------>
-<h2 class="tituloProductoMobile"><%= productos.nombre %></h2>
 <div class="contenedorProductoMobile">
+    <h2 class="tituloProducto"><%= productos.nombre %></h2>
     <img class="imagenProducto" src="/imgProducts/<%= productos.imagen %>">
     <i id="favoritosIcon" class="fas fa-heart"></i>
 </div>
@@ -43,12 +43,10 @@
     <h1 id="producto_precio" class="precioProducto">$ <%= productos.precio %> </h1>
     <h5><a class="mediosDePagoLink" href="#">Ver los medios de pago</a></h5>
     
-    <form action="">
         <div class="botones">
             <input id="boton_comprar" class="comprarBoton" type="submit">Comprar ahora</input>
-            <input id="boton_carrito" class="carritoBoton" type="submit">Agregar al carrito</input>
+            <input id="boton_carrito" class="carritoBoton" type="submit" value="Agregar al carrito" onclick="addProduct()"></input>
         </div>
-    </form>
     
     <h3 class="caractTitulo">Caracteristicas</h3>
     <p class="detalleProducto"><%= productos.detalle %></p>
@@ -86,10 +84,11 @@
     <div class="detailProductDesktop">
         <h3 class="caractTitulo">Caracteristicas</h3>
         <p class="detalleProducto"><%= productos.detalle %></p>
-        
-        <h1 class="producto_precio">$ <%= productos.precio %></h1>
-        <label for="producto_cantidad">Cantidad</label><br>
-        <input id="producto_cantidad" type="number" min="0">
+        <div class="producto_cantidad">
+            <h1 id="producto_precio">$ <%= productos.precio %></h1>
+            <label for="producto_cantidad">Cantidad</label>
+            <input id="producto_cantidad" type="number" min="0">
+        </div>
         
         <div class="botones">
             <input id="comprar" class="comprarBoton" type="submit" value="Comprar ahora"></input>
@@ -103,7 +102,6 @@
         <img class="imgMercadoPago" src="/img/994049-MERCADO_PAGO.png">
     </div>
 </div>
-
 
 
 <!------PRODUCTOS SIMILARES MOBILE------>
@@ -130,6 +128,6 @@
 <!------FOOTER DESKTOP AND MOBILE------>
 <%- include("../partials/footer.ejs") %>
 <script src="/js/productDelete.js"></script>
-<script src="/js/carritoValidator.js"></script>
+<script src="/js/carritoUpload.js"></script>
 </body>
 </html>
