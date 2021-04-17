@@ -9,8 +9,8 @@
         <% if(typeof usuarioLogueado == 'undefined') { %>
             <nav class="default">
                 <ul class="default">
-                    <li><a href="login">Login</a></li>
-                    <li><a href="register">Registro</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Registro</a></li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </nav>
@@ -21,7 +21,7 @@
                         <img class="avatar" src="imgAvatar/<%= usuarioLogueado.avatar %>">
                     </a></li>
 
-                    <li class="contacto"><a class= "contacto" href="#">Contacto</a></li>
+                    <li class="contacto"><a class= "contacto" href="/productCart">Carrito</a></li>
 
                     <li class="cierreSesion">
                         <form action="/logout" method="POST">

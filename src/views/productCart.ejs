@@ -13,115 +13,13 @@
 <%- include("partials/barraDeNavegacion.ejs") %>
 
 <!-- PRODUCTS DESKTOP -->
-    <div class="productCartDesktop">
-        <div class="carrito">
-            <section class="productosAgregados">
-                <article>
-                    <img src="/img/producto.jpg" alt="imagenProducto"> 
-                    <p>Lorem ipsum dolor sit.</p>
-                    <ul>
-                        <li> <form class="unidadesCarrito">
-                            <label for="unidadesCarrito">Unidades</label><br>
-                            <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="1">
-                          </form>
-                        </li>
-                        <li>$ 123456</li>
-                    </ul>
-                </article>
-                <hr>
-                <article>
-                    <img src="/img/producto.jpg" alt="imagenProducto"> 
-                    <p>Lorem ipsum dolor sit.</p>
-                    <ul>
-                        <li> <form class="unidadesCarrito">
-                            <label for="unidadesCarrito">Unidades</label><br>
-                            <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="1">
-                          </form>
-                        </li>
-                        <li>$ 123456</li>
-                    </ul>
-                </article>
-                <hr>
-                <article>
-                    <img src="/img/producto.jpg" alt="imagenProducto">
-                    <p>Lorem ipsum dolor sit.</p> 
-                    <ul>
-                        <li> <form class="unidadesCarrito">
-                            <label for="unidadesCarrito">Unidades</label><br>
-                            <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="1">
-                          </form>
-                        </li>
-                        <li>$ 123456</li>
-                    </ul>
-                </article>
-                <hr>
-            </section>  
-        </div>
+    <div class="containerCarrito">
+
     </div>
-
-<!-- PRODUCTS MOBILE -->
-<div class="productCartMobile">
-    <div class="carrito">
-        <section class="productosAgregados">
-            <article>
-                <img src="/img/producto.jpg" alt="imagenProducto"> 
-                <p>Lorem ipsum dolor sit.</p>
-                <ul>
-                    <li> <form class="unidadesCarrito">
-                        <label for="unidadesCarrito">Unidades</label>
-                        <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="1">
-                      </form>
-                    </li>
-                    <li>$ 123456</li>
-                </ul>
-            </article>
-            <article>
-                <img src="/img/producto.jpg" alt="imagenProducto"> 
-                <p>Lorem ipsum dolor sit.</p>
-                <ul>
-                    <li> <form class="unidadesCarrito">
-                        <label for="unidadesCarrito">Unidades</label>
-                        <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="1">
-                      </form>
-                    </li>
-                    <li>$ 123456</li>
-                </ul>
-            </article>
-            <article>
-                <img src="/img/producto.jpg" alt="imagenProducto"> 
-                <p>Lorem ipsum dolor sit.</p>
-                <ul>
-                    <li> <form class="unidadesCarrito">
-                        <label for="unidadesCarrito">Unidades</label>
-                        <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="1">
-                      </form>
-                    </li>
-                    <li>$ 123456</li>
-                </ul>
-            </article>
-        </section>  
-    </div>
-</div>
-
-<!------TOTAL CARRITO------>
-
-<div class="totalCarrito">
-    <article>
-    <ul>
-        <li><form class="calculoEnvio">
-            <label for="calculoEnvio">Codigo Postal</label>
-            <input type="text" id="calculoEnvio" name="calculoEnvio" value="">
-        </form>
-    </li>
-    <li>Total Envio</li>
-    <li>$ 1234</li>
-    <li>Total a abonar</li>
-    <li>$ 123456</li>
-    </ul>
-</article>
-</div>
 
 <!------FOOTER DESKTOP AND MOBILE------>
 <%- include("partials/footer.ejs") %>
+<script src="/js/cartComplete.js"></script>
+<script src="/js/carritoUpload.js"></script>
 </body>
 </html>
