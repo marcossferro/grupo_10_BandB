@@ -1,6 +1,8 @@
 import "./components/assets/css/app.css"
 import TopbarNav from "./components/TopbarNav"
-import AmountCard from "./components/AmountCard"
+import ProductsAmountCard from "./components/ProductsAmountCard"
+import AmountInProductsCard from "./components/AmountInProductsCard"
+import UsersAmountCard from "./components/UsersAmountCard"
 import LastProduct from "./components/LastProduct"
 import CategoriesBlock from "./components/CategoriesBlock"
 import Table from "./components/Table"
@@ -27,9 +29,9 @@ function App() {
 				</div>
 
 				<div className="row">
-          <AmountCard />
-          <AmountCard />
-          <AmountCard />
+          <ProductsAmountCard />
+          <UsersAmountCard />
+          <AmountInProductsCard />
 				<div className="row">
           <LastProduct />
           <CategoriesBlock />          

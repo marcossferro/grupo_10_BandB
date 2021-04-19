@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class AmountCard extends Component {
+class ProductsAmountCard extends Component {
 
     constructor(props){
         super(props);
@@ -17,7 +17,6 @@ class AmountCard extends Component {
     }
 
     componentDidMount(){
-        console.log("componentDidMount")
         this.apiCall("https://grupo10dh.herokuapp.com/api/products/getProducts", this.mostrarNumero)
     }
 
@@ -28,7 +27,6 @@ class AmountCard extends Component {
     }
 
     render() {
-        console.log("render")
         return (
         <div className="col-md-4 mb-4">
         <div className="card border-left-primary shadow h-100 py-2">
@@ -50,4 +48,4 @@ class AmountCard extends Component {
 
 }
 
-export default AmountCard;
+export default ProductsAmountCard;
