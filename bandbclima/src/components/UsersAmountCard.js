@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 class UsersAmountCard extends Component {
 
+    //Estado por defecto de numero
     constructor(props){
         super(props);
         this.state = {
@@ -9,6 +10,7 @@ class UsersAmountCard extends Component {
         }
     }
 
+    //Utilizo fetch dentro del Metodo ApiCall
     apiCall(url, handler){
         fetch(url)
         .then( response => response.json() )
@@ -16,16 +18,21 @@ class UsersAmountCard extends Component {
         .catch( e => console.log(e) )
     }
 
+    //Llamo dentro del componentDidMount al metodo apiCall usando la URL de la API conrrespondiente y genero una respuesta con mostrarNumero
     componentDidMount(){
         this.apiCall("https://grupo10dh.herokuapp.com/api/users/getUsers", this.mostrarNumero)
     }
 
+    //mostrarNumero devuelve los datos de la API mediante data
     mostrarNumero = (data) => {
+
+        //Defino el nuevo estado de numero
         this.setState({
             numero: data.data.count
         })
     }
 
+    //Dentro del render llamo a this.state.numero para que me devuelva su estado final
     render() {
         return (
             <div class="col-md-4 mb-4">

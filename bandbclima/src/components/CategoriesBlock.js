@@ -3,6 +3,7 @@ import Categories from "./Categories";
 
 class CategoriesBlock extends Component {
 
+	//Estado por defecto de categoria
 	constructor(props){
         super(props);
         this.state = {
@@ -10,6 +11,7 @@ class CategoriesBlock extends Component {
         }
     }
 
+	//Utilizo fetch dentro del Metodo ApiCall
 	apiCall(url, handler){
         fetch(url)
         .then( response => response.json() )
@@ -17,18 +19,23 @@ class CategoriesBlock extends Component {
         .catch( e => console.log(e) )
     }
 
+	//Llamo dentro del componentDidMount al metodo apiCall usando la URL de la API conrrespondiente y genero una respuesta con mostrarDatos
     componentDidMount(){
         this.apiCall("https://grupo10dh.herokuapp.com/api/products/getCategories", this.mostrarDatos)
     }
 
-
+	//mostrarDatos devuelve los datos de la API mediante data
 	mostrarDatos = (data) => {
+
+		//Defino el nuevo estado de categoria con el array de las categorias
 		this.setState({
 			categoria: data.data.rows
 		})
-		console.log(data.data.rows)
 	}
 
+	//Dentro del render llamo a this.state.categoria para que me devuelva su estado final.
+	
+	//Utilizo el metodo de array MAP para recorrerlo y generar tantos componentes CATEGORIES como cantidad de categorias que tenga en el array y asignarles como propiedad su nombre correspondiente
   render() {
 		return (
 	<div className="col-lg-6 mb-4">						

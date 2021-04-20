@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function TopbarNav() {
-  return (
+class TopbarNav extends Component {
+
+  render(){
+	  return (
 	<ul className="navbar-nav ml-auto">
 		<li className="nav-item dropdown no-arrow mx-1">
 			<a className="nav-link dropdown-toggle" href="/" id="alertsDropdown">
@@ -20,13 +22,14 @@ function TopbarNav() {
 
 			<li className="nav-item dropdown no-arrow">
 				<a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-					<span className="mr-2 d-none d-lg-inline text-gray-600 small">Walter White</span>
-		    		<img alt="userIcon" className="img-profile rounded-circle" src="assets/images/dummy-avatar.jpg" width="60"/>
+					<span className="mr-2 d-none d-lg-inline text-gray-600 small">Welcome Admin</span>
 				</a>
 			</li>
 
 	</ul>
   );
+}
+
 }
 
 export default TopbarNav;
