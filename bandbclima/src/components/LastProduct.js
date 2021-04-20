@@ -34,6 +34,8 @@ class LastProduct extends Component {
 		//Guardo el ultimo producto dentro de ULTIMOPRODUCTO
 		let ultimoProducto = array[array.length - 1]
 
+		console.log()
+
 		//Defino el nuevo estado de nombre, imagen, detalle, precio
 		this.setState({
 			nombre: ultimoProducto.nombre,
@@ -55,7 +57,7 @@ class LastProduct extends Component {
 			<div className="card-body">
 			    <p>{this.state.nombre}</p>
 				<div className="text-center">
-					<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: "25rem"}} src={"public/imgProducts" + this.state.imagen} alt="lastProduct"/>
+					<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: "25rem"}} src={process.env.PUBLIC_URL + "/imgProducts/" + this.state.imagen} alt="lastProduct"/>
 				</div>
 				<p>{this.state.detalle}</p>
 				<p>$ {this.state.precio}</p>

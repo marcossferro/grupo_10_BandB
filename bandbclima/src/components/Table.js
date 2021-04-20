@@ -45,6 +45,7 @@ class Table extends Component{
             <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Name</th>
                         <th>Description</th>
                         <th>Price</th>
@@ -54,7 +55,7 @@ class Table extends Component{
                 </thead>
                 <tbody>
                 {this.state.productos.map( producto => 
-					<ProductData detalle = {producto.detalle} precio = {producto.precio} nombre = {producto.nombre} categoria = {producto.categoria.type} />
+					<ProductData id = {producto.id} detalle = {producto.detalle} precio = {producto.precio} nombre = {producto.nombre} categoria = {producto.categoria.type} />
 				)}
                 </tbody>
             </table>

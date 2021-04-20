@@ -7,6 +7,7 @@ class ProductData extends Component {
   render(){
     return (
     <tr>
+        <td>{this.props.id}</td>
         <td>{this.props.nombre}</td>
         <td>{this.props.detalle}</td>
         <td>{this.props.precio}</td>
@@ -14,8 +15,6 @@ class ProductData extends Component {
         <ul>
             <li>{this.props.categoria}</li>
         </ul>
-        </td>
-        <td>
         </td>
         <td>245</td>
         </tr>

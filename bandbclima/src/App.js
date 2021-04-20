@@ -1,4 +1,13 @@
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import "./components/assets/css/app.css"
+
 import TopbarNav from "./components/TopbarNav"
 import ProductsAmountCard from "./components/ProductsAmountCard"
 import AmountInProductsCard from "./components/AmountInProductsCard"
@@ -10,6 +19,8 @@ import Footer from "./components/Footer"
 
 function App() {
   return (
+    <Router>
+      <Route path="/">
     <div className="App">
       <header className="App-header">
       <div id="wrapper">
@@ -50,6 +61,8 @@ function App() {
   </div>
       </header>
   </div>
+  </Route>
+  </Router>
   );
 }
 
