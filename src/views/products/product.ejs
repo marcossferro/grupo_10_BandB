@@ -20,7 +20,7 @@
 </div>
 
     <div class="editDeleteMobile">
-        <%if(typeof usuarioLogueado == "undefined" || !usuarioLogueado.tipo_usuario == 1){%>
+        <%if(typeof usuarioLogueado == "undefined" || usuarioLogueado.tipo_usuario != 1){%>
             <div class="editDelete" style="display: none;">
                 <a class="edit" href="/products/<%= productos.id %>/edit"><i class="far fa-edit"></i></a>
                 
@@ -62,7 +62,7 @@
         <img class="imagenProducto" src="/imgProducts/<%= productos.imagen %>">
         <i id="favoritosIcon" class="fas fa-heart"></i>
     
-        <%if(typeof usuarioLogueado == "undefined" || !usuarioLogueado.tipo_usuario == 1){%>
+        <%if(typeof usuarioLogueado == "undefined" || usuarioLogueado.tipo_usuario != 1){%>
             <div class="editDelete" style="display: none;">
                 <a class="edit" href="/products/<%= productos.id %>/edit"><i class="far fa-edit"></i></a>
                 

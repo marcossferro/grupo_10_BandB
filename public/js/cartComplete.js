@@ -21,7 +21,7 @@ for (let i = 0; i < carrito.length; i++) {
                         <li> 
                             <form class="unidadesCarrito">
                                 <label for="unidadesCarrito">Unidades</label>
-                                <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="${productToShow.cantidad}">
+                                <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="${productToShow.cantidad}" readonly>
                             </form>
                         </li>
                         <li>$ ${productToShow.precio}</li>
@@ -41,7 +41,7 @@ for (let i = 0; i < carrito.length; i++) {
                         <li> 
                             <form class="unidadesCarrito">
                                 <label for="unidadesCarrito">Unidades</label>
-                                <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="${productToShow.cantidad}">
+                                <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="${productToShow.cantidad}"readonly>
                             </form>
                         </li>
                         <li>$ ${productToShow.precio}</li>
@@ -50,6 +50,14 @@ for (let i = 0; i < carrito.length; i++) {
             </section>  
         </div>
         </div> 
+        <div class="totalCarrito">
+        <article>
+            <ul>
+                <li>Total a abonar</li>
+                <li>$ ${total}</li>
+            </ul>
+        </article>
+        </div>  
         `
     }else{
         if(i != carrito.length -1){
@@ -65,7 +73,7 @@ for (let i = 0; i < carrito.length; i++) {
                             <li> 
                                 <form class="unidadesCarrito">
                                     <label for="unidadesCarrito">Unidades</label>
-                                    <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="${productToShow.cantidad}">
+                                    <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="${productToShow.cantidad}"readonly>
                                 </form>
                             </li>
                             <li>$ ${productToShow.precio}</li>
@@ -85,7 +93,7 @@ for (let i = 0; i < carrito.length; i++) {
                             <li> 
                                 <form class="unidadesCarrito">
                                     <label for="unidadesCarrito">Unidades</label>
-                                    <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="${productToShow.cantidad}">
+                                    <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="${productToShow.cantidad}"readonly>
                                 </form>
                             </li>
                             <li>$ ${productToShow.precio}</li>
@@ -109,7 +117,7 @@ for (let i = 0; i < carrito.length; i++) {
                                 <li> 
                                     <form class="unidadesCarrito">
                                         <label for="unidadesCarrito">Unidades</label>
-                                        <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="${productToShow.cantidad}">
+                                        <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="${productToShow.cantidad}"readonly>
                                     </form>
                                 </li>
                                 <li>$ ${productToShow.precio}</li>
@@ -129,7 +137,7 @@ for (let i = 0; i < carrito.length; i++) {
                                 <li> 
                                     <form class="unidadesCarrito">
                                         <label for="unidadesCarrito">Unidades</label>
-                                        <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="${productToShow.cantidad}">
+                                        <input type="number" id="unidadesCarrito" name="unidadesCarrito" value="${productToShow.cantidad}"readonly>
                                     </form>
                                 </li>
                                 <li>$ ${productToShow.precio}</li>

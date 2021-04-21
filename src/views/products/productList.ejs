@@ -17,7 +17,7 @@
 <h2 class="tituloProductos">Listado de Productos</h2>
 <div class="container">
 
-    <% if(typeof usuarioLogueado == "undefined" || !usuarioLogueado.tipo_usuario == 1){ %>
+    <%if(typeof usuarioLogueado == "undefined" || usuarioLogueado.tipo_usuario != 1){%>
         <% for (let i = 0; i < productos.length; i++) { %>
             <a class="aProduct" href="/products/<%= productos[i].id %>">
                 <div class="detalleProducto">

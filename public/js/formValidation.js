@@ -13,6 +13,15 @@ const email_login = document.getElementById("email_login");
 const contraseña_login = document.getElementById("contraseña_login");
 const form_login = document.getElementById("form_login");
 
+// Perfil
+const form_perfil = document.getElementById('form_perfil');
+const nombre_perfil = document.getElementById("nombre_perfil");  
+const apellido_perfil = document.getElementById("apellido_perfil");
+const email_perfil = document.getElementById("email_perfil");
+const contraseñaActual_perfil = document.getElementById("contraseñaActual_perfil");
+const contraseñaNueva_perfil = document.getElementById("contraseñaNueva_perfil");
+const repassword_perfil = document.getElementById("repassword_perfil");
+const boton_perfil = document.getElementById("boton_perfil");
 
 
 // Register
@@ -49,3 +58,18 @@ window.addEventListener("load", function(){
     })
 })
 
+// Perfil
+window.addEventListener('load',()=>{
+    boton_perfil.addEventListener('click',(event)=>{
+        event.preventDefault();
+        if(nombre_perfil.value == "" || nombre_perfil.value.length < 2){
+            alert('El nombre debe tener al menos dos caracteres');
+        }else if(apellido_perfil.value =="" || apellido_perfil.value.length < 2){
+            alert('El apellido debe tener al menos dos caracteres');
+        }else if(email_perfil.value == "" || !email_perfil.value.includes("@")){
+            alert('El formato correcto es tuemail@email.com');
+        }else{
+            form_perfil.submit();
+        }
+    })
+})
