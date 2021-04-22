@@ -1,4 +1,5 @@
 const { check, validationResult, body } = require ("express-validator");
+const bcrypt = require("bcryptjs");
 const db = require("../database/models")
 
 //  CHEQUEAR
@@ -7,30 +8,6 @@ module.exports = [
     check("nombre").isLength({min:2}).withMessage("El nombre no puede estar vacio y debera tener al menos 2 caracteres"),
     check("apellido").isLength({min:2}).withMessage("El apellido no puede estar vacio y debera tener al menos 2 caracteres"),
     check("email").isEmail().withMessage("El formato correcto es tuemail@email.com"),
-    // contraseñaActual
-    // contraseña
-    // repassword
-    check("contraseña").custom(({req})=>{
-      if(req.body.contraseñaActual != ''){
-        body("email").custom(function(value){
-          console.log("contraseña: ", req.body.contraseñaActual);
-          console.log("Value: ", value);
-          return db.Usuario.findAll({where: {email: value}})
-          .then(function(usuario){
-            console.log(usuario);
-            if(usuario.contraseña == req.body.contraseñaActual){
-              check("contraseña").isLength({min: 8}).withMessage("Debe contener al menos 8 caracteres").matches("[0-9]").withMessage("Debe contener al menos un número").matches("[A-Z]").withMessage("Debe contener al menos una letra mayúscula").matches(/[.*+\-?^${}_()|[\]\\]/g,'\\$&').withMessage("Debe contener al menos un caracter especial: .*+\-?^${}_()|[\]\\ "),
-              check("repassword").custom(async(repassword, {req})=>{
-                let contraseña = req.body.contraseña
-                if(contraseña !== repassword){
-                  throw new Error("La contraseña debe ser la misma")
-                }
-              })          
-            }
-          })
-        })
-      }
-    }),
     body("email").custom(function(value){
       return db.Usuario.findAll({where:{email:value}})
       .then(function(usuario){
@@ -39,19 +16,13 @@ module.exports = [
         }
       })
     }),
-    // body("avatar").custom((avatar, {req})=>{
-    //   if(req.files[0] != undefined){
-    //     if(req.files[0].mimetype == "image/png"){
-    //       console.log(req.files[0].mimetype)
-    //       return true
-    //     }else if(req.files[0].mimetype == "image/jpeg"){
-    //       console.log(req.files[0].mimetype)
-    //       return true
-    //     }else if(req.files[0].mimetype == "image/jpg"){
-    //       console.log(req.files[0].mimetype)
-    //       return true
-    //     }console.log(req) 
-    //     throw new Error("Los unicos formatos validos son JPG, JPEG y PNG") 
-    //   }return true
-    // })
+    check("contraseñaActual").custom(function(value, {req}){
+        return db.Usuario.findByPk(req.params.id)
+        .then(function(usuario){
+          if(bcrypt.compareSync(value, usuario.contraseña) = false ){
+            return Promise.reject("Debes poner tu contraseña actual");
+          }
+        })
+      }
+    )
   ]
