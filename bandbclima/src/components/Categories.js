@@ -9,6 +9,7 @@ class Categories extends Component {
 				<div className="card bg-info text-white shadow">
 					<div className="card-body">
 						<p>{this.props.categoria}</p>
+						<p>Qty: {this.props.cantidad}</p>
 					</div>
 				</div>
 			</div>

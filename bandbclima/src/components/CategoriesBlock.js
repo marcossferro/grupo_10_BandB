@@ -21,7 +21,7 @@ class CategoriesBlock extends Component {
 
 	//Llamo dentro del componentDidMount al metodo apiCall usando la URL de la API conrrespondiente y genero una respuesta con mostrarDatos
     componentDidMount(){
-        this.apiCall("https://grupo10dh.herokuapp.com/api/products/getCategories", this.mostrarDatos)
+        this.apiCall("https://grupo10dh.herokuapp.com/api/products/getCategoriesWithProducts", this.mostrarDatos)
     }
 
 	//mostrarDatos devuelve los datos de la API mediante data
@@ -29,7 +29,7 @@ class CategoriesBlock extends Component {
 
 		//Defino el nuevo estado de categoria con el array de las categorias
 		this.setState({
-			categoria: data.data.rows
+			categoria: data.data
 		})
 	}
 
@@ -46,7 +46,7 @@ class CategoriesBlock extends Component {
 		<div className="card-body">
 			<div className="row">
 				{this.state.categoria.map( categoria => 
-					<Categories categoria = {categoria.type} />
+					<Categories categoria = {categoria.type} cantidad = {categoria.productos.length}/>
 				)}
 			</div>
 		</div>
