@@ -24,7 +24,7 @@ module.exports = {
                 apellido: req.body.apellido,
                 email: req.body.email,
                 avatar: (req.files.length != 0) ? req.files[0].filename : avatarAModificar,
-                contraseña: (!req.body.contraseña == undefined && req.body.contraseña == req.body.repassword) ? bcrypt.hashSync(req.body.contraseña, 12) : contraseñaAModificar,
+                contraseña: (typeof req.body.contraseña != "undefined" && req.body.contraseña == req.body.repassword) ? bcrypt.hashSync(req.body.contraseña, 12) : contraseñaAModificar,
                 tipo_usuario: "2"
             },{
                 where: { id: req.params.id }

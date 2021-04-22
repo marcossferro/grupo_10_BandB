@@ -29,7 +29,7 @@ var upload = multer({
    }
   })
 
-router.get('/:id', perfilMiddleware, perfilController.perfil)
+router.get('/:id', perfilController.perfil)
 router.put("/:id/edit", upload.any(), perfilValidator ,perfilController.edit)
 router.delete("/:id/delete", perfilController.delete)
 

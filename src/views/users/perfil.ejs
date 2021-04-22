@@ -15,7 +15,7 @@
     
     <!------TITULAR PERFIL MOBILE------>
     <section class="tituloPerfil">
-        <img class="imgPerfil" src="/imgAvatar/<%=usuarioLogueado.avatar%>">
+        <img class="imgPerfil" src="/imgAvatar/<%= usuarioLogueado.avatar%>">
 
         <h1 class="h1Perfil">Bienvenido <%= usuarioLogueado.nombre%></h1>
     </section>
@@ -62,15 +62,9 @@
             </small>
             <label for="avatar">Avatar:</label>
             <input id="avatar_perfil" type="file" name="avatar" value="<%= usuarioLogueado.avatar%>">
-                
+            
             <p class="pFormEditPerfil">¿Quieres cambiar la contraseña?</p>
-                
-            <small style="color: red">
-                <%= (typeof errores != "undefined" && errores.contraseñaActual) ? errores.contraseñaActual.msg : '' %>
-            </small>
-            <label for="contraseñaActual">Contraseña Actual:</label>
-            <input id= "contraseñaActual_perfil" name="contraseñaActual" type="password">
-                
+            <small class="smallFormPerfil">(completa solamente si quieres cambiarla)</small>
             <small style="color: red">
                 <%= (typeof errores != "undefined" && errores.contraseña) ? errores.contraseña.msg : '' %>
             </small>
@@ -82,6 +76,14 @@
             </small>
             <label for="repassword">Repite la Contraseña:</label>
             <input id= "repassword_perfil" name="repassword" type="password">
+            <br>
+            <br>
+
+            <small style="color: red">
+                <%= (typeof errores != "undefined" && errores.contraseñaActual) ? errores.contraseñaActual.msg : '' %>
+            </small>
+            <label for="contraseñaActual">Para confirmar los cambios ingresa tu contraseña:</label>
+            <input id= "contraseñaActual_perfil" name="contraseñaActual" type="password">
                 
             <input id="boton_perfil" class="inputEditar" type="submit" value="Editar">
         </form>
@@ -105,6 +107,6 @@
     </div>
 <!------FOOTER DESKTOP AND MOBILE------>
 <%- include("../partials/footer.ejs") %>
-<!--<script src="/js/formValidation.js"></script>-->
+<script src="/js/formValidation.js"></script>
 </body>
 </html>

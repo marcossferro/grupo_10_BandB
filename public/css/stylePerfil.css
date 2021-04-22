@@ -83,6 +83,9 @@ form.formEditPerfil input#email {
 
 form.formEditPerfil p.pFormEditPerfil {
     margin-top: 20px;
+}
+
+form.formEditPerfil small.smallFormPerfil {
     margin-bottom: 20px;
 }
 
