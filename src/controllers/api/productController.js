@@ -95,19 +95,54 @@ module.exports = {
             })
         })
     },
-    productosPorCategoria: function(req, res){
-        db.Categoria.findAll({
-            include: "productos"
+    //productosPorCategoria: function(req, res){
+      //  db.Categoria.findAll({
+        //    include: "productos"
+        //})
+        //.then(function(categorias){
+          //  if(categorias.length > 0){
+            //    return res.status(200).json({
+              //      meta:{
+                //        status: res.statusCode,
+                  //      msg: "success",
+                        //url: req.originalUrl
+                   // },
+                   // data: categorias
+                //})
+            //}else{
+              //  return res.status(204).json({
+                //    meta: {
+                  //      status: res.statusCode,
+                    //    msg: "no data found",
+                      //  url: req.originalUrl
+                    //},
+                    //data: []
+                //})
+            //}
+        //})
+        //.catch(function(error){
+          //  console.log(error);
+            //return res.json({
+              //  error: "Internal error. Try again!"
+            //})
+        //})
+    //},
+    
+    cantidadProductosPorCat: function(req, res){
+        db.Producto.findAndCountAll({
+            where:{
+                categoria_id: req.params.id
+            }
         })
-        .then(function(categorias){
-            if(categorias.length > 0){
+        .then(function(productos){
+            if(productos.rows.length > 0 && productos.count > 0){
                 return res.status(200).json({
                     meta:{
                         status: res.statusCode,
                         msg: "success",
                         url: req.originalUrl
                     },
-                    data: categorias
+                    data: productos
                 })
             }else{
                 return res.status(204).json({
@@ -126,6 +161,8 @@ module.exports = {
                 error: "Internal error. Try again!"
             })
         })
-    }   
+    },
+    
+
     
 }
