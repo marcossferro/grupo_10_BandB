@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 const perfilValidator = require("../validations/perfilValidator")
-const perfilMiddleware = require ("../middlewares/perfilMiddleware")
+//const perfilMiddleware = require ("../middlewares/perfilMiddleware")
 
 const perfilController = require("../controllers/perfilController");
 

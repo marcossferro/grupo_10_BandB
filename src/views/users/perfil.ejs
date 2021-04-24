@@ -15,16 +15,16 @@
     
     <!------TITULAR PERFIL MOBILE------>
     <section class="tituloPerfil">
-        <img class="imgPerfil" src="/imgAvatar/<%= usuarioLogueado.avatar%>">
+        <img class="imgPerfil" src="/imgAvatar/<%= usuario.avatar%>">
 
-        <h1 class="h1Perfil">Bienvenido <%= usuarioLogueado.nombre%></h1>
+        <h1 class="h1Perfil">Bienvenido <%= usuario.nombre%></h1>
     </section>
 
     <!------TITULAR PERFIL DESKTOP------>
     <section class="tituloPerfilDesk">
-        <img class="imgPerfilDesk" src="/imgAvatar/<%=usuarioLogueado.avatar%>">
+        <img class="imgPerfilDesk" src="/imgAvatar/<%=usuario.avatar%>">
 
-        <h1 class="h1PerfilDesk">Bienvenido <%= usuarioLogueado.nombre%></h1>
+        <h1 class="h1PerfilDesk">Bienvenido <%= usuario.nombre%></h1>
     </section>
 
     <!------FORM EDIT PERFIL------>
@@ -35,33 +35,33 @@
         <p class="pSectionPerfil">¿Quieres editar tus datos?</p>
         <br>
             
-        <form class="formEditPerfil" id="form_perfil" action="/perfil/<%= usuarioLogueado.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form class="formEditPerfil" id="form_perfil" action="/perfil/<%= usuario.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
             <label id="id" for="id">ID:</label>
-            <input id= "id" name="id" type="number" value="<%= usuarioLogueado.id %>" readonly>
+            <input id= "id" name="id" type="number" value="<%= usuario.id %>" readonly>
                 
             <small style="color: red">
                 <%= (typeof errores != "undefined" && errores.nombre) ? errores.nombre.msg : '' %>
             </small>
             <label for="nombre">Nombre:</label>
-            <input id= "nombre_perfil" name="nombre" type="text" value="<%= usuarioLogueado.nombre%>">
+            <input id= "nombre_perfil" name="nombre" type="text" value="<%= usuario.nombre%>">
                 
             <small style="color: red">
                 <%= (typeof errores != "undefined" && errores.apellido) ? errores.apellido.msg : '' %>
             </small>
             <label for="apellido">Apellido:</label>
-            <input id= "apellido_perfil" name="apellido" type="text" value="<%= usuarioLogueado.apellido%>">
+            <input id= "apellido_perfil" name="apellido" type="text" value="<%= usuario.apellido%>">
                 
             <small style="color: red">
                 <%= (typeof errores != "undefined" && errores.email) ? errores.email.msg : '' %>
             </small>
             <label for="email">Email:</label>
-            <input id= "email_perfil" name="email" type="text" value="<%= usuarioLogueado.email%>">
+            <input id= "email_perfil" name="email" type="text" value="<%= usuario.email%>">
                 
             <small style="color: red">
                 <%= (typeof errores != "undefined" && errores.avatar) ? errores.avatar.msg : '' %>
             </small>
             <label for="avatar">Avatar:</label>
-            <input id="avatar_perfil" type="file" name="avatar" value="<%= usuarioLogueado.avatar%>">
+            <input id="avatar_perfil" type="file" name="avatar" value="<%= usuario.avatar%>">
             
             <p class="pFormEditPerfil">¿Quieres cambiar la contraseña?</p>
             <small class="smallFormPerfil">(completa solamente si quieres cambiarla)</small>
@@ -91,8 +91,8 @@
             <!------FORM DELETE PERFIL------>
         <p class="pDeletePerfil">¿Quieres desactivar tu cuenta?</p>
            
-        <form class="formDeletePerfil" action="/perfil/<%= usuarioLogueado.id %>/delete?_method=DELETE" method="POST" enctype="multipart/form-data">
-            <a href="/perfil/<%= usuarioLogueado.id %>/delete"><button id="deleteButton">Desactivar Cuenta</button></a>    
+        <form class="formDeletePerfil" action="/perfil/<%= usuario.id %>/delete?_method=DELETE" method="POST" enctype="multipart/form-data">
+            <a href="/perfil/<%= usuario.id %>/delete"><button id="deleteButton">Desactivar Cuenta</button></a>    
         </form>
 
     </section>
