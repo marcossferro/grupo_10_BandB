@@ -22,6 +22,9 @@ const contraseñaActual_perfil = document.getElementById("contraseñaActual_perf
 const contraseñaNueva_perfil = document.getElementById("contraseñaNueva_perfil");
 const repassword_perfil = document.getElementById("repassword_perfil");
 const boton_perfil = document.getElementById("boton_perfil");
+const formDeletePerfil = document.querySelector(".formDeletePerfil");
+const boton_delete_perfil = document.getElementById("deleteButton");
+const contraseñaDelete_perfil = document.getElementById("contraseñaDelete_perfil");
 
 
 // Register
@@ -70,6 +73,22 @@ window.addEventListener('load',()=>{
             alert('El formato correcto es tuemail@email.com');
         }else{
             form_perfil.submit();
+        }
+    })
+})
+
+window.addEventListener('load',()=>{
+    boton_delete_perfil.addEventListener('click',(event)=>{
+        event.preventDefault();
+        var confirmar = confirm("Estas seguro que queres eliminar tu usuario?");
+        if (confirmar == true) {
+            if(contraseñaDelete_perfil.value != ''){
+                formDeletePerfil.submit();
+            }else{
+                alert('Para eliminar tu perfil debes confirmar con tu contraseña');
+            }
+        }else{
+            alert("Cancelado");
         }
     })
 })

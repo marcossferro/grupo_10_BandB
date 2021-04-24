@@ -109,19 +109,47 @@ section.sectionPerfil p.pDeletePerfil {
 }
 
 section.sectionPerfil form.formDeletePerfil {
-    text-align: center;
-    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--colorPrincipal);
+    border-radius: 20px;
+    padding: 10px 0;
 }
+
+form.formEditPerfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--colorPrincipal);
+    border-radius: 20px;
+    padding: 10px 0;
+}
+
 section.sectionPerfil form.formDeletePerfil a {}
+
+form.formDeletePerfil small.smallFormPerfil {
+    margin-bottom: 20px;
+}
+
+form.formDeletePerfil input {
+    width: 230px;
+    height: 25px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-color: #fff;
+    border-radius: 10px;
+}
 section.sectionPerfil form.formDeletePerfil a button#deleteButton {
     width: 300px;
-    height: 20px;
+    height: 35px;
     border-color: #fff;
     border-radius: 10px;
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
     cursor: pointer;
     transition: box-shadow 0.2s ease-in-out;
 }
+
 section.sectionPerfil form.formDeletePerfil a button#deleteButton:hover{
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }

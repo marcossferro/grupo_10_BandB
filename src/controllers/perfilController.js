@@ -40,11 +40,17 @@ module.exports = {
         }
     },
     delete: function(req, res){
+        let errores = validationResult(req);
+
+        if(errores.isEmpty()){
         db.Usuario.destroy({ where: { id:req.params.id }})
         .then(()=>{
             req.session.destroy(()=>{
                 return res.redirect("/");
             })
         })
+        }else{
+            return res.render("users/perfil", { errores: errores.mapped()})
+        }
     }
 }

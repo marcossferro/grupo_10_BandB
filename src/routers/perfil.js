@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 const perfilValidator = require("../validations/perfilValidator")
+const deleteValidator = require("../validations/deleteValidator");
 //const perfilMiddleware = require ("../middlewares/perfilMiddleware")
 
 const perfilController = require("../controllers/perfilController");
@@ -31,6 +32,6 @@ var upload = multer({
 
 router.get('/:id', perfilController.perfil)
 router.put("/:id/edit", upload.any(), perfilValidator ,perfilController.edit)
-router.delete("/:id/delete", perfilController.delete)
+router.delete("/:id/delete", deleteValidator, perfilController.delete)
 
 module.exports = router
